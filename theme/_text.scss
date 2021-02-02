@@ -1,0 +1,38 @@
+// Poppins
+@mixin poppins($weight) {
+  font-family: "Poppins", sans-serif;
+  font-weight: $weight;
+}
+
+@mixin poppins-italic {
+  font-family: "Poppins", sans-serif;
+  font-style: italic;
+}
+
+// Montserrat
+@mixin montserrat($weight) {
+  font-family: "Montserrat", sans-serif;
+  font-weight: $weight;
+}
+
+@mixin montserrat-italic {
+  font-family: "Montserrat", sans-serif;
+  font-style: italic;
+}
+
+// Links
+@mixin link-normal {
+  text-decoration: none;
+  color: $night-blue;
+  @include montserrat-italic;
+
+  &:hover {
+    color: complement($color: $night-blue);
+    cursor: pointer;
+  }
+}
+
+// Default styling
+h1 {
+  @include poppins(bold);
+}
