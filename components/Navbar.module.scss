@@ -1,0 +1,21 @@
+@import "../theme/theme";
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  max-width: 1200px;
+  width: 100%;
+
+  ul {
+    @include horizontal-list;
+  }
+
+  a {
+    @include poppins(700);
+    @include link-normal;
+    color: $white;
+    text-shadow: 1px 1px 2px gray;
+  }
+}

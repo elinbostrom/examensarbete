@@ -6,7 +6,7 @@ export default function Home() {
     <Layout>
       <div className="startpage">
         <Head>
-          <title>Create Next App</title>
+          <title>Startpage</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
 

@@ -10,6 +10,19 @@
 }
 
 // Montserrat
+@import "~@fontsource/montserrat/scss/mixins";
+
+// Uses a unicode-range map to automatically generate multiple @font-face rules.
+@include fontFace($weight: 500, $display: fallback, $fontDir: "~@fontsource/montserrat/files");
+
+// Fully customisable single @font-face mixin.
+@include fontFaceCustom(
+  $weight: 600,
+  $display: optional,
+  $woff2Path: "~@fontsource/montserrat/files/montserrat-latin-500-normal.woff2",
+  $unicodeRange: false
+);
+
 @mixin montserrat($weight) {
   font-family: "Montserrat", sans-serif;
   font-weight: $weight;
@@ -24,7 +37,6 @@
 @mixin link-normal {
   text-decoration: none;
   color: $night-blue;
-  @include montserrat-italic;
 
   &:hover {
     color: complement($color: $night-blue);
@@ -32,7 +44,13 @@
   }
 }
 
-// Default styling
-h1 {
-  @include poppins(bold);
+@mixin link-italic {
+  text-decoration: none;
+  color: $night-blue;
+  @include montserrat-italic;
+
+  &:hover {
+    color: complement($color: $night-blue);
+    cursor: pointer;
+  }
 }
