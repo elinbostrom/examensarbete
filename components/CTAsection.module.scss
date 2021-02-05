@@ -1,0 +1,30 @@
+@import "../theme/theme";
+
+.CTAwrapper {
+  background: linear-gradient($transperant-blue, $transperant-blue),
+    url(../public/images/josue-isai-ramos-figueroa-0tejKLSfUCo-unsplash.jpg);
+  @include parallax(none);
+  box-shadow: 2px 2px 2px black;
+  min-height: 450px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.text {
+  @extend %main-wrapper;
+  color: $white;
+  text-shadow: 1px 1px 3px black;
+  text-align: right;
+
+  h2 {
+    font-size: 24px;
+  }
+
+  p {
+    font-size: 14px;
+    @include montserrat(100);
+    margin-block: 1rem;
+  }
+}

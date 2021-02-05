@@ -1,18 +1,6 @@
-// Pictures
-%background-parallax {
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
-}
-
-%background-img {
-  background-size: cover;
-  background-position: center;
-}
-
 // Wrappers
 %padding-wrapper {
-  padding: 2em;
+  padding: 2em 0;
 }
 
 %main-wrapper {

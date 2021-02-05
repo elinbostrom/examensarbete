@@ -23,3 +23,8 @@
   background-attachment: fixed;
   background-position: $position;
 }
+
+@mixin background-img {
+  background-size: cover;
+  background-position: center;
+}
