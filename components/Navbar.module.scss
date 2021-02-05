@@ -11,6 +11,10 @@
     @include horizontal-list;
   }
 
+  li:nth-of-type(5) {
+    margin-right: 0;
+  }
+
   a {
     @include poppins(700);
     @include link-normal;
