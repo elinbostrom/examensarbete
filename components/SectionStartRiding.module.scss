@@ -1,0 +1,34 @@
+@import "../theme/theme";
+
+.wrapper {
+  min-height: 600px;
+  background: linear-gradient($transperant-blue, $transperant-blue),
+    url(../public/images/chris-bair-sJBBCn4vk8Y-unsplash.jpg);
+  @include parallax(left);
+  position: relative;
+  box-shadow: 2px 2px 2px rgb(63, 63, 63);
+  padding: 5rem 0 6rem;
+}
+
+.text {
+  @extend %main-wrapper;
+  color: $white;
+  text-shadow: 1px 1px 2px black;
+  display: grid;
+  gap: 1rem;
+  text-align: right;
+
+  h2 {
+    @include poppins(600);
+  }
+
+  p {
+    @include montserrat(100);
+    max-width: 450px;
+    margin-left: auto;
+  }
+
+  button {
+    margin-left: auto;
+  }
+}

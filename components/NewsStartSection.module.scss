@@ -6,7 +6,9 @@
     url(../public/images/caroline-ziemkiewicz-9KgxAnq7eD0-unsplash.jpg);
   @include parallax(left);
   position: relative;
+  z-index: 8;
   box-shadow: 2px 2px 2px rgb(63, 63, 63);
+  padding: 2rem 0 3rem;
 }
 
 .main {
@@ -19,7 +21,7 @@
 
   h2 {
     text-shadow: 1px 1px 2px black;
-    padding: 4rem 2rem 2rem;
+    padding: 2rem;
   }
 }
 
