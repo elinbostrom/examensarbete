@@ -7,10 +7,7 @@ export default function Home() {
       <div className="startpage">
         <Head>
           <title>Startpage</title>
-          <link rel="icon" href="/favicon.ico" />
         </Head>
-
-        <h1>Examensarbete</h1>
       </div>
     </Layout>
   )

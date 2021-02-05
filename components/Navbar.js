@@ -6,7 +6,7 @@ export default function Navbar() {
   return (
     <nav className={style.navbar}>
       <div>
-        Logo
+        Logotyp
       </div>
 
       <ul>

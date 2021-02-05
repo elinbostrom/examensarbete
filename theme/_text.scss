@@ -37,9 +37,11 @@
 @mixin link-normal {
   text-decoration: none;
   color: $night-blue;
+  transition: all ease-in 250ms;
 
   &:hover {
-    color: complement($color: $night-blue);
+    color: $light-purple;
+    text-shadow: 2px 2px 2px black;
     cursor: pointer;
   }
 }
@@ -50,7 +52,14 @@
   @include montserrat-italic;
 
   &:hover {
-    color: complement($color: $night-blue);
+    color: $light-purple;
     cursor: pointer;
   }
+}
+
+// Quotes
+%quote {
+  @include montserrat-italic;
+  font-weight: 100;
+  line-height: 1.8;
 }

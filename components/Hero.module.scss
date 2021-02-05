@@ -1,0 +1,36 @@
+@import "../theme/theme";
+
+.header {
+  display: flex;
+  height: 60vh;
+  width: 100%;
+  // justify-content: center;
+  background: linear-gradient(rgba(247, 245, 242, 0.27), rgba(247, 245, 242, 0.27)),
+    url(../public/images/9.jpg);
+  @include parallax(none);
+  box-shadow: 2px 2px 2px black;
+}
+
+.text {
+  align-self: center;
+  @extend %main-wrapper;
+  padding-left: 6rem;
+
+  h1,
+  p {
+    max-width: 400px;
+    color: white;
+    text-shadow: 1px 1px 3px black;
+  }
+
+  h1 {
+    font-size: 36px;
+    @include poppins(bold);
+    margin: 0;
+  }
+
+  p {
+    @extend %quote;
+    font-size: 16px;
+  }
+}

@@ -1,15 +1,15 @@
 import React from 'react';
 import Footer from './Footer';
+import Hero from './Hero';
 import style from './Layout.module.scss'
-import Navbar from './Navbar';
 
 export default function Layout({ children }) {
   return (
     <>
       <div className={style.wrapper}>
-        <Navbar />
-        {children}
+        <Hero />
       </div>
+      {children}
       <Footer />
     </>
   )
