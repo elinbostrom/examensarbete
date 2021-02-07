@@ -23,8 +23,9 @@
     color: white;
     text-shadow: 1px 1px 3px black;
 
-    @media (max-width: $tablet) {
+    @media (max-width: $tablet-normal) {
       margin: auto;
+      text-align: center;
     }
   }
 
@@ -33,7 +34,7 @@
     @include poppins(bold);
     margin: 0;
 
-    @media (max-width: $tablet) {
+    @media (max-width: $tablet-normal) {
       margin: auto;
     }
   }

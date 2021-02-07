@@ -19,15 +19,19 @@
   justify-content: center;
   height: 100%;
 
-  @media (max-width: $tablet) {
+  @media (max-width: $mobile-max) {
     align-items: center;
+  }
+
+  @media (max-width: $tablet-normal) {
+    padding-left: 2rem;
   }
 
   h2 {
     text-shadow: 1px 1px 2px black;
     padding: 2rem;
 
-    @media (max-width: $tablet) {
+    @media (max-width: $mobile-max) {
       text-align: center;
     }
   }
@@ -40,4 +44,8 @@
   grid-template-columns: repeat(5, auto);
   gap: 1.5rem;
   padding: 1rem;
+
+  @media (max-width: $tablet-normal) {
+    max-width: 350px;
+  }
 }

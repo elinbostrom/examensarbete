@@ -18,7 +18,7 @@
   gap: 1rem;
   text-align: right;
 
-  @media (max-width: $tablet) {
+  @media (max-width: $tablet-normal) {
     text-align: center;
   }
 
@@ -38,7 +38,7 @@
 
   p,
   button {
-    @media (max-width: $tablet) {
+    @media (max-width: $tablet-normal) {
       margin: auto;
     }
   }

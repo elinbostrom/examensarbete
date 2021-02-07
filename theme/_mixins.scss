@@ -23,7 +23,7 @@
   background-attachment: fixed;
   background-position: $position;
 
-  @media (max-width: $tablet) {
+  @media (max-width: $tablet-normal) {
     background-position-x: 50%;
   }
 }

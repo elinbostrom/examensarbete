@@ -20,7 +20,7 @@
   text-shadow: 1px 1px 3px black;
   text-align: right;
 
-  @media (max-width: $tablet) {
+  @media (max-width: $tablet-normal) {
     text-align: center;
   }
 
@@ -31,7 +31,7 @@
     max-width: 450px;
     margin-left: auto;
 
-    @media (max-width: $tablet) {
+    @media (max-width: $tablet-normal) {
       margin: 1rem auto;
       text-align: center;
     }

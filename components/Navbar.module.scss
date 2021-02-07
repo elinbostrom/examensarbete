@@ -7,14 +7,14 @@
   position: fixed;
   @extend %main-wrapper;
 
-  @media (max-width: $tablet) {
+  @media (max-width: $tablet-normal) {
     flex-direction: column;
   }
 
   ul {
     @include horizontal-list;
 
-    @media (max-width: $tablet) {
+    @media (max-width: $tablet-normal) {
       margin-top: 1rem;
     }
   }
