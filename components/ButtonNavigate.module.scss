@@ -5,7 +5,8 @@
   color: $white;
   background: $primary;
   padding: 0.7rem;
-  width: 175px;
+  max-width: 175px;
+  width: 100%;
   border: none;
   border-radius: $radius-large;
   box-shadow: 1px 1px 2px black;

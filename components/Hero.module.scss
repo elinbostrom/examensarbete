@@ -11,6 +11,11 @@
   box-shadow: 1px 1px 2px rgb(63, 63, 63);
   position: relative;
   z-index: 10;
+  transition: all ease 250ms;
+
+  @media (max-width: $mobile-max) {
+    min-height: 450px;
+  }
 }
 
 .text {
@@ -22,10 +27,15 @@
     max-width: 400px;
     color: white;
     text-shadow: 1px 1px 3px black;
+    transition: all ease 250ms;
 
     @media (max-width: $tablet-normal) {
       margin: auto;
       text-align: center;
+    }
+
+    @media (max-width: $mobile-max) {
+      padding-inline: 2rem;
     }
   }
 
@@ -33,6 +43,7 @@
     font-size: 36px;
     @include poppins(bold);
     margin: 0;
+    transition: all ease 250ms;
 
     @media (max-width: $tablet-normal) {
       margin: auto;

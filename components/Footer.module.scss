@@ -11,6 +11,7 @@
   @extend %main-wrapper;
   display: flex;
   justify-content: space-between;
+  transition: all ease 250ms;
 
   @media (max-width: $tablet-normal) {
     flex-direction: column-reverse;
@@ -69,6 +70,7 @@
     flex-direction: column;
     align-items: flex-end;
     justify-content: flex-end;
+    transition: all ease 250ms;
 
     @media (max-width: $tablet-normal) {
       align-items: center;
@@ -80,6 +82,7 @@
   width: 40px;
   height: 40px;
   color: $white;
+  transition: all ease 250ms;
 
   @media (max-width: $tablet-normal) {
     width: 25px;
@@ -92,6 +95,7 @@
   width: 100%;
   border-radius: $radius-small;
   box-shadow: 1px 1px 1px black;
+  transition: all ease 250ms;
 
   @media (max-width: $tablet-normal) {
     max-width: 300px;

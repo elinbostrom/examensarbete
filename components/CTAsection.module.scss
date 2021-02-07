@@ -12,6 +12,11 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  transition: all ease 250ms;
+
+  @media (max-width: $mobile-max) {
+    min-height: 450px;
+  }
 }
 
 .text {
@@ -19,9 +24,11 @@
   color: $white;
   text-shadow: 1px 1px 3px black;
   text-align: right;
+  transition: all ease 250ms;
 
   @media (max-width: $tablet-normal) {
     text-align: center;
+    padding-inline: 2rem;
   }
 
   p {
@@ -30,6 +37,7 @@
     margin-block: 1rem;
     max-width: 450px;
     margin-left: auto;
+    transition: all ease 250ms;
 
     @media (max-width: $tablet-normal) {
       margin: 1rem auto;
