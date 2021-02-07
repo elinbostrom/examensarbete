@@ -20,11 +20,20 @@
   text-shadow: 1px 1px 3px black;
   text-align: right;
 
+  @media (max-width: $tablet) {
+    text-align: center;
+  }
+
   p {
     font-size: 14px;
     @include montserrat(100);
     margin-block: 1rem;
     max-width: 450px;
     margin-left: auto;
+
+    @media (max-width: $tablet) {
+      margin: 1rem auto;
+      text-align: center;
+    }
   }
 }

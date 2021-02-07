@@ -6,7 +6,7 @@ export default function NewsCard({ obj, activePost, setActivePost }) {
   const [post, setPost] = useState(obj[activePost])
   let { title, text, date, id } = post;
 
-  if (text.length > 120) {
+  if (text.length > 350) {
     text = `${text.slice(0, 350)}...`;
   }
 

@@ -2,7 +2,6 @@
 
 .footer {
   background: $night-blue;
-  // position: absolute;
   bottom: 0;
   width: 100%;
   color: $white;
@@ -12,6 +11,11 @@
   @extend %main-wrapper;
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: $tablet) {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
 }
 
 .text {
@@ -23,6 +27,15 @@
   width: 100%;
   justify-self: space-between;
   margin-right: 2em;
+
+  @media (max-width: $tablet) {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-right: unset;
+    margin-top: 1rem;
+    gap: 1rem;
+  }
 
   h2 {
     font-size: 16px;
@@ -56,6 +69,10 @@
     flex-direction: column;
     align-items: flex-end;
     justify-content: flex-end;
+
+    @media (max-width: $tablet) {
+      align-items: center;
+    }
   }
 }
 
@@ -63,6 +80,11 @@
   width: 40px;
   height: 40px;
   color: $white;
+
+  @media (max-width: $tablet) {
+    width: 25px;
+    height: 25px;
+  }
 }
 
 .map {
@@ -70,4 +92,8 @@
   width: 100%;
   border-radius: $radius-small;
   box-shadow: 1px 1px 1px black;
+
+  @media (max-width: $tablet) {
+    max-width: 300px;
+  }
 }

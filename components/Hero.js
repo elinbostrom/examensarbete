@@ -7,8 +7,8 @@ export default function Hero() {
     <header className={style.header}>
       <Navbar />
       <section className={style.text}>
-        <h1>Här är en titel</h1>
-        <p>"Här kommer det en liten välkomnande text som beskriver ridskolans ledord i citatform"</p>
+        <h1>BOSSE</h1>
+        <p>"Här är en hemsida gjord av Sofia Boström"</p>
       </section>
     </header>
   )

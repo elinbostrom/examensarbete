@@ -7,8 +7,16 @@
   position: fixed;
   @extend %main-wrapper;
 
+  @media (max-width: $tablet) {
+    flex-direction: column;
+  }
+
   ul {
     @include horizontal-list;
+
+    @media (max-width: $tablet) {
+      margin-top: 1rem;
+    }
   }
 
   li:nth-of-type(5) {

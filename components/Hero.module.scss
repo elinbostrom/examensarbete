@@ -22,12 +22,20 @@
     max-width: 400px;
     color: white;
     text-shadow: 1px 1px 3px black;
+
+    @media (max-width: $tablet) {
+      margin: auto;
+    }
   }
 
   h1 {
     font-size: 36px;
     @include poppins(bold);
     margin: 0;
+
+    @media (max-width: $tablet) {
+      margin: auto;
+    }
   }
 
   p {

@@ -22,6 +22,10 @@
   background-size: cover;
   background-attachment: fixed;
   background-position: $position;
+
+  @media (max-width: $tablet) {
+    background-position-x: 50%;
+  }
 }
 
 @mixin background-img {
