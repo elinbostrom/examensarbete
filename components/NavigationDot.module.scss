@@ -7,6 +7,7 @@
   background: $transperant-blue;
   margin: auto;
   transition: background ease-in 250ms;
+  transition: all ease 250ms;
 
   @media (max-width: $tablet-normal) {
     width: 12px;
@@ -22,6 +23,7 @@
   margin: auto;
   box-shadow: 1px 1px 2px black;
   transition: background ease-in 250ms;
+  transition: all ease 250ms;
 
   @media (max-width: $tablet-normal) {
     width: 12px;
