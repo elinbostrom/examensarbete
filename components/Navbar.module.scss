@@ -12,6 +12,11 @@
     flex-direction: column;
   }
 
+  .logotype {
+    object-fit: contain;
+    width: 120px;
+  }
+
   ul {
     @include horizontal-list;
     transition: all ease 250ms;

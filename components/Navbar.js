@@ -5,9 +5,9 @@ import style from './Navbar.module.scss';
 export default function Navbar() {
   return (
     <nav className={style.navbar}>
-      <div>
-        Logotyp
-      </div>
+      <Link href="/">
+        <img className={style.logotype} src="../icons/LogotypVit.svg" alt="Logotyp" />
+      </Link>
 
       <ul>
         <li>
