@@ -13,8 +13,18 @@
   z-index: 10;
   transition: all ease 250ms;
 
+  @media (max-width: $tablet-normal) {
+    min-height: 450px;
+    background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)),
+      url(../public/images/9tablet.jpg);
+    background-size: cover;
+  }
+
   @media (max-width: $mobile-max) {
     min-height: 450px;
+    background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)),
+      url(../public/images/9mobile.jpg);
+    background-size: cover;
   }
 }
 

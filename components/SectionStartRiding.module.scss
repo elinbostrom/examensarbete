@@ -10,8 +10,18 @@
   padding: 5rem 0 6rem;
   transition: all ease 250ms;
 
+  @media (max-width: $tablet-normal) {
+    background: linear-gradient($transperant-blue, $transperant-blue),
+      url(../public/images/chris-bair-sJBBCn4vk8Y-unsplash-tablet.jpg);
+    background-size: cover;
+  }
+
   @media (max-width: $mobile-max) {
     min-height: 450px;
+    background: linear-gradient($transperant-blue, $transperant-blue),
+      url(../public/images/chris-bair-sJBBCn4vk8Y-unsplash-mobile.jpg);
+    background-size: cover;
+    background-position-x: 20%;
   }
 }
 
