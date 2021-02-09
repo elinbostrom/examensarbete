@@ -32,3 +32,21 @@
   background-size: cover;
   background-position: center;
 }
+
+// Buttons
+@mixin button-green {
+  border: none;
+  background: $primary;
+  font-size: 14px;
+  color: $white;
+  padding: 0.7rem 2rem;
+  border-radius: $radius-large;
+  box-shadow: 1px 1px 2px black;
+  transition: all ease-in 200ms;
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 2px 2px 3px black;
+    transform: scale(1.05);
+  }
+}

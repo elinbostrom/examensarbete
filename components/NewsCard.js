@@ -29,7 +29,7 @@ export default function NewsCard({ obj, activePost, setActivePost }) {
       <h3>{posts.title}</h3>
       <p>{posts.information}</p>
       <p>{date}</p>
-      <ButtonNavigate text="Läs mer" navigate={`/stallnytt/${id}`} />
+      <ButtonNavigate text="Läs mer" navigate={`/stallnytt/#${id}`} />
       <button className={style.button_arrow} onClick={handleClick}>
         {'>'}
       </button>

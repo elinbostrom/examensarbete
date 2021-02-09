@@ -17,3 +17,16 @@
     box-shadow: 2px 2px 3px black;
   }
 }
+
+.link {
+  position: absolute;
+  bottom: -20px;
+  left: 3rem;
+  @include button-green;
+  @include poppins(600);
+  transition: left ease 250ms;
+
+  @media (max-width: $mobile-max) {
+    left: 1rem;
+  }
+}

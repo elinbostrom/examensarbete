@@ -7,39 +7,6 @@ export default function NewsStartSection({ data }) {
   const [activePost, setActivePost] = useState(0);
   const posts = data ?? null;
 
-  const arrObj = [
-    {
-      id: "hakhroit",
-      title: "Nyhetstitel",
-      text: "Text från stallnytt Text från stallnytt Text från stallnytt Text från stallnytt Text från stallnytt Text från stallnytt Text från stallnytt ",
-      date: "2020-11-22 15:30"
-    },
-    {
-      id: "ao385y9f",
-      title: "Hej och välkommen",
-      text: "Text från stallnytt Text från stallnytt Text från stallnytt Text från stallnytt Text från stallnytt Text från stallnytt Text från stallnytt Text från stallnytt Text från stallnytt Text från stallnytt Text från stallnytt Text från stallnytt Text från stallnytt Text från stallnytt Text från stallnytt Text från stallnytt Text från stallnytt Text från stallnytt Text från stallnytt Text från stallnytt Text från stallnytt Text från stallnytt Text från stallnytt Text från stallnytt Text från stallnytt Text från stallnytt Text från stallnytt Text från stallnytt ",
-      date: "2020-11-22 15:30"
-    },
-    {
-      id: "a289rfak",
-      title: "Hejdå",
-      text: "Text från stallnytt Text från stallnytt Text från stallnytt Text från stallnytt Text från stallnytt Text från stallnytt Text från stallnytt ",
-      date: "2020-11-22 15:30"
-    },
-    {
-      id: "a289r35k",
-      title: "Another one",
-      text: "Text från stallnytt Text från stallnytt Text från stallnytt Text från stallnytt Text från stallnytt Text från stallnytt Text från stallnytt ",
-      date: "2020-11-22 15:30"
-    },
-    {
-      id: "a289rffe",
-      title: "YEEEAHH",
-      text: "Text från stallnytt Text från stallnytt Text från stallnytt Text från stallnytt Text från stallnytt Text från stallnytt Text från stallnytt ",
-      date: "2020-11-22 15:30"
-    }
-  ];
-
   return (
     <section className={style.wrapper}>
       <div className={style.main}>
@@ -49,7 +16,7 @@ export default function NewsStartSection({ data }) {
           activePost={activePost}
           setActivePost={setActivePost} />
         <div className={style.navigation_dots}>
-          {Array.isArray(arrObj) && arrObj.map((post, index) => {
+          {Array.isArray(posts) && posts.map((post, index) => {
             if (index === activePost) {
               return <NavigationDot key={post.id} active={true} />
             }
