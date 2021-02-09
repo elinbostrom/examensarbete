@@ -2,21 +2,21 @@ import { gql } from "@apollo/client";
 
 export const GET_STARTPAGE = gql`
 query GET_STARTPAGE {
-  startpageitems {
+  startpageitems(first: 1) {
     nodes {
       welcome {
+        title
         slogan
-        titel
       }
       cta {
-        titel
-        link
-        information
+        titlecta
+        descriptioncta
         btnText
+        link
       }
       start_riding {
-        titel
-        information
+        titlestartriding
+        descriptionstartriding
       }
     }
   }

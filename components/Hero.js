@@ -2,13 +2,13 @@ import React from 'react'
 import style from './Hero.module.scss'
 import Navbar from './Navbar'
 
-export default function Hero() {
+export default function Hero({ data }) {
   return (
     <header className={style.header}>
       <Navbar />
       <section className={style.text}>
-        <h1>BOSSE</h1>
-        <p>"Här är en hemsida gjord av Sofia Boström"</p>
+        <h1>{data.title}</h1>
+        <p>"{data.slogan}"</p>
       </section>
     </header>
   )
