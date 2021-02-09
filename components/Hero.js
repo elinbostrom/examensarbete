@@ -3,6 +3,7 @@ import style from './Hero.module.scss'
 import Navbar from './Navbar'
 
 export default function Hero({ data }) {
+
   return (
     <header className={style.header}>
       <Navbar />

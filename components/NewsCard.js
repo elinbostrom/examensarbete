@@ -4,10 +4,11 @@ import style from './NewsCard.module.scss'
 
 export default function NewsCard({ obj, activePost, setActivePost }) {
   const [post, setPost] = useState(obj[activePost])
-  let { title, text, date, id } = post;
+  let { date, id, posts } = post;
+  date = date.replace("T", " ");
 
-  if (text.length > 350) {
-    text = `${text.slice(0, 350)}...`;
+  if (posts.information.length > 350) {
+    posts.information = `${posts.information.slice(0, 350)}...`;
   }
 
   useEffect(() => {
@@ -25,8 +26,8 @@ export default function NewsCard({ obj, activePost, setActivePost }) {
 
   return (
     <article className={style.card}>
-      <h3>{title}</h3>
-      <p>{text}</p>
+      <h3>{posts.title}</h3>
+      <p>{posts.information}</p>
       <p>{date}</p>
       <ButtonNavigate text="Läs mer" navigate={`/stallnytt/${id}`} />
       <button className={style.button_arrow} onClick={handleClick}>

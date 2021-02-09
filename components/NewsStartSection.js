@@ -3,8 +3,9 @@ import NavigationDot from './NavigationDot';
 import NewsCard from './NewsCard'
 import style from './NewsStartSection.module.scss'
 
-export default function NewsStartSection() {
+export default function NewsStartSection({ data }) {
   const [activePost, setActivePost] = useState(0);
+  const posts = data ?? null;
 
   const arrObj = [
     {
@@ -44,7 +45,7 @@ export default function NewsStartSection() {
       <div className={style.main}>
         <h2>Stallnytt</h2>
         <NewsCard
-          obj={arrObj}
+          obj={posts}
           activePost={activePost}
           setActivePost={setActivePost} />
         <div className={style.navigation_dots}>

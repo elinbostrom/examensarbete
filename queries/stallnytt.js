@@ -1,16 +1,21 @@
 import { gql } from "@apollo/client";
 
-export const GET_POSTS = gql`
-query GET_POSTS {
+export const STALLNYTT = gql`
+query STALLNYTT {
+  heroes(where: {title: "Stallnytt"}) {
+    nodes {
+      heroInfo {
+        title
+        slogan
+      }
+    }
+  }
   stablenews {
     nodes {
-      date
-      slug
-      stablenewId
       posts {
+        title
         information
         link
-        title
         pictures {
           picture1 {
             altText

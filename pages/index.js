@@ -1,25 +1,28 @@
 import Head from 'next/head'
-import CTAsection from '../components/CTAsection.js'
+
+// Components
 import Layout from '../components/Layout.js'
+import CTAsection from '../components/CTAsection.js'
 import NewsStartSection from '../components/NewsStartSection.js'
 import SectionStartRiding from '../components/SectionStartRiding.js'
 
 // get data
 import client from '../apollo/client'
-import { GET_STARTPAGE } from '../queries/get-startpage';
+import { STARTPAGE } from '../queries/startpage';
 
-export default function Home({ startpageitems }) {
-  const { welcome, cta, start_riding } = startpageitems[0];
-  console.log(startpageitems);
+export default function Home({ startpageitems, heroes, stablenews }) {
+  const { cta, start_riding } = startpageitems[0];
+  const { heroInfo } = heroes[0];
 
   return (
     <>
       <Head>
         <title>Vendelsö Ridskola</title>
+        <link rel="shortcut icon" href="../public/vr-favicon.svg" />
       </Head>
-      <Layout data={welcome}>
+      <Layout data={heroInfo}>
         <CTAsection data={cta} />
-        <NewsStartSection />
+        <NewsStartSection data={stablenews} />
         <SectionStartRiding data={start_riding} />
       </Layout>
     </>
@@ -29,12 +32,14 @@ export default function Home({ startpageitems }) {
 export async function getStaticProps(context) {
 
   const { data, loading, networkStatus } = await client.query({
-    query: GET_STARTPAGE
+    query: STARTPAGE
   });
 
   return {
     props: {
-      startpageitems: data?.startpageitems?.nodes
+      startpageitems: data?.startpageitems?.nodes,
+      heroes: data?.heroes?.nodes,
+      stablenews: data?.stablenews?.nodes
     },
   }
 }
