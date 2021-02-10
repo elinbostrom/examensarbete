@@ -3,11 +3,11 @@ import styles from '../styles/Stallnytt.module.scss'
 
 // Components
 import Layout from '../components/Layout'
+import NewsArticle from '../components/NewsArticle';
 
 // get data
 import client from '../apollo/client'
 import { STALLNYTT } from '../queries/stallnytt';
-import NewsArticle from '../components/NewsArticle';
 
 export default function Stallnytt({ stablenews, heroes }) {
   const { heroInfo } = heroes[0];
