@@ -1,0 +1,52 @@
+@import "../../theme/theme";
+
+.dressage {
+  @extend %button-card;
+  background: url(../../public/images/josue-isai-ramos-figueroa-0tejKLSfUCo-unsplash.jpg);
+  background-size: cover;
+  height: 150px;
+}
+
+.jumping {
+  @extend %button-card;
+  background: url(../../public/images/philippe-oursel-fCf-RqOpjwA-unsplash.jpg);
+  background-size: cover;
+  height: 150px;
+}
+
+.summer {
+  @extend %button-card;
+  background: url(../../public/images/beth-macdonald-7Y8gfWM-1dw-unsplash.jpg);
+  background-size: cover;
+  background-position: right;
+  height: 150px;
+}
+
+.christmas {
+  @extend %button-card;
+  background: url(../../public/images/philippe-oursel-jckGRV_-FI4-unsplash-tablet.jpg);
+  background-size: cover;
+  height: 150px;
+}
+
+.non {
+  @extend %button-card;
+  background: url(../../public/images/philippe-oursel-blpypGHlh6A-unsplash.jpg);
+  background-size: cover;
+  height: 150px;
+}
+
+.text {
+  color: $white;
+  background: $transperant-blue;
+  padding: 1.5rem;
+
+  h2 {
+    font-size: 18px;
+    text-shadow: 0px 4px 4px black;
+  }
+
+  p {
+    font-size: 14px;
+  }
+}
