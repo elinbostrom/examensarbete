@@ -1,0 +1,56 @@
+@import "../../theme/theme";
+
+.navigation {
+  background: $primary;
+  position: relative;
+  width: 100%;
+  box-shadow: 1px 1px 2px rgb(67, 67, 67);
+  z-index: 20;
+
+  .list {
+    display: grid;
+    grid-template: 1fr auto / repeat(5, auto);
+    @extend %main-wrapper;
+    padding-block: 2rem;
+
+    @media (max-width: $tablet-normal) {
+      padding: 2rem;
+    }
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+  }
+
+  a {
+    @include link-normal;
+    color: $white;
+    @include poppins(200);
+    font-size: 16px;
+    transition: all ease 200ms;
+
+    @media (max-width: $mobile-max) {
+      font-size: 16px;
+      margin-inline: 0.2rem;
+    }
+  }
+
+  svg {
+    color: $white;
+    font-size: 16px;
+    margin-left: 0.5rem;
+    margin-bottom: 0.2rem;
+    text-shadow: 1px 1px 1px gray;
+  }
+}
+
+.active_link {
+  position: relative;
+  transition: all ease 200ms;
+
+  a {
+    text-decoration: underline;
+    text-shadow: 1px 1px 2px rgb(41, 41, 41);
+  }
+}
