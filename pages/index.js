@@ -1,7 +1,7 @@
 import Head from 'next/head'
 
 // Components
-import Layout from '../components/Layout.js'
+import Layout from '../components/Layouts/index.js'
 import CTAsection from '../components/CTAsection.js'
 import NewsStartSection from '../components/NewsStartSection.js'
 import SectionStartRiding from '../components/SectionStartRiding.js'
@@ -20,7 +20,7 @@ export default function Home({ startpageitems, heroes, stablenews }) {
         <title>Vendelsö Ridskola</title>
         <link rel="shortcut icon" href="../public/vr-favicon.svg" />
       </Head>
-      <Layout data={heroInfo}>
+      <Layout data={heroInfo} page="startpage">
         <CTAsection data={cta} />
         <NewsStartSection data={stablenews} />
         <SectionStartRiding data={start_riding} />
