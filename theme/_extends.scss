@@ -9,3 +9,32 @@
   width: 100%;
   margin: auto;
 }
+
+// Buttons
+%button-clear {
+  border: none;
+  background: transparent;
+  transition: transform ease 250ms;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+  }
+}
+
+%button-card {
+  @extend %button-clear;
+  height: 334px;
+  width: 260px;
+  border-radius: $radius-medium;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1rem 0;
+  transition: box-shadow ease 250ms;
+
+  &:hover {
+    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.25);
+  }
+}
