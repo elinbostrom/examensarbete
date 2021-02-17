@@ -38,7 +38,7 @@ query START_RIDING {
         ridscheman {
           title
           description
-          btntext
+          btntexthorse
           linkhast
           btntextponny
           linkponny

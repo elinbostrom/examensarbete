@@ -5,7 +5,6 @@ import styles from './SubNavigation.module.scss'
 
 export default function SubNavigation() {
   const { activePage, setActivePage } = useContext(LessonsCoursesContext);
-  console.log(activePage);
 
   return (
     <nav className={styles.navigation}>

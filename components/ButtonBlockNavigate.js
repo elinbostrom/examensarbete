@@ -1,13 +1,12 @@
 import React from 'react'
 import { useRouter } from 'next/router'
-import style from './ButtonNavigate.module.scss'
+import style from './ButtonBlockNavigate.module.scss'
 
-export default function ButtonNavigate({ text, navigate, link, block }) {
+export default function ButtonBlockNavigate({ text, navigate }) {
   const router = useRouter();
 
   return (
-    <button className={
-      link ? style.link : style.button}
+    <button className={style.button}
       onClick={() => router.push(navigate)}>
       {text}
     </button>

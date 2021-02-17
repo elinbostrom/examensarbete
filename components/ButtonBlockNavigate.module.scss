@@ -1,0 +1,20 @@
+@import "../theme/theme";
+
+.button {
+  font-size: 14px;
+  color: $white;
+  background: $primary;
+  padding: 0.7rem;
+  width: 100%;
+  border: none;
+  border-radius: $radius-medium;
+  box-shadow: 1px 1px 2px black;
+  transition: box-shadow ease-in 150ms;
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 2px 2px 3px black;
+  }
+
+  grid-column: 1;
+}

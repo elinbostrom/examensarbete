@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout from '../components/Layout'
-import styled from 'styled-components'
+import styles from '../styles/LektionerKurser.module.scss';
 
 // get data
 import client from '../apollo/client'
@@ -8,6 +8,7 @@ import { START_RIDING } from '../queries/start-riding';
 import SubNavigation from '../components/SubNavigation';
 import LessonCoursesProvider from '../contexts/LessonCoursesProvider';
 import TextInformationSection from '../components/TextInformationSection';
+import ArticleSection from '../components/ArticleSection';
 
 export default function LektionerKurser({ heroes, lektionerkurseritems }) {
   const { heroInfo } = heroes[0];
@@ -17,22 +18,19 @@ export default function LektionerKurser({ heroes, lektionerkurseritems }) {
     <LessonCoursesProvider>
       <Layout data={heroInfo}>
         <SubNavigation />
-        <MainWrapper>
-          <TextInformationSection data={borjarida.welcome} />
-        </MainWrapper>
+        <main className={styles.main}>
+          <div className={styles.wrapper}>
+            <TextInformationSection data={borjarida.welcome} name="Börja rida" />
+            <ArticleSection data={borjarida.information} imgright />
+            <ArticleSection data={borjarida.minridskola} button />
+            <ArticleSection data={borjarida.ridscheman} imgright />
+          </div>
+        </main>
       </Layout>
     </LessonCoursesProvider>
   )
 }
 
-const MainWrapper = styled.main`
-max-width: 1100px;
-width: 100%;
-background: white;
-margin: 0 auto;
-box-shadow: 1px 1px 1px 1px black;
-padding: 4rem 3rem;
-`;
 
 export async function getStaticProps(context) {
 

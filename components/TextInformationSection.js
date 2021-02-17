@@ -1,22 +1,18 @@
 import React, { useContext } from 'react'
 import { LessonsCoursesContext } from '../contexts/LessonCoursesProvider';
-import styled from 'styled-components';
+import styles from './TextInformationSection.module.scss';
 
 
-export default function TextInformationSection({ data }) {
+export default function TextInformationSection({ data, name }) {
   const { title, description } = data;
   const { activePage } = useContext(LessonsCoursesContext);
 
   return (
     <>
-      {activePage === "Börja rida" && <Wrapper>
+      {activePage === name && <section className={styles.wrapper}>
         <h2>{title}</h2>
         <p>{description}</p>
-      </Wrapper>}
+      </section>}
     </>
   )
 }
-
-const Wrapper = styled.section`
-text-align: center;
-`;
