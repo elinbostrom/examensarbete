@@ -7,6 +7,7 @@
   position: fixed;
   @extend %main-wrapper;
   transition: all ease 250ms;
+  z-index: 20;
 
   @media (max-width: $tablet-normal) {
     flex-direction: column;
@@ -15,6 +16,8 @@
   .logotype {
     object-fit: contain;
     width: 120px;
+    position: relative;
+    z-index: 2;
   }
 
   ul {
