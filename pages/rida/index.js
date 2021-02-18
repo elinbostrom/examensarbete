@@ -6,8 +6,6 @@ import ArticleSection from '../../components/ArticleSection';
 // get data
 import client from '../../apollo/client'
 import { START_RIDING } from '../../queries/start-riding';
-import { useContext, useEffect } from 'react';
-import { LessonsCoursesContext } from '../../contexts/LessonCoursesProvider';
 
 export default function LektionerKurser({ heroes, lektionerkurseritems }) {
   const { borjarida } = lektionerkurseritems[0];
