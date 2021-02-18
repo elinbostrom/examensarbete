@@ -5,6 +5,7 @@ query COURSES {
   courses {
     nodes {
       id
+      slug
       course {
         title
         time
@@ -19,6 +20,14 @@ query COURSES {
           altText
           sourceUrl
         }
+      }
+    }
+  }
+  heroes(where: {title: "Lektioner och Kurser"}, first: 1) {
+    nodes {
+      heroInfo {
+        title
+        slogan
       }
     }
   }
@@ -42,6 +51,14 @@ query COURSE {
       picture {
         altText
         sourceUrl
+      }
+    }
+  }
+  heroes(where: {title: "Lektioner och Kurser"}, first: 1) {
+    nodes {
+      heroInfo {
+        title
+        slogan
       }
     }
   }
