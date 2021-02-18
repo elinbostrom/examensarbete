@@ -1,8 +1,6 @@
 import Link from 'next/link'
 import React, { useContext, useState } from 'react'
 import { LessonsCoursesContext } from '../../contexts/LessonCoursesProvider'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSortDown } from '@fortawesome/free-solid-svg-icons'
 import Dropdown from './Dropdown';
 import styles from './Submenu.module.scss'
 
@@ -24,8 +22,7 @@ export default function Submenu() {
           onClick={() => setActivePage("Kurser")}
           onMouseEnter={() => setIsOpen(true)}
           >
-          <Link href="/rida/kurser">Kurser</Link>
-          <FontAwesomeIcon icon={faSortDown}/>
+          <Link href="/rida/kurser">Alla kurser</Link>
         </li>
         <li
           className={activePage === "Hästlekis" ? styles.active_link : styles.link}
