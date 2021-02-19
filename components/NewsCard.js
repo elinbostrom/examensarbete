@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import ButtonNavigate from './ButtonNavigate'
 import style from './NewsCard.module.scss'
+import { IoIosArrowForward } from 'react-icons/io'
 
 export default function NewsCard({ obj, activePost, setActivePost }) {
   const [post, setPost] = useState(obj[activePost])
@@ -31,7 +32,7 @@ export default function NewsCard({ obj, activePost, setActivePost }) {
       <p>{date}</p>
       <ButtonNavigate text="Läs mer" navigate={`/stallnytt/#${id}`} />
       <button className={style.button_arrow} onClick={handleClick}>
-        {'>'}
+        <IoIosArrowForward />
       </button>
     </article>
   )

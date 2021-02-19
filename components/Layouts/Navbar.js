@@ -6,7 +6,7 @@ export default function Navbar() {
   return (
     <nav className={style.navbar}>
       <Link href="/">
-        <img className={style.logotype} src="../icons/LogotypVit.svg" alt="Logotyp" />
+        <img className={style.logotype} src="/icons/LogotypVit.svg" alt="Logotyp" />
       </Link>
 
       <ul>

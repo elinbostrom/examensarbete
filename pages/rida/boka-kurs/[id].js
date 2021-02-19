@@ -2,6 +2,9 @@ import { useQuery } from '@apollo/client';
 import { useRouter } from 'next/router'
 import LessonsCoursesLayout from '../../../components/Layouts/LessonsCoursesLayout';
 import { COURSE } from '../../../queries/courses';
+import RegisterForm from '@/components/RegisterForm'
+import InstructorCard from '@/components/InstructorCard';
+import styles from '../../../styles/BookCourse.module.scss'
 
 export default function CourseDetail() {
   const router = useRouter()
@@ -19,9 +22,13 @@ export default function CourseDetail() {
 
   return (
     <LessonsCoursesLayout heroes={heroes} page="lessoncourses">
-      <section>
+      <section className={styles.text}>
         <h2>{course.title}</h2>
         <p>{course.description}</p>
+      </section>
+      <section className={styles.form}>
+        <RegisterForm course={course} />
+        <InstructorCard course={course} />
       </section>
     </LessonsCoursesLayout>
   )

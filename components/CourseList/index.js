@@ -1,6 +1,7 @@
 import styles from './CourseList.module.scss'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faClock, faCalendar, faStar, faUsers, faTag } from '@fortawesome/free-solid-svg-icons'
+import { BsClock, BsCalendar, BsStar } from 'react-icons/bs'
+import { FaMoneyCheck } from 'react-icons/fa'
+import { FiUsers } from 'react-icons/fi'
 import { useContext, useEffect } from 'react';
 import { LessonsCoursesContext } from '../../contexts/LessonCoursesProvider';
 
@@ -13,23 +14,23 @@ export default function index({ courseInfo }) {
   return (
     <ul className={styles.infolist}>
       <li>
-        <FontAwesomeIcon icon={faClock} />
+        <BsClock />
         <p>{time} minuter</p>
       </li>
       <li>
-        <FontAwesomeIcon icon={faCalendar} />
+        <BsCalendar />
         <p>{date}</p>
       </li>
       <li>
-        <FontAwesomeIcon icon={faStar} />
+        <BsStar />
         <p>{level}</p>
       </li>
       <li>
-        <FontAwesomeIcon icon={faTag} />
+        <FaMoneyCheck />
         <p>{price} kr</p>
       </li>
       <li>
-        <FontAwesomeIcon icon={faUsers} />
+        <FiUsers />
         <p>{`${placesLeft} av ${spots} platser kvar`}</p>
       </li>
     </ul>

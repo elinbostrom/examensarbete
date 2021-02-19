@@ -1,8 +1,8 @@
 import React from 'react'
 
 // Components
-import NewsArticle from '../components/NewsArticle/NewsArticle';
-import StablenewsLayout from '../components/Layouts/StablenewsLayout';
+import NewsArticle from '@/components/NewsArticle/NewsArticle';
+import StablenewsLayout from '@/components/Layouts/StablenewsLayout';
 
 // get data
 import client from '../apollo/client'

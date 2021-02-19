@@ -1,42 +1,38 @@
 @import "../../theme/theme";
 
 .startpage {
-  @include hero-light(
-    "../public/images/7.png",
-    "../public/images/9tablet.jpg",
-    "../public/images/9mobile.jpg"
-  );
+  @include hero-light("/images/9.png", "/images/9tablet.jpg", "/images/9mobile.jpg");
 }
 
 .stablenews {
   @include hero-dark(
-    "../public/images/markus-spiske-eioMwO2IJ2E-unsplash.jpg",
-    "../public/images/markus-spiske-eioMwO2IJ2E-unsplash-tablet.jpg",
-    "../public/images/markus-spiske-eioMwO2IJ2E-unsplash-mobile.jpg"
+    "/images/markus-spiske-eioMwO2IJ2E-unsplash.jpg",
+    "/images/markus-spiske-eioMwO2IJ2E-unsplash-tablet.jpg",
+    "/images/markus-spiske-eioMwO2IJ2E-unsplash-mobile.jpg"
   );
 }
 
 .lessoncourses {
   @include hero-dark(
-    "../public/images/louise-pilgaard-3SM_F21nzSw-unsplash.jpg",
-    "../public/images/louise-pilgaard-3SM_F21nzSw-unsplash-tablet.jpg",
-    "../public/images/louise-pilgaard-3SM_F21nzSw-unsplash-mobile.jpg"
+    "/images/louise-pilgaard-3SM_F21nzSw-unsplash.jpg",
+    "/images/louise-pilgaard-3SM_F21nzSw-unsplash-tablet.jpg",
+    "/images/louise-pilgaard-3SM_F21nzSw-unsplash-mobile.jpg"
   );
 }
 
 .aboutus {
   @include hero-dark(
-    "../public/images/markus-spiske-xl7-2hh251Y-unsplash.jpg",
-    "../public/images/markus-spiske-xl7-2hh251Y-unsplash-tablet.jpg",
-    "../public/images/markus-spiske-xl7-2hh251Y-unsplash-mobile.jpg"
+    "/images/markus-spiske-xl7-2hh251Y-unsplash.jpg",
+    "/images/markus-spiske-xl7-2hh251Y-unsplash-tablet.jpg",
+    "/images/markus-spiske-xl7-2hh251Y-unsplash-mobile.jpg"
   );
 }
 
 .contact {
   @include hero-dark(
-    "../public/images/contact.jpg",
-    "../public/images/contact-tablet.jpg",
-    "../public/images/contact-mobile.jpg"
+    "/images/contact.jpg",
+    "/images/contact-tablet.jpg",
+    "/images/contact-mobile.jpg"
   );
 }
 

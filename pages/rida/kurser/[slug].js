@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
-import LessonCoursesLayout from '../../../components/Layouts/LessonsCoursesLayout'
-import CourseCard from '../../../components/CourseCard'
+import LessonCoursesLayout from '@/components/Layouts/LessonsCoursesLayout'
+import CourseCard from '@/components/CourseCard'
 import styles from '../../../styles/CourseDetailPage.module.scss'
 
 // get data
@@ -36,7 +36,8 @@ export default function index({ courses, heroes }) {
     <LessonCoursesLayout heroes={heroes} page="lessoncourses">
       <h2>Kommande kurser</h2>
       <div className={styles.card}>
-        {Array.isArray(activeCourses) && activeCourses.map(item => <CourseCard key={item.id} id={item.id} courseInfo={item.course} />)}
+        {Array.isArray(activeCourses) && activeCourses.map(item =>
+          <CourseCard key={item.id} id={item.id} courseInfo={item.course} />)}
       </div>
     </LessonCoursesLayout>
   )

@@ -2,7 +2,7 @@ import Link from 'next/link'
 import React from 'react'
 import style from './Footer.module.scss'
 
-export default function Footer() {
+export default function index() {
   return (
     <footer className={style.footer}>
       <div className={style.inner}>
@@ -22,16 +22,16 @@ export default function Footer() {
             <p>Följ oss via våra sociala medier</p>
             <div>
               <a href="https://www.instagram.com/vendelsoridskola/?hl=sv">
-                <img className={style.icons} src="../icons/InstagramIconVit.svg" alt="instagram" />
+                <img className={style.icons} src="/icons/InstagramIconVit.svg" alt="instagram" />
               </a>
               <a href="https://sv-se.facebook.com/vendelso.ridskola">
-                <img className={style.icons} src="../icons/FacebookIconVit.svg" alt="Facebook" />
+                <img className={style.icons} src="/icons/FacebookIconVit.svg" alt="Facebook" />
               </a>
             </div>
           </div>
         </section>
         <div>
-          <img className={style.map} src="../images/map.png" alt="map" />
+          <img className={style.map} src="/images/map.png" alt="map" />
         </div>
       </div>
     </footer>

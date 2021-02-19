@@ -1,0 +1,27 @@
+@import "../../theme/theme";
+
+.card {
+  width: 300px;
+  background: $night-blue;
+  color: $white;
+  display: grid;
+  grid-template-rows: 1fr auto;
+
+  img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+
+  p {
+    @include montserrat(400);
+  }
+
+  span {
+    @include poppins(600);
+  }
+
+  .text {
+    padding: 1.5rem 2rem;
+  }
+}

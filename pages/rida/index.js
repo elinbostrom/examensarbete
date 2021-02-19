@@ -1,7 +1,7 @@
 // Components
-import LessonCoursesLayout from '../../components/Layouts/LessonsCoursesLayout'
-import TextInformationSection from '../../components/TextInformationSection';
-import ArticleSection from '../../components/ArticleSection';
+import LessonCoursesLayout from '@/components/Layouts/LessonsCoursesLayout'
+import TextInformationSection from '@/components/TextInformationSection';
+import ArticleSection from '@/components/ArticleSection';
 
 // get data
 import client from '../../apollo/client'

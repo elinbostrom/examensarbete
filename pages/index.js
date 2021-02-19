@@ -1,10 +1,10 @@
 import Head from 'next/head'
 
 // Components
-import Layout from '../components/Layouts/index.js'
-import CTAsection from '../components/CTAsection.js'
-import NewsStartSection from '../components/NewsStartSection.js'
-import SectionStartRiding from '../components/SectionStartRiding.js'
+import Layout from '@/components/Layouts/index.js'
+import CTAsection from '@/components/CTAsection.js'
+import NewsStartSection from '@/components/NewsStartSection.js'
+import SectionStartRiding from '@/components/SectionStartRiding.js'
 
 // get data
 import client from '../apollo/client'
