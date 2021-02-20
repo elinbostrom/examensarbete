@@ -4,18 +4,23 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 import { IoIosArrowForward } from 'react-icons/io'
 
-const schema = yup.object().shape({
-  name: yup.string().required(),
-  email: yup.string().email().required(),
-  phone: yup.number().min(8).max(11).required()
-})
 
-export default function index({ course }) {
+export default function index({ course, setClientInfo, setShowRegForm }) {
+  const schema = yup.object().shape({
+    name: yup.string().required(),
+    lastname: yup.string().required(),
+    email: yup.string().email().required(),
+    phone: yup.number().required()
+  })
+
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(schema)
   })
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    setClientInfo(data);
+    setShowRegForm(false);
+  }
 
   return (
     <article className={styles.wrapper}>
@@ -23,16 +28,19 @@ export default function index({ course }) {
       <p>Fyll i nedstående formulär</p>
 
       <form onSubmit={handleSubmit(onSubmit)}>
-        <input type="text" name="name" placeholder="Deltagarens namn" ref={register} />
-        <p>{errors.name?.message}</p>
+        <input type="text" name="name" placeholder="Deltagarens förnamn" ref={register} />
+        {errors.name && <p>Du måste skriva in deltagarens förnamn</p>}
+
+        <input type="text" name="lastname" placeholder="Deltagarens efternamn" ref={register} />
+        {errors.lastname && <p>Du måste skriva in deltagarens efternamn</p>}
 
         <input type="text" name="email" placeholder="Emailadress" ref={register} />
-        <p>{errors.email?.message}</p>
+        {errors.email && <p>Du måste skriva in din email</p>}
 
         <input type="text" name="phone" placeholder="Telefonnummer" ref={register} />
-        <p>{errors.phone?.message}</p>
+        {errors.phone && <p>Du måste skriva till telefonnummer</p>}
 
-        <button type="submit">Gå till översikt <IoIosArrowForward /></button>
+        <button type="submit">Gå till översikt  <IoIosArrowForward /></button>
       </form>
     </article>
   )
