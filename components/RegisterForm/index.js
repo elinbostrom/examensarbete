@@ -2,7 +2,7 @@ import styles from './RegisterForm.module.scss'
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
-import { IoIosArrowForward } from 'react-icons/io'
+import { IoIosArrowDroprightCircle } from 'react-icons/io'
 
 
 export default function index({ course, setClientInfo, setShowRegForm }) {
@@ -40,7 +40,7 @@ export default function index({ course, setClientInfo, setShowRegForm }) {
         <input type="text" name="phone" placeholder="Telefonnummer" ref={register} />
         {errors.phone && <p>Du måste skriva till telefonnummer</p>}
 
-        <button type="submit">Gå till översikt  <IoIosArrowForward /></button>
+        <button type="submit">Gå till översikt  <IoIosArrowDroprightCircle /></button>
       </form>
     </article>
   )

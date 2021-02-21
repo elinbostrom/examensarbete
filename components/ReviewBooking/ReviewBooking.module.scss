@@ -21,7 +21,152 @@
     @include montserrat(400);
   }
 
-  button {
+  .clientinfo {
+    display: grid;
+    grid-template: repeat(3, 1fr) / 1fr 1fr;
+    align-items: center;
+    padding: 1.5rem;
+    column-gap: 2rem;
+    strong {
+      @include poppins(600);
+      text-align: left;
+    }
+
+    p {
+      @include montserrat(400);
+      text-align: left;
+    }
+
+    .name {
+      text-transform: capitalize;
+    }
+  }
+
+  .paymentWrapper {
+    max-width: 500px;
+    width: 100%;
+
+    h3 {
+      font-size: 24px;
+      position: relative;
+      padding-top: 1.5rem;
+
+      &::before {
+        content: "";
+        height: 2px;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.25);
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+    }
+
+    p {
+      @include montserrat(400);
+    }
+
+    span {
+      @include poppins(600);
+    }
+  }
+
+  .payment {
+    width: 80%;
+    margin: 1rem auto;
+
+    p {
+      max-width: 250px;
+      margin: auto;
+    }
+
+    input {
+      width: 100%;
+    }
+
+    .choosenbtn {
+      font-size: 14px;
+      padding: 0.3rem 1rem;
+      width: 100px;
+      border-radius: $radius-small;
+      background: $primary;
+      color: white;
+      border: none;
+      margin: 0.3rem;
+      box-shadow: rgba(0, 0, 0, 0.25);
+      cursor: pointer;
+    }
+
+    .notchoosenbtn {
+      font-size: 14px;
+      padding: 0.3rem 1rem;
+      width: 100px;
+      border-radius: $radius-small;
+      background: rgb(154, 154, 154);
+      color: white;
+      border: none;
+      margin: 0.3rem;
+      cursor: pointer;
+      transition: all ease 250ms;
+
+      &:hover {
+        background: $primary;
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+      }
+    }
+  }
+
+  .phoneInput {
+    display: flex;
+    align-items: center;
+
+    button {
+      height: 100%;
+      border: none;
+      background: transparent;
+      transition: all ease 250ms;
+
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+      }
+    }
+
+    svg {
+      font-size: 22px;
+      color: $warning-red;
+      margin-top: 5px;
+    }
+  }
+
+  .disabledNext {
+    background: lightgray;
+    padding: 10px;
+    max-width: 345px;
+    width: 100%;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    transition: box-shadow ease 250ms;
+    color: $white;
+    border-radius: $radius-small;
+    border: none;
+    @include poppins(600);
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 4rem;
+
+    &:hover {
+      cursor: not-allowed;
+    }
+
+    svg {
+      margin-left: 1rem;
+    }
+  }
+
+  .next {
     background: $primary;
     padding: 10px;
     max-width: 345px;
@@ -42,6 +187,10 @@
     &:hover {
       box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
       cursor: pointer;
+    }
+
+    svg {
+      margin-left: 1rem;
     }
   }
 }
