@@ -1,7 +1,7 @@
 import React from 'react'
 
 // Components
-import NewsArticle from '@/components/NewsArticle/NewsArticle';
+import NewsArticle from '@/components/NewsArticle';
 import StablenewsLayout from '@/components/Layouts/StablenewsLayout';
 
 // get data

@@ -3,9 +3,9 @@ import { BsClock, BsCalendar, BsStar } from 'react-icons/bs'
 import { FaMoneyCheck } from 'react-icons/fa'
 import { FiUsers } from 'react-icons/fi'
 import { useContext, useEffect } from 'react';
-import { LessonsCoursesContext } from '../../contexts/LessonCoursesProvider';
+import { LessonsCoursesContext } from '@/contexts/LessonCoursesProvider';
 
-export default function index({ courseInfo }) {
+export default function CourseList({ courseInfo }) {
   const { time, spots, price, level, date } = courseInfo;
   const { placesLeft, setPlacesLeft } = useContext(LessonsCoursesContext);
 

@@ -1,0 +1,32 @@
+@import "@/theme/theme";
+
+.dot {
+  width: 15px;
+  height: 15px;
+  border-radius: $radius-round;
+  background: $transperant-blue;
+  margin: auto;
+  transition: background ease-in 250ms;
+  transition: all ease 250ms;
+
+  @media (max-width: $tablet-normal) {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+.active_dot {
+  width: 15px;
+  height: 15px;
+  border-radius: $radius-round;
+  background: rgba(255, 255, 255, 0.6);
+  margin: auto;
+  box-shadow: 1px 1px 2px black;
+  transition: background ease-in 250ms;
+  transition: all ease 250ms;
+
+  @media (max-width: $tablet-normal) {
+    width: 12px;
+    height: 12px;
+  }
+}

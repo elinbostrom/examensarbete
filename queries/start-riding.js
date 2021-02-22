@@ -10,9 +10,9 @@ query START_RIDING {
       }
     }
   }
-  lektionerkurseritems(first: 1) {
+  lektionerkurseritems(where: {title: "Börja rida"}, first: 1) {
     nodes {
-      borjarida {
+      information {
         welcome {
           title
           description

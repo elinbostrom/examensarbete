@@ -5,8 +5,20 @@
       "@/components/*": [
         "components/*"
       ],
-      "@/icons/*": [
-        "icons/*"
+      "@/styles/*": [
+        "styles/*"
+      ],
+      "@/theme/*": [
+        "theme/*"
+      ],
+      "@/queries/*": [
+        "queries/*"
+      ],
+      "@/apollo/*": [
+        "apollo/*"
+      ],
+      "@/contexts/*": [
+        "contexts/*"
       ]
     }
   }

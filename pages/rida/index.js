@@ -1,21 +1,21 @@
 // Components
 import LessonCoursesLayout from '@/components/Layouts/LessonsCoursesLayout'
 import TextInformationSection from '@/components/TextInformationSection';
-import ArticleSection from '@/components/ArticleSection';
+import ArticleSection from '@/components/ArticleSection/index.jsx';
 
 // get data
-import client from '../../apollo/client'
-import { START_RIDING } from '../../queries/start-riding';
+import client from '@/apollo/client'
+import { START_RIDING } from '@/queries/start-riding';
 
 export default function LektionerKurser({ heroes, lektionerkurseritems }) {
-  const { borjarida } = lektionerkurseritems[0];
+  const { information } = lektionerkurseritems[0];
 
   return (
     <LessonCoursesLayout heroes={heroes} page="lessoncourses">
-      <TextInformationSection data={borjarida.welcome} name="Börja rida" />
-      <ArticleSection data={borjarida.information} imgright />
-      <ArticleSection data={borjarida.minridskola} button />
-      <ArticleSection data={borjarida.ridscheman} imgright />
+      <TextInformationSection data={information.welcome} name="Börja rida" />
+      <ArticleSection data={information.information} imgright />
+      <ArticleSection data={information.minridskola} button />
+      <ArticleSection data={information.ridscheman} imgright />
     </LessonCoursesLayout>
   )
 }

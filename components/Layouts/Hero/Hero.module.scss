@@ -1,0 +1,76 @@
+@import "@/theme/theme";
+
+.startpage {
+  @include hero-light("/images/9.png", "/images/9tablet.jpg", "/images/9mobile.jpg");
+}
+
+.stablenews {
+  @include hero-dark(
+    "/images/markus-spiske-eioMwO2IJ2E-unsplash.jpg",
+    "/images/markus-spiske-eioMwO2IJ2E-unsplash-tablet.jpg",
+    "/images/markus-spiske-eioMwO2IJ2E-unsplash-mobile.jpg"
+  );
+}
+
+.lessoncourses {
+  @include hero-dark(
+    "/images/louise-pilgaard-3SM_F21nzSw-unsplash.jpg",
+    "/images/louise-pilgaard-3SM_F21nzSw-unsplash-tablet.jpg",
+    "/images/louise-pilgaard-3SM_F21nzSw-unsplash-mobile.jpg"
+  );
+}
+
+.aboutus {
+  @include hero-dark(
+    "/images/markus-spiske-xl7-2hh251Y-unsplash.jpg",
+    "/images/markus-spiske-xl7-2hh251Y-unsplash-tablet.jpg",
+    "/images/markus-spiske-xl7-2hh251Y-unsplash-mobile.jpg"
+  );
+}
+
+.contact {
+  @include hero-dark(
+    "/images/contact.jpg",
+    "/images/contact-tablet.jpg",
+    "/images/contact-mobile.jpg"
+  );
+}
+
+.text {
+  align-self: center;
+  @extend %main-wrapper;
+
+  h1,
+  p {
+    max-width: 450px;
+    color: white;
+    text-shadow: 1px 1px 3px black;
+    transition: all ease 250ms;
+
+    @media (max-width: $tablet-normal) {
+      margin: auto;
+      text-align: center;
+    }
+
+    @media (max-width: $mobile-max) {
+      padding-inline: 2rem;
+    }
+  }
+
+  h1 {
+    font-size: 36px;
+    @include poppins(bold);
+    margin: 0;
+    transition: all ease 250ms;
+
+    @media (max-width: $tablet-normal) {
+      margin: auto;
+      padding-top: 2rem;
+    }
+  }
+
+  p {
+    @extend %quote;
+    font-size: 16px;
+  }
+}

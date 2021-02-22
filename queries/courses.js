@@ -31,6 +31,32 @@ query COURSES {
       }
     }
   }
+  lektionerkurseritems(where: {title: "Alla kurser"}, first: 1) {
+    nodes {
+      information {
+        welcome {
+          title
+          description
+        }
+        information {
+          title
+          description
+          picture {
+            altText
+            sourceUrl
+          }
+        }
+        informationOrs {
+          title
+          description
+          picture {
+            altText
+            sourceUrl
+          }
+        }
+      }
+    }
+  }
 }
 `;
 

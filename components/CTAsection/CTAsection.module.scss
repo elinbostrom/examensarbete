@@ -1,0 +1,56 @@
+@import "@/theme/theme";
+
+.CTAwrapper {
+  background: linear-gradient($transperant-blue, $transperant-blue),
+    url(/images/philippe-oursel-jckGRV_-FI4-unsplash.jpg);
+  @include parallax(none);
+  box-shadow: 2px 2px 2px rgb(63, 63, 63);
+  z-index: 9;
+  position: relative;
+  min-height: 600px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  transition: all ease 250ms;
+
+  @media (max-width: $tablet-normal) {
+    background: linear-gradient($transperant-blue, $transperant-blue),
+      url(/images/philippe-oursel-jckGRV_-FI4-unsplash-tablet.jpg);
+    background-size: cover;
+  }
+
+  @media (max-width: $mobile-max) {
+    min-height: 450px;
+    background: linear-gradient($transperant-blue, $transperant-blue),
+      url(/images/philippe-oursel-jckGRV_-FI4-unsplash-mobile.jpg);
+    background-size: cover;
+  }
+}
+
+.text {
+  @extend %main-wrapper;
+  color: $white;
+  text-shadow: 1px 1px 3px black;
+  text-align: right;
+  transition: all ease 250ms;
+
+  @media (max-width: $tablet-normal) {
+    text-align: center;
+    padding-inline: 2rem;
+  }
+
+  p {
+    font-size: 14px;
+    @include montserrat(100);
+    margin-block: 1rem;
+    max-width: 450px;
+    margin-left: auto;
+    transition: all ease 250ms;
+
+    @media (max-width: $tablet-normal) {
+      margin: 1rem auto;
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,65 @@
+@import "@/theme/theme";
+
+.wrapper {
+  min-height: 600px;
+  background: linear-gradient($transperant-blue, $transperant-blue),
+    url(/images/chris-bair-sJBBCn4vk8Y-unsplash.jpg);
+  @include parallax(left);
+  padding: 5rem 0 6rem;
+  transition: all ease 250ms;
+
+  @media (max-width: $tablet-normal) {
+    background: linear-gradient($transperant-blue, $transperant-blue),
+      url(/images/chris-bair-sJBBCn4vk8Y-unsplash-tablet.jpg);
+    background-size: cover;
+  }
+
+  @media (max-width: $mobile-max) {
+    min-height: 450px;
+    background: linear-gradient($transperant-blue, $transperant-blue),
+      url(/images/chris-bair-sJBBCn4vk8Y-unsplash-mobile.jpg);
+    background-size: cover;
+    background-position-x: 20%;
+  }
+}
+
+.text {
+  @extend %main-wrapper;
+  color: $white;
+  text-shadow: 1px 1px 2px black;
+  display: grid;
+  gap: 1rem;
+  text-align: right;
+  transition: all ease 250ms;
+
+  @media (max-width: $tablet-normal) {
+    text-align: center;
+  }
+
+  @media (max-width: $mobile-max) {
+    padding-inline: 2rem;
+  }
+
+  h2 {
+    @include poppins(600);
+  }
+
+  p {
+    @include montserrat(100);
+    max-width: 450px;
+    margin-left: auto;
+    transition: all ease 250ms;
+  }
+
+  button {
+    margin-left: auto;
+    transition: all ease 250ms;
+  }
+
+  p,
+  button {
+    @media (max-width: $tablet-normal) {
+      margin: auto;
+    }
+  }
+}

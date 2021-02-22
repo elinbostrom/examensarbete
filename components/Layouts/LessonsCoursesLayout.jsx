@@ -1,26 +1,20 @@
-import React from 'react'
-import Layout from './index'
-import styles from './Style.module.scss';
+import React from "react";
+import Layout from "./index";
+import styles from "./Style.module.scss";
+import Submenu from "../../components/Submenu";
+import LessonCoursesProvider from "../../contexts/LessonCoursesProvider";
 
-// get data
-import client from '../../apollo/client'
-import { START_RIDING } from '../../queries/start-riding';
-import Submenu from '../../components/Submenu';
-import LessonCoursesProvider from '../../contexts/LessonCoursesProvider';
-
-export default function LessonsCoursesLayout({ heroes, children, page }) {
- const { heroInfo } = heroes[0];
+export default function LessonsCoursesLayout({ heroes, children, page, activePage }) {
+  const { heroInfo } = heroes[0];
 
   return (
     <LessonCoursesProvider>
       <Layout data={heroInfo} page={page}>
-        <Submenu />
+        <Submenu page={activePage} />
         <main className={styles.main}>
-          <div className={styles.wrapper}>
-          {children}
-          </div>
-          </main>
-        </Layout>
+          <div className={styles.wrapper}>{children}</div>
+        </main>
+      </Layout>
     </LessonCoursesProvider>
-  )
+  );
 }

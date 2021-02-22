@@ -1,0 +1,32 @@
+@import "@/theme/theme";
+
+.button {
+  font-size: 14px;
+  color: $white;
+  background: $primary;
+  padding: 0.7rem;
+  max-width: 175px;
+  width: 100%;
+  border: none;
+  border-radius: $radius-large;
+  box-shadow: 1px 1px 2px black;
+  transition: box-shadow ease-in 150ms;
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 2px 2px 3px black;
+  }
+}
+
+.link {
+  position: absolute;
+  bottom: -20px;
+  left: 3rem;
+  @include button-green;
+  @include poppins(600);
+  transition: left ease 250ms;
+
+  @media (max-width: $mobile-max) {
+    left: 1rem;
+  }
+}

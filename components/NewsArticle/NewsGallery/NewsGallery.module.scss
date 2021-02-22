@@ -1,0 +1,54 @@
+@import "@/theme/theme";
+
+.pictures {
+  display: grid;
+  grid-column: 2;
+  max-width: 450px;
+  height: 450px;
+  grid-template: auto 80px / repeat(5, auto);
+  gap: 1rem 0.7rem;
+  transition: all ease 200ms;
+
+  @media (max-width: $tablet-normal) {
+    grid-column: span 2;
+    margin: 1rem auto 0;
+  }
+
+  @media (max-width: $mobile-max) {
+    height: 350px;
+    grid-template: auto 50px / repeat(5, auto);
+    gap: 0.7rem 0.2rem;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  img:nth-of-type(1) {
+    grid-column: span 5;
+    border-radius: $radius-small;
+    box-shadow: 1px 1px 2px gray;
+    height: 100%;
+    width: 100%;
+  }
+
+  button {
+    border: none;
+    background: transparent;
+    padding: 0;
+    border-radius: $radius-small;
+    overflow: hidden;
+    box-shadow: 1px 1px 2px gray;
+    max-width: 80px;
+
+    img {
+      transition: transform ease-in 250ms;
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.2);
+      }
+    }
+  }
+}

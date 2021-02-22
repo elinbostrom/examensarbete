@@ -1,0 +1,105 @@
+@import "@/theme/theme";
+
+.footer {
+  background: $night-blue;
+  bottom: 0;
+  width: 100%;
+  color: $white;
+}
+
+.inner {
+  @extend %main-wrapper;
+  display: flex;
+  justify-content: space-between;
+  transition: all ease 250ms;
+
+  @media (max-width: $tablet-normal) {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+}
+
+.text {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  align-content: center;
+  max-width: 750px;
+  width: 100%;
+  justify-self: space-between;
+  margin-right: 2em;
+
+  @media (max-width: $tablet-normal) {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-right: unset;
+    margin-top: 1rem;
+    gap: 1rem;
+  }
+
+  h2 {
+    font-size: 16px;
+    @include poppins(700);
+  }
+
+  p,
+  a {
+    @include montserrat(100);
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+  }
+
+  a {
+    @include link-normal;
+    color: white;
+  }
+
+  div:nth-of-type(1) {
+    grid-column: 1;
+  }
+
+  div:nth-of-type(2) {
+    grid-column: 1;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.socials {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  transition: all ease 250ms;
+
+  @media (max-width: $tablet-normal) {
+    align-items: center;
+  }
+
+  svg {
+    font-size: 36px;
+    color: $white;
+    transition: all ease 250ms;
+
+    &:hover {
+      color: $primary;
+    }
+
+    @media (max-width: $tablet-normal) {
+      font-size: 24px;
+    }
+  }
+}
+
+.map {
+  max-width: 400px;
+  width: 100%;
+  border-radius: $radius-small;
+  box-shadow: 1px 1px 1px black;
+  transition: all ease 250ms;
+
+  @media (max-width: $tablet-normal) {
+    max-width: 300px;
+  }
+}
