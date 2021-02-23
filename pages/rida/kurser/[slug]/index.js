@@ -9,7 +9,6 @@ import { COURSES } from '@/queries/courses';
 import { useEffect, useState } from 'react';
 import TextInformationSection from '@/components/TextInformationSection';
 import ArticleSection from '@/components/ArticleSection';
-import Head from 'next/head'
 
 
 export default function index({ courses, heroes, lektionerkurseritems }) {
@@ -39,25 +38,19 @@ export default function index({ courses, heroes, lektionerkurseritems }) {
   }
 
   return (
-    <>
-      <Head>
-        <title>Vendelsö Ridskola - Kurser</title>
-        <link rel="icon" href="/vr-favicon.svg" />
-      </Head>
-      <LessonCoursesLayout heroes={heroes} page="lessoncourses">
-        <TextInformationSection data={information.welcome} name="Alla kurser" />
-        <ArticleSection data={information.information} imgright />
-        <ArticleSection data={information.informationOrs} buttonOrs />
-        <hr className={styles.line} />
-        {activeCourses.length === 0
-          ? <h3 className={styles.courseHeadline}>Tyvärr så är inga kurser tillgängliga i denna kategori just nu 😢</h3>
-          : <h3 className={styles.courseHeadline}>Kommande kurser</h3>}
-        <div className={styles.card}>
-          {Array.isArray(activeCourses) && activeCourses.map(item =>
-            <CourseCard key={item.id} id={item.id} slug={slug} courseInfo={item.course} />)}
-        </div>
-      </LessonCoursesLayout>
-    </>
+    <LessonCoursesLayout heroes={heroes} page="lessoncourses">
+      <TextInformationSection data={information.welcome} name="Alla kurser" />
+      <ArticleSection data={information.information} imgright />
+      <ArticleSection data={information.informationOrs} buttonOrs />
+      <hr className={styles.line} />
+      {activeCourses.length === 0
+        ? <h3 className={styles.courseHeadline}>Tyvärr så är inga kurser tillgängliga i denna kategori just nu 😢</h3>
+        : <h3 className={styles.courseHeadline}>Kommande kurser</h3>}
+      <div className={styles.card}>
+        {Array.isArray(activeCourses) && activeCourses.map(item =>
+          <CourseCard key={item.id} id={item.id} slug={slug} courseInfo={item.course} />)}
+      </div>
+    </LessonCoursesLayout>
   )
 }
 

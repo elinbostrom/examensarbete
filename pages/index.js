@@ -1,5 +1,3 @@
-import Head from 'next/head'
-
 // Components
 import Layout from '@/components/Layouts/index.jsx'
 import CTAsection from '@/components/CTAsection/index.jsx'
@@ -15,17 +13,11 @@ export default function Home({ startpageitems, heroes, stablenews }) {
   const { heroInfo } = heroes[0];
 
   return (
-    <>
-      <Head>
-        <title>Vendelsö Ridskola</title>
-        <link rel="icon" href="/vr-favicon.svg" />
-      </Head>
-      <Layout data={heroInfo} page="startpage">
-        <CTAsection data={cta} />
-        <NewsStartSection data={stablenews} />
-        <SectionStartRiding data={start_riding} />
-      </Layout>
-    </>
+    <Layout data={heroInfo} page="startpage">
+      <CTAsection data={cta} />
+      <NewsStartSection data={stablenews} />
+      <SectionStartRiding data={start_riding} />
+    </Layout>
   )
 }
 
