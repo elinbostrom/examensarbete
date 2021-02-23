@@ -14,7 +14,7 @@
 
   @include tablet-normal {
     padding: 1rem;
-    margin-block: 1rem;
+    margin: 1rem 0;
     grid-template: repeat(5, auto) / 1fr;
     column-gap: 0;
   }
@@ -40,7 +40,7 @@
 
   h3,
   span {
-    @include poppins(600);
+    @include poppins(700);
   }
 
   h3 {

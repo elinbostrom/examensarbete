@@ -8,21 +8,23 @@
   padding-top: 5rem;
 
   @include mobile-max {
+    grid-template: unset;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
     justify-items: center;
+    padding-top: 2rem;
   }
 
   h2,
   h3 {
-    grid-column: span 2;
+    grid-column: span 3;
+
+    @include mobile-max {
+      grid-column: span 2;
+    }
   }
 
   h2 {
     text-align: center;
-
-    @include mobile-max {
-      padding-top: 2rem;
-    }
   }
 }
