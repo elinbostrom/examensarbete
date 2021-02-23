@@ -9,7 +9,7 @@
 
   .list {
     display: grid;
-    grid-template: 1fr auto / repeat(5, auto);
+    grid-template: 1fr auto / repeat(7, 1fr);
     @extend %main-wrapper;
     padding-block: 2rem;
 
@@ -24,10 +24,10 @@
   }
 
   a {
-    @include link-normal;
+    @include link-underline;
     color: $white;
     @include poppins(200);
-    font-size: 16px;
+    font-size: 14px;
     transition: all ease 200ms;
 
     @media (max-width: $mobile-max) {

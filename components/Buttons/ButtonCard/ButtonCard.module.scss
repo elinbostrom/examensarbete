@@ -2,21 +2,21 @@
 
 .dressage {
   @extend %button-card;
-  background: url(../../public/images/josue-isai-ramos-figueroa-0tejKLSfUCo-unsplash.jpg);
+  background: url(/images/josue-isai-ramos-figueroa-0tejKLSfUCo-unsplash.jpg);
   background-size: cover;
   height: 150px;
 }
 
 .jumping {
   @extend %button-card;
-  background: url(../../public/images/philippe-oursel-fCf-RqOpjwA-unsplash.jpg);
+  background: url(/images/philippe-oursel-fCf-RqOpjwA-unsplash.jpg);
   background-size: cover;
   height: 150px;
 }
 
 .summer {
   @extend %button-card;
-  background: url(../../public/images/beth-macdonald-7Y8gfWM-1dw-unsplash.jpg);
+  background: url(/images/beth-macdonald-7Y8gfWM-1dw-unsplash.jpg);
   background-size: cover;
   background-position: right;
   height: 150px;
@@ -24,14 +24,14 @@
 
 .christmas {
   @extend %button-card;
-  background: url(../../public/images/philippe-oursel-jckGRV_-FI4-unsplash-tablet.jpg);
+  background: url(/images/philippe-oursel-jckGRV_-FI4-unsplash-tablet.jpg);
   background-size: cover;
   height: 150px;
 }
 
 .non {
   @extend %button-card;
-  background: url(../../public/images/philippe-oursel-blpypGHlh6A-unsplash.jpg);
+  background: url(/images/philippe-oursel-blpypGHlh6A-unsplash.jpg);
   background-size: cover;
   height: 150px;
 }
