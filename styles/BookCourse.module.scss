@@ -9,6 +9,12 @@
   display: grid;
   grid-template-columns: 1fr auto;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+
+  @include mobile-max {
+    margin: 1rem 0 0 0;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
 }
 
 .text {
@@ -16,8 +22,13 @@
   margin-bottom: 4rem;
   padding: 5rem 2rem 0;
 
+  @include mobile-max {
+    padding: 0 0.5rem;
+    margin-bottom: 2rem;
+  }
+
   h2 {
-    @include poppins(600);
+    @include poppins(700);
     margin-bottom: 1rem;
   }
 
