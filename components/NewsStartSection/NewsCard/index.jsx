@@ -8,8 +8,8 @@ export default function NewsCard({ obj, activePost, setActivePost }) {
   let { date, id, posts } = post;
   date = date.replace("T", " ");
 
-  if (posts.information.length > 350) {
-    posts.information = `${posts.information.slice(0, 350)}...`;
+  if (posts.information.length > 250) {
+    posts.information = `${posts.information.slice(0, 250)}...`;
   }
 
   useEffect(() => {

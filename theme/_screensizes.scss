@@ -5,3 +5,45 @@ $tablet-normal: 770px;
 $computer-mini: 900px;
 $computer-normal: 1100px;
 $computer-large: 1500px;
+
+@mixin mobile {
+  @media (max-width: $mobile) {
+    @content;
+  }
+}
+
+@mixin mobile-max {
+  @media (max-width: $mobile-max) {
+    @content;
+  }
+}
+
+@mixin tablet-mini {
+  @media (max-width: $tablet-mini) {
+    @content;
+  }
+}
+
+@mixin tablet-normal {
+  @media (max-width: $tablet-normal) {
+    @content;
+  }
+}
+
+@mixin computer-mini {
+  @media (max-width: $computer-mini) {
+    @content;
+  }
+}
+
+@mixin computer-normal {
+  @media (max-width: $computer-normal) {
+    @content;
+  }
+}
+
+@mixin computer-large {
+  @media (max-width: $computer-large) {
+    @content;
+  }
+} ;

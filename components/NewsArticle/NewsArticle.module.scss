@@ -8,17 +8,34 @@
   border: 1px solid rgba(42, 42, 63, 0.201);
   color: $night-blue;
   display: grid;
-  grid-template-columns: 1fr auto;
-  position: relative;
+  grid-template: 1fr auto / 1fr 0.6fr;
   transition: all ease 200ms;
 
-  @media (max-width: $tablet-normal) {
-    grid-template-columns: unset;
-    grid-template-rows: auto auto;
-    grid-template: auto auto / 1fr 1fr;
+  @include tablet-normal {
+    grid-template: auto auto auto / 1fr 1fr;
   }
 
-  @media (max-width: $mobile-max) {
+  @include mobile-max {
+    padding: 2rem 1rem 6rem;
+  }
+}
+
+.postNoPic {
+  background: $white;
+  margin-bottom: 4rem;
+  padding: 2.5rem 3rem;
+  border-radius: $radius-medium;
+  border: 1px solid rgba(42, 42, 63, 0.201);
+  color: $night-blue;
+  display: grid;
+  grid-template: 1fr auto / 1fr;
+  transition: all ease 200ms;
+
+  @include tablet-normal {
+    grid-template: auto auto auto / 1fr 1fr;
+  }
+
+  @include mobile-max {
     padding: 2rem 1rem;
   }
 }
@@ -28,17 +45,33 @@
   margin-right: 2rem;
   max-width: 600px;
   transition: all ease 200ms;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
 
-  @media (max-width: $tablet-normal) {
+  @include tablet-normal {
     grid-row: unset;
     grid-column: span 2;
     margin: unset;
     text-align: center;
+    font-size: 16px;
+  }
+
+  h2 {
+    grid-row: 2;
+    grid-column: span 2;
+
+    @include mobile-max {
+    }
   }
 
   p {
-    @include montserrat(100);
+    @include montserrat(400);
     margin-top: 1rem;
+    grid-column: span 2;
+
+    @include mobile-max {
+      margin-top: 0;
+    }
   }
 }
 
@@ -47,9 +80,10 @@
   font-size: 12px;
   transition: all ease 200ms;
 
-  @media (max-width: $tablet-normal) {
+  @include tablet-normal {
     grid-column: span 2;
     grid-row: 1;
     text-align: center;
+    font-size: 14px;
   }
 }

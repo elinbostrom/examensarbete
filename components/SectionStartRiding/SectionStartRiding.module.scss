@@ -8,13 +8,13 @@
   padding: 5rem 0 6rem;
   transition: all ease 250ms;
 
-  @media (max-width: $tablet-normal) {
+  @include tablet-normal {
     background: linear-gradient($transperant-blue, $transperant-blue),
       url(/images/chris-bair-sJBBCn4vk8Y-unsplash-tablet.jpg);
     background-size: cover;
   }
 
-  @media (max-width: $mobile-max) {
+  @include mobile-max {
     min-height: 450px;
     background: linear-gradient($transperant-blue, $transperant-blue),
       url(/images/chris-bair-sJBBCn4vk8Y-unsplash-mobile.jpg);
@@ -32,23 +32,28 @@
   text-align: right;
   transition: all ease 250ms;
 
-  @media (max-width: $tablet-normal) {
+  @include tablet-normal {
     text-align: center;
   }
 
-  @media (max-width: $mobile-max) {
+  @include mobile-max {
     padding-inline: 2rem;
+    max-width: 320px;
   }
 
   h2 {
-    @include poppins(600);
+    @include poppins(700);
   }
 
   p {
-    @include montserrat(100);
+    @include montserrat(400);
     max-width: 450px;
     margin-left: auto;
     transition: all ease 250ms;
+
+    @include mobile-max {
+      font-size: 16px;
+    }
   }
 
   button {
@@ -58,7 +63,7 @@
 
   p,
   button {
-    @media (max-width: $tablet-normal) {
+    @include tablet-normal {
       margin: auto;
     }
   }

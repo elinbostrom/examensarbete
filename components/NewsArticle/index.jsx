@@ -8,13 +8,13 @@ export default function NewsArticle({ postInfo, date, id }) {
   date = date.replace("T", " | ");
 
   return (
-    <li id={id} className={styles.post}>
+    <li id={id} className={pictures?.picture1 ? styles.post : styles.postNoPic}>
       <section className={styles.text}>
         <h2>{title}</h2>
         <p className={styles.date}>{date}</p>
         <p>{information}</p>
+        {link && <ButtonNavigate text={btntext} navigate={link} link />}
       </section>
-      {link && <ButtonNavigate text={btntext} navigate={link} link />}
       {pictures?.picture1 && <NewsGallery pictures={pictures} />}
     </li>
   );

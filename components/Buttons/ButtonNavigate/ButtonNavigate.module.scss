@@ -19,14 +19,9 @@
 }
 
 .link {
-  position: absolute;
-  bottom: -20px;
-  left: 3rem;
   @include button-green;
   @include poppins(600);
-  transition: left ease 250ms;
-
-  @media (max-width: $mobile-max) {
-    left: 1rem;
-  }
+  grid-row: 5;
+  grid-column: span 2;
+  max-width: 450px;
 }

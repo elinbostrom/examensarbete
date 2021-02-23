@@ -13,7 +13,7 @@
   justify-content: space-between;
   transition: all ease 250ms;
 
-  @media (max-width: $tablet-normal) {
+  @include tablet-normal {
     flex-direction: column-reverse;
     align-items: center;
   }
@@ -29,7 +29,7 @@
   justify-self: space-between;
   margin-right: 2em;
 
-  @media (max-width: $tablet-normal) {
+  @include tablet-normal {
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -45,9 +45,9 @@
 
   p,
   a {
-    @include montserrat(100);
+    @include montserrat(400);
     font-family: "Montserrat", sans-serif;
-    font-size: 14px;
+    font-size: 16px;
   }
 
   a {
@@ -73,7 +73,7 @@
   justify-content: flex-end;
   transition: all ease 250ms;
 
-  @media (max-width: $tablet-normal) {
+  @include tablet-normal {
     align-items: center;
   }
 
@@ -86,8 +86,8 @@
       color: $primary;
     }
 
-    @media (max-width: $tablet-normal) {
-      font-size: 24px;
+    @include tablet-normal {
+      font-size: 28px;
     }
   }
 }
@@ -99,7 +99,7 @@
   box-shadow: 1px 1px 1px black;
   transition: all ease 250ms;
 
-  @media (max-width: $tablet-normal) {
+  @include tablet-normal {
     max-width: 300px;
   }
 }
