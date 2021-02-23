@@ -9,6 +9,11 @@
 .card {
   color: $night-blue;
   margin: 1rem -100px;
+
+  @include tablet-normal {
+    margin: 0;
+    padding: 1rem 0;
+  }
 }
 
 .line {

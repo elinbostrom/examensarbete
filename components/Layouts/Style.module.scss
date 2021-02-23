@@ -15,7 +15,7 @@
   padding: 4rem 3rem;
   color: $night-blue;
 
-  @media (max-width: $mobile-max) {
-    padding: 2rem 0.5rem;
+  @include mobile-max {
+    padding: 9rem 0.5rem 0;
   }
 }
