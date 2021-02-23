@@ -1,10 +1,18 @@
-@import "../theme/theme";
+@import "@/theme/theme";
 
-.headline {
-  padding: 5rem 0 0 0;
+.courseHeadline {
+  padding: 2rem 0 0 0;
+  text-align: center;
+  font-size: 22px;
 }
 
 .card {
   color: $night-blue;
   margin: 1rem -100px;
+}
+
+.line {
+  width: 90%;
+  color: rgba($navy-blue, 0.25);
+  margin-top: 2rem;
 }

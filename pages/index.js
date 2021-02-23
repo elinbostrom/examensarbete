@@ -18,7 +18,7 @@ export default function Home({ startpageitems, heroes, stablenews }) {
     <>
       <Head>
         <title>Vendelsö Ridskola</title>
-        <link rel="shortcut icon" href="../public/vr-favicon.svg" />
+        <link rel="icon" href="/vr-favicon.svg" />
       </Head>
       <Layout data={heroInfo} page="startpage">
         <CTAsection data={cta} />

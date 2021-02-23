@@ -3,13 +3,15 @@
 .wrapper {
   text-align: center;
   padding: 5rem 3.5rem 3rem;
+  max-width: 700px;
+  margin: auto;
 
   @media (max-width: $tablet-normal) {
     padding: 0.5rem;
   }
 
   h2 {
-    font-size: 30px;
+    font-size: 24px;
     @include poppins(800);
     margin-bottom: 0.5rem;
 
@@ -21,10 +23,6 @@
   p {
     @include montserrat-italic;
     font-weight: 500;
-    font-size: 16px;
-
-    @media (max-width: $mobile-max) {
-      font-size: 14px;
-    }
+    font-size: 14px;
   }
 }

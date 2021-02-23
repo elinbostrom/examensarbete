@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./ArticleSection.module.scss";
 import ButtonBlockNavigate from "../Buttons/ButtonBlockNavigate";
 
-export default function ArticleSection({ data, imgright, button }) {
+export default function ArticleSection({ data, imgright, button, buttonOrs }) {
   const { title, description, picture } = data;
 
   return (
@@ -16,6 +16,13 @@ export default function ArticleSection({ data, imgright, button }) {
         <ButtonBlockNavigate
           text="Gå till Min Ridskola"
           navigate="https://ww2.minridskola.se/Init_LoggaIn.aspx"
+          block
+        />
+      )}
+      {buttonOrs && (
+        <ButtonBlockNavigate
+          text="Bli medlem"
+          navigate="http://boka.osterhaningeridsallskap.se/form/ors/medlemskap"
           block
         />
       )}
