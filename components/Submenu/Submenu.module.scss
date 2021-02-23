@@ -13,8 +13,15 @@
     @extend %main-wrapper;
     padding-block: 2rem;
 
-    @media (max-width: $tablet-normal) {
+    @include tablet-normal {
       padding: 2rem;
+    }
+
+    @include mobile-max {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 1rem;
     }
   }
 
@@ -26,13 +33,13 @@
   a {
     @include link-underline;
     color: $white;
-    @include poppins(200);
+    @include poppins(400);
     font-size: 14px;
     transition: all ease 200ms;
 
-    @media (max-width: $mobile-max) {
+    @include mobile-max {
       font-size: 16px;
-      margin-inline: 0.2rem;
+      margin: 0.5rem;
     }
   }
 
@@ -51,6 +58,7 @@
 
   a {
     text-decoration: underline;
+    font-weight: 500;
     text-shadow: 1px 1px 2px rgb(41, 41, 41);
   }
 }

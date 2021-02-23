@@ -7,16 +7,22 @@
   justify-content: center;
   padding-top: 5rem;
 
+  @include mobile-max {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    justify-items: center;
+  }
+
   h2,
   h3 {
-    grid-column: span 3;
+    grid-column: span 2;
   }
 
   h2 {
     text-align: center;
-  }
 
-  h3 {
-    font-size: 18px;
+    @include mobile-max {
+      padding-top: 2rem;
+    }
   }
 }
