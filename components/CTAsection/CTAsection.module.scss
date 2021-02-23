@@ -14,13 +14,13 @@
   justify-content: flex-end;
   transition: all ease 250ms;
 
-  @media (max-width: $tablet-normal) {
+  @include tablet-normal {
     background: linear-gradient($transperant-blue, $transperant-blue),
       url(/images/philippe-oursel-jckGRV_-FI4-unsplash-tablet.jpg);
     background-size: cover;
   }
 
-  @media (max-width: $mobile-max) {
+  @include mobile-max {
     min-height: 450px;
     background: linear-gradient($transperant-blue, $transperant-blue),
       url(/images/philippe-oursel-jckGRV_-FI4-unsplash-mobile.jpg);
@@ -35,7 +35,7 @@
   text-align: right;
   transition: all ease 250ms;
 
-  @media (max-width: $tablet-normal) {
+  @include tablet-normal {
     text-align: center;
     padding-inline: 2rem;
   }
@@ -48,9 +48,10 @@
     margin-left: auto;
     transition: all ease 250ms;
 
-    @media (max-width: $tablet-normal) {
+    @include tablet-normal {
       margin: 1rem auto;
       text-align: center;
+      font-size: 16px;
     }
   }
 }
