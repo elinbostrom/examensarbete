@@ -9,46 +9,69 @@
   transition: all ease 250ms;
   z-index: 20;
 
-  @media (max-width: $tablet-normal) {
-    flex-direction: column;
+  @include tablet-normal {
+    padding: 0;
   }
 
   .logotype {
     object-fit: contain;
-    width: 120px;
-    position: relative;
-    z-index: 2;
+    width: 100px;
+
+    @include tablet-normal {
+      margin: 1.3rem;
+      width: 80px;
+    }
   }
 
-  ul {
+  .list {
     @include horizontal-list;
     transition: all ease 250ms;
 
-    @media (max-width: $mobile-max) {
+    @include tablet-normal {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding-inline: 2rem;
+      flex-direction: column;
+      position: absolute;
+      top: -1rem;
+      right: 0;
+      background: $navy-blue;
+      padding: 2rem;
+      align-items: flex-end;
+      border-radius: 0 0 0 5px;
+      box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
     }
 
     li {
       transition: all ease 250ms;
-      @media (max-width: $mobile-max) {
-        margin: 0.2rem 1rem;
+
+      @include tablet-normal {
+        margin: 1rem;
       }
 
-      @media (max-width: $mobile) {
+      @include mobile-max {
+        margin: 1rem;
+        font-size: 20px;
+      }
+
+      @include mobile {
         margin: 0.2rem 0.5rem;
       }
     }
 
-    @media (max-width: $tablet-normal) {
+    @include tablet-normal {
       margin-top: 1rem;
     }
   }
 
   li:nth-of-type(5) {
     margin-right: 0;
+
+    @include tablet-normal {
+      margin: 1rem;
+    }
+
+    @include mobile-max {
+      margin: 1rem;
+    }
   }
 
   a {
@@ -58,8 +81,55 @@
     text-shadow: 1px 1px 2px black;
     transition: all ease 250ms;
 
-    @media (max-width: $mobile) {
+    @include mobile {
       font-size: 12px;
+    }
+  }
+
+  button {
+    @extend %button-clear;
+
+    svg {
+      color: $white;
+      font-size: 24px;
+    }
+
+    @media (min-width: $tablet-normal) {
+      display: none;
+    }
+  }
+
+  .list_hidden {
+    @include horizontal-list;
+    transition: all ease 250ms;
+
+    @include mobile-max {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding-inline: 2rem;
+    }
+
+    li {
+      @include tablet-normal {
+        display: none;
+      }
+    }
+
+    button {
+      position: absolute;
+      top: 2rem;
+      right: 1rem;
+
+      svg {
+        color: $primary;
+        font-size: 40px;
+        text-shadow: 2px 2px 2px black;
+      }
+
+      @media (min-width: $tablet-normal) {
+        display: none;
+      }
     }
   }
 }
