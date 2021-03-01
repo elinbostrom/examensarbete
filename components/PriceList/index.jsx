@@ -3,7 +3,7 @@ import PriceListItem from "./PriceListItem";
 
 export default function PriceList({ data, category }) {
   return (
-    <div className={styles.wrapper}>
+    <section className={styles.wrapper}>
       <h2>{category}</h2>
       <ul>
         {Array.isArray(data) &&
@@ -13,6 +13,6 @@ export default function PriceList({ data, category }) {
             }
           })}
       </ul>
-    </div>
+    </section>
   );
 }

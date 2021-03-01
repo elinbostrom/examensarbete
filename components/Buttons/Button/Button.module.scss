@@ -1,0 +1,28 @@
+@import "@/theme/theme";
+
+.button {
+  @extend %button-clear;
+  background: rgba($primary, 0.25);
+  color: white;
+  margin-right: 0.5rem;
+  font-size: 14px;
+  padding: 0.5rem 1.5rem;
+  border-radius: $radius-medium;
+  cursor: pointer;
+  transition: all ease 250ms;
+
+  &:hover {
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+    background: $primary;
+  }
+}
+
+.button_active {
+  @extend %button-clear;
+  background: $primary;
+  color: white;
+  margin-right: 0.5rem;
+  font-size: 14px;
+  padding: 0.5rem 1.5rem;
+  border-radius: $radius-medium;
+}

@@ -1,7 +1,6 @@
 import styles from "./PriceListItem.module.scss";
 
 export default function PriceListItem({ item }) {
-  console.log(item);
   const { cost, description, orsMedlem, title } = item;
 
   return (
