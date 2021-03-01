@@ -6,7 +6,11 @@ import LessonCoursesProvider from "../../contexts/LessonCoursesProvider";
 import Head from "next/head";
 
 export default function LessonsCoursesLayout({ heroes, children, page, activePage }) {
-  const { heroInfo } = heroes[0];
+  const heroObj = {
+    title: "Lektioner & Kurser",
+    slogan: "",
+  };
+  const heroInfo = heroes?.[0]?.heroInfo ?? heroObj;
 
   return (
     <LessonCoursesProvider>

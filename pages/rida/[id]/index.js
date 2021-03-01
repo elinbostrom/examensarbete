@@ -7,6 +7,7 @@ import InstructorCard from '@/components/InstructorCard';
 import styles from '@/styles/BookCourse.module.scss'
 import { useState } from 'react';
 import ReviewBooking from '@/components/ReviewBooking';
+import LCLoading from '../loading';
 
 export default function CourseDetail() {
   const router = useRouter()
@@ -16,7 +17,7 @@ export default function CourseDetail() {
 
   const { data, loading, error } = useQuery(COURSE(id));
 
-  if (loading) return <h1>Loading</h1>;
+  if (loading) return <LCLoading />;
   if (error) return <h1>ERROR</h1>;
   if (!data) return <h1>Not found</h1>;
 
