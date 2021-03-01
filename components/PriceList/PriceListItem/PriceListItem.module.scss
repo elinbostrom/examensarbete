@@ -7,6 +7,10 @@
   padding: 1rem 0;
   position: relative;
 
+  @include mobile-max {
+    column-gap: 1rem;
+  }
+
   &::after {
     content: "";
     width: 100%;

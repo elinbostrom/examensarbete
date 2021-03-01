@@ -16,7 +16,6 @@ export default function index({ courses, heroes, lektionerkurseritems }) {
   const slug = router.query.slug;
   const [activeCourses, setActiveCourses] = useState([]);
   const { information } = lektionerkurseritems[0];
-  console.log(courses);
 
   useEffect(() => {
     let arr = [];

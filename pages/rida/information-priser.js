@@ -16,7 +16,6 @@ import Wrapper from '@/components/Wrapper';
 
 export default function InformationPrices({ heroes, pricepages, informations }) {
   const [activeInfo, setActiveInfo] = useState("Priser");
-  console.log(informations);
 
   useEffect(() => { }, [activeInfo])
 
@@ -26,7 +25,7 @@ export default function InformationPrices({ heroes, pricepages, informations }) 
 
   return (
     <LessonCoursesLayout heroes={heroes} page="lessoncourses">
-      <Wrapper>
+      <Wrapper btn>
         <Button btnText="Priser" setActiveInfo={setActiveInfo} activeInfo={activeInfo} />
         <Button btnText="Fakturainfo" setActiveInfo={setActiveInfo} activeInfo={activeInfo} />
         <Button btnText="Igenridning & Avbokning" setActiveInfo={setActiveInfo} activeInfo={activeInfo} />
@@ -42,7 +41,7 @@ export default function InformationPrices({ heroes, pricepages, informations }) 
             const category = item.informationtype.informationstype;
             if (category === "Prisinformation") {
               return (
-                <div className={styles.ownHtml} dangerouslySetInnerHTML={createMarkup(item.content)} />
+                <div dangerouslySetInnerHTML={createMarkup(item.content)} />
               )
             }
           })

@@ -23,8 +23,6 @@ export default function CourseDetail() {
   const heroes = data.heroes.nodes ?? null;
   const course = data.course.course ?? null;
 
-  console.log(clientInfo);
-
   return (
     <LessonsCoursesLayout
       heroes={heroes}

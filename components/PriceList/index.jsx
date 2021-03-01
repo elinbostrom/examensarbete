@@ -4,7 +4,7 @@ import PriceListItem from "./PriceListItem";
 export default function PriceList({ data, category }) {
   return (
     <section className={styles.wrapper}>
-      <h2>{category}</h2>
+      <h3>{category}</h3>
       <ul>
         {Array.isArray(data) &&
           data.map(item => {
