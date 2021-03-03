@@ -39,8 +39,7 @@ export default function index({ courses, heroes, lektionerkurseritems }) {
   return (
     <LessonCoursesLayout heroes={heroes} page="lessoncourses">
       <TextInformationSection data={information.welcome} name="Alla kurser" />
-      <ArticleSection data={information.information} imgright />
-      <ArticleSection data={information.informationOrs} buttonOrs />
+      {information && <ArticleSection data={information.informationOrs} buttonOrs />}
       <hr className={styles.line} />
       {activeCourses.length === 0
         ? <h3 className={styles.courseHeadline}>Tyvärr så är inga kurser tillgängliga i denna kategori just nu 😢</h3>
