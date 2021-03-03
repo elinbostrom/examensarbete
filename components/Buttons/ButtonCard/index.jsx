@@ -1,25 +1,14 @@
 import styles from "./ButtonCard.module.scss";
-import cn from "classnames";
-import { useRouter } from "next/router";
 
-export default function ButtonCard({ info }) {
-  const description = info.description ?? null;
-  const router = useRouter();
+export default function ButtonCard({ employee, setActiveEmployee }) {
+  const { title, name, picture } = employee;
 
   return (
-    <button
-      className={cn({
-        [styles.dressage]: info.title === "Dressyr",
-        [styles.jumping]: info.title === "Hoppning",
-        [styles.summer]: info.title === "Sommarkurser",
-        [styles.christmas]: info.title === "Julkurser",
-        [styles.non]: info.title === "Övrigt",
-      })}
-      onClick={() => router.push(info.path)}
-    >
+    <button className={styles.button} onClick={() => setActiveEmployee(employee)}>
+      <img src={picture.sourceUrl} alt={picture.altText} />
       <article className={styles.text}>
-        <h2>{info.title}</h2>
-        {description && <p>Beskrivning</p>}
+        <h2>{name}</h2>
+        {<p>{title}</p>}
       </article>
     </button>
   );

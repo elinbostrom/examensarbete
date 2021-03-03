@@ -1,0 +1,95 @@
+@import "@/theme/theme";
+
+.closed_card {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: $radius-medium;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  padding: 2rem;
+  column-gap: 2rem;
+  margin: 1rem 0;
+  animation: fadeIn 500ms;
+
+  button {
+    grid-row: 1;
+    grid-column: 3;
+    @include button-green;
+    width: max-content;
+  }
+
+  img {
+    grid-row: 1;
+    grid-column: 1;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .text {
+    grid-column: 2;
+    grid-row: 1;
+  }
+}
+
+.card {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: $radius-medium;
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  margin: 1rem 0;
+  overflow: hidden;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+  position: relative;
+  animation: fadeIn 500ms;
+
+  img {
+    max-width: 250px;
+    width: 100%;
+    min-height: 300px;
+    height: 100%;
+    object-fit: cover;
+    grid-row: span 3;
+  }
+
+  button {
+    grid-column: 2;
+    grid-row: 1;
+    @include button-green;
+    width: max-content;
+    margin: 0.5rem 0.5rem 0 auto;
+  }
+
+  .text {
+    padding: 0 2rem 1.5rem;
+
+    h3 {
+      @include poppins(700);
+      font-size: 24px;
+    }
+
+    p:nth-of-type(1) {
+      @include poppins(700);
+    }
+  }
+
+  .contact {
+    grid-column: 2;
+    background: $primary;
+    margin-bottom: 1rem;
+    padding: 1rem 2rem;
+
+    svg {
+      margin-right: 1rem;
+    }
+
+    a {
+      @include link-normal;
+      color: $white;
+      display: flex;
+      align-items: center;
+      justify-content: right;
+      font-weight: 500;
+    }
+  }
+}
