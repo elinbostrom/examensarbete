@@ -88,6 +88,11 @@ query COURSE {
       }
     }
   }
+  informations(where: {title: "Betalningsvillkor & Retur / reklamationsrutiner"}) {
+    nodes {
+      content(format: RENDERED)
+    }
+  }
 }
 `
 };

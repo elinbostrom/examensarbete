@@ -12,13 +12,15 @@ export default function index() {
           <div>
             <p>08-776 10 15</p>
             <a href="mailto:info@vendelsoridskola.se">info@vendelsoridskola.se</a>
-          </div>
-          <div>
             <p>Österängs Gård</p>
             <p>136 75 Vendelsö</p>
+          </div>
+          <div>
             <Link href="/kontakt">Öppettider</Link>
             <Link href="/karriarsida">Karriärsida</Link>
+            <p>Vendelsö Ridhus AB | 556423-6668</p>
           </div>
+
           <div className={style.socials}>
             <p>Följ oss via våra sociala medier</p>
             <div>

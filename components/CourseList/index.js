@@ -27,7 +27,7 @@ export default function CourseList({ courseInfo }) {
       </li>
       <li>
         <FaMoneyCheck />
-        <p>{price} kr</p>
+        <p>{price} kr inkl. moms</p>
       </li>
       <li>
         <FiUsers />

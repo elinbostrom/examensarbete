@@ -23,6 +23,13 @@ export default function CourseDetail() {
 
   const heroes = data.heroes.nodes ?? null;
   const course = data.course.course ?? null;
+  const informations = data.informations.nodes ?? null;
+
+  const createMarkup = (content) => {
+    return { __html: content }
+  };
+
+  console.log(informations);
 
   return (
     <LessonsCoursesLayout
@@ -37,6 +44,9 @@ export default function CourseDetail() {
         {!clientInfo && <RegisterForm course={course} setClientInfo={setClientInfo} setShowRegForm={setShowRegForm} />}
         {clientInfo && <ReviewBooking course={course} clientInfo={clientInfo} />}
         <InstructorCard course={course} />
+      </section>
+      <section className={styles.paymentDetails}>
+        <div dangerouslySetInnerHTML={createMarkup(informations[0].content)} />
       </section>
     </LessonsCoursesLayout>
   )

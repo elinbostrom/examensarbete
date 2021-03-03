@@ -1,17 +1,17 @@
-import { useEffect, useState } from 'react'
-import styles from './ReviewBooking.module.scss'
-import { IoIosArrowDroprightCircle, IoMdCloseCircleOutline } from 'react-icons/io'
+import { useEffect, useState } from "react";
+import styles from "./ReviewBooking.module.scss";
+import { IoIosArrowDroprightCircle, IoMdCloseCircleOutline } from "react-icons/io";
 
 export default function ReviewBooking({ course, clientInfo }) {
-  const [checkedNumber, setCheckedNumber] = useState(true)
-  const [phonenumber, setPhonenumber] = useState("")
+  const [checkedNumber, setCheckedNumber] = useState(true);
+  const [phonenumber, setPhonenumber] = useState("");
 
-  useEffect(() => { }, [phonenumber])
+  useEffect(() => {}, [phonenumber]);
 
   const handleClick = () => {
-    setPhonenumber(`0${clientInfo.phone}`)
-    setCheckedNumber(true)
-  }
+    setPhonenumber(`0${clientInfo.phone}`);
+    setCheckedNumber(true);
+  };
 
   return (
     <div className={styles.wrapper}>
@@ -26,25 +26,39 @@ export default function ReviewBooking({ course, clientInfo }) {
       </div>
       <div className={styles.paymentWrapper}>
         <h3>Betalning</h3>
-        <p><span>Total kostnad: </span>{course.price} SEK</p>
+        <p>
+          <span>Total kostnad: </span>
+          {course.price} SEK (inkl. moms)
+        </p>
         <div className={styles.payment}>
           <p>Vill du använda samma angivna telefonnummer till swish?</p>
-          {checkedNumber &&
+          {checkedNumber && (
             <>
-              <button className={phonenumber.length > 8 ? styles.choosenbtn : styles.notchoosenbtn} onClick={handleClick}>Ja</button>
-              <button className={styles.notchoosenbtn} onClick={() => setCheckedNumber(false)}>Nej</button>
-            </>}
-          {!checkedNumber &&
+              <button
+                className={phonenumber.length > 8 ? styles.choosenbtn : styles.notchoosenbtn}
+                onClick={handleClick}
+              >
+                Ja
+              </button>
+              <button className={styles.notchoosenbtn} onClick={() => setCheckedNumber(false)}>
+                Nej
+              </button>
+            </>
+          )}
+          {!checkedNumber && (
             <div className={styles.phoneInput}>
               <input
                 type="text"
                 name="phone"
                 placeholder="ex. 070000900"
                 value={phonenumber}
-                onChange={(e) => setPhonenumber(e.target.value)} />
-              <button onClick={() => setCheckedNumber(true)}><IoMdCloseCircleOutline /></button>
+                onChange={e => setPhonenumber(e.target.value)}
+              />
+              <button onClick={() => setCheckedNumber(true)}>
+                <IoMdCloseCircleOutline />
+              </button>
             </div>
-          }
+          )}
         </div>
       </div>
 
@@ -54,5 +68,5 @@ export default function ReviewBooking({ course, clientInfo }) {
         <IoIosArrowDroprightCircle />
       </button>
     </div>
-  )
+  );
 }
