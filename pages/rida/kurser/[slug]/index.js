@@ -38,7 +38,7 @@ export default function index({ courses, heroes, lektionerkurseritems }) {
 
   return (
     <LessonCoursesLayout heroes={heroes} page="lessoncourses">
-      <TextInformationSection data={information.welcome} name="Alla kurser" />
+      {information && <TextInformationSection data={information.welcome} name="Alla kurser" />}
       {information && <ArticleSection data={information.informationOrs} buttonOrs />}
       <hr className={styles.line} />
       {activeCourses.length === 0
