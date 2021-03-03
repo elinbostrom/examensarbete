@@ -5,7 +5,7 @@ export default function SwishLoader({ setShowRegForm }) {
   useEffect(() => {
     const simulatePaymentDone = setTimeout(() => {
       setShowRegForm("Overview");
-    }, 2500);
+    }, 3000);
     return () => clearTimeout(simulatePaymentDone);
   }, []);
 

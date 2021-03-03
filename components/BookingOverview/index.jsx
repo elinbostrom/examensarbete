@@ -1,4 +1,4 @@
-import ButtonBlockNavigate from "../Buttons/ButtonBlockNavigate";
+import ButtonNavigate from "../Buttons/ButtonNavigate";
 import styles from "./BookingOverview.module.scss";
 
 export default function BookingOverview() {
@@ -8,7 +8,7 @@ export default function BookingOverview() {
       <img src="/icons/DressageIcon.svg" alt="häst ikon" />
       <p>Ett kvitto samt en bokningsbekräftelse har skickats till den angivna mejladressen.</p>
       <p>Vi ses i sadeln och du glöm inte hjälmen 😃</p>
-      <ButtonBlockNavigate navigate="/rida/kurser" text="Våra kurser" />
+      <ButtonNavigate navigate="/rida/kurser" text="Våra kurser" />
     </div>
   );
 }
