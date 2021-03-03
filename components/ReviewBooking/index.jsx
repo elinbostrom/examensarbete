@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import styles from "./ReviewBooking.module.scss";
 import { IoIosArrowDroprightCircle, IoMdCloseCircleOutline } from "react-icons/io";
 
-export default function ReviewBooking({ course, clientInfo }) {
+export default function ReviewBooking({ course, clientInfo, setShowRegForm }) {
   const [checkedNumber, setCheckedNumber] = useState(true);
   const [phonenumber, setPhonenumber] = useState("");
 
@@ -62,7 +62,10 @@ export default function ReviewBooking({ course, clientInfo }) {
         </div>
       </div>
 
-      <button className={phonenumber.length > 8 ? styles.next : styles.disabledNext}>
+      <button
+        onClick={() => setShowRegForm("SwishLoader")}
+        className={phonenumber.length > 8 ? styles.next : styles.disabledNext}
+      >
         Betala med Swish
         <img src="/icons/swish.png" alt="Swish Ikon" />
         <IoIosArrowDroprightCircle />

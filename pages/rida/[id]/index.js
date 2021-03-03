@@ -8,11 +8,13 @@ import styles from '@/styles/BookCourse.module.scss'
 import { useState } from 'react';
 import ReviewBooking from '@/components/ReviewBooking';
 import LCLoading from '../loading';
+import SwishLoader from '@/components/SwishLoader'
+import BookingOverview from '@/components/BookingOverview'
 
 export default function CourseDetail() {
   const router = useRouter()
   const id = router.query.id;
-  const [showRegForm, setShowRegForm] = useState(true);
+  const [showRegForm, setShowRegForm] = useState("RegisterForm");
   const [clientInfo, setClientInfo] = useState(null);
 
   const { data, loading, error } = useQuery(COURSE(id));
@@ -41,8 +43,10 @@ export default function CourseDetail() {
         <p>{course.description}</p>
       </section>
       <section className={styles.form}>
-        {!clientInfo && <RegisterForm course={course} setClientInfo={setClientInfo} setShowRegForm={setShowRegForm} />}
-        {clientInfo && <ReviewBooking course={course} clientInfo={clientInfo} />}
+        {!clientInfo && showRegForm === "RegisterForm" && <RegisterForm course={course} setClientInfo={setClientInfo} setShowRegForm={setShowRegForm} />}
+        {clientInfo && showRegForm === "ReviewBooking" && <ReviewBooking course={course} clientInfo={clientInfo} setShowRegForm={setShowRegForm} />}
+        {clientInfo && showRegForm === "SwishLoader" && <SwishLoader setShowRegForm={setShowRegForm} />}
+        {clientInfo && showRegForm === "Overview" && <BookingOverview />}
         <InstructorCard course={course} />
       </section>
       <section className={styles.paymentDetails}>

@@ -18,7 +18,7 @@ export default function RegisterForm({ course, setClientInfo, setShowRegForm }) 
 
   const onSubmit = data => {
     setClientInfo(data);
-    setShowRegForm(false);
+    setShowRegForm("ReviewBooking");
   };
 
   return (
