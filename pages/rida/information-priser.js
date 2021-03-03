@@ -41,7 +41,7 @@ export default function InformationPrices({ heroes, pricepages, informations }) 
             const category = item.informationtype.informationstype;
             if (category === "Prisinformation") {
               return (
-                <div dangerouslySetInnerHTML={createMarkup(item.content)} />
+                <div key={item.id} dangerouslySetInnerHTML={createMarkup(item.content)} />
               )
             }
           })
@@ -52,7 +52,7 @@ export default function InformationPrices({ heroes, pricepages, informations }) 
         const category = item.informationtype.informationstype;
         if (category === activeInfo) {
           return (
-            <Wrapper>
+            <Wrapper key={item.id}>
               <h2>{activeInfo}</h2>
               <div dangerouslySetInnerHTML={createMarkup(item.content)} />
             </Wrapper>

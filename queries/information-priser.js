@@ -14,7 +14,7 @@ query INFORMATION_PRISER {
       }
     }
   }
-  informations(last: 1) {
+  informations {
     nodes {
       content
       id
