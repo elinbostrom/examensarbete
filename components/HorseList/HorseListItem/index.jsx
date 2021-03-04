@@ -66,9 +66,9 @@ export default function HorseListItem({ horse }) {
         <h3>{name}</h3>
         {seeMore && (
           <>
-            <p>{birthyear}</p>
+            <p className={styles.birthyear}>{birthyear}</p>
             {breed && (
-              <div>
+              <div className={styles.breed}>
                 <p>Stamtavla</p>
                 <p>{breed}</p>
               </div>
