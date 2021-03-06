@@ -11,6 +11,10 @@
   margin: 1rem 0;
   animation: fadeIn 500ms;
 
+  .bigPhoto {
+    margin: 0;
+  }
+
   .thumbnail {
     width: 100px;
     height: 100px;
@@ -93,14 +97,16 @@
     grid-column: span 2;
     max-width: unset;
     position: relative;
+    margin-top: 0;
 
     .activePicture {
       width: 100%;
       border-radius: $radius-medium;
       border: 2px solid $white;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
-      height: 550px;
-      object-fit: cover;
+      height: 450px;
+      object-fit: contain;
+      background: $mini-transperant-blue;
     }
 
     .before {
@@ -152,6 +158,36 @@
       &:hover {
         border: 2px solid $white;
         cursor: pointer;
+      }
+    }
+  }
+
+  .photos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+    max-width: unset;
+    grid-column: span 2;
+    gap: 0.5rem;
+
+    .photoBtn {
+      height: 120px;
+      border-radius: $radius-medium;
+      border: 2px solid $white;
+      box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+      overflow: hidden;
+      cursor: pointer;
+      padding: 0;
+
+      img {
+        width: 100%;
+        height: 120px;
+        object-fit: cover;
+        transition: transform ease 500ms;
+
+        &:hover {
+          transform: scale(1.1);
+        }
       }
     }
   }
