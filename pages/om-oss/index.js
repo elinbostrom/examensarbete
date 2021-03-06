@@ -12,7 +12,6 @@ export default function AboutUs({ aboutusposts, heroes }) {
   const { setActivePage } = useContext(LessonsCoursesContext);
   const { description, article } = aboutusposts[0];
   const { sectionOne, sectionTwo, sectionThree } = article;
-  console.log(sectionOne);
 
   useEffect(() => { setActivePage("Om ridskolan") }, [])
 
