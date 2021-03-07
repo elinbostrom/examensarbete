@@ -36,7 +36,7 @@ export default function Navbar() {
           <Link href="/om-oss">Om oss</Link>
         </li>
         <li onClick={() => setShowMenu(false)}>
-          <Link href="/kontakt">Kontakt</Link>
+          <Link href="/om-oss/kontakt">Kontakt</Link>
         </li>
       </ul>
     </nav>

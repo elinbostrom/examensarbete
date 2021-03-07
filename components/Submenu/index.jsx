@@ -32,7 +32,7 @@ export default function Submenu({ page, aboutus }) {
             <Link href="/om-oss/taxiskjuts">Taxiskjuts</Link>
           </li>
           <li className={activePage === "Kontakt" ? styles.active_link : styles.link}>
-            <Link href="/kontakt">Kontakt</Link>
+            <Link href="/om-oss/kontakt">Kontakt</Link>
           </li>
         </ul>
       ) : (
