@@ -18,3 +18,48 @@
   padding: 0;
   color: $night-blue;
 }
+
+.taxiskjuts {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  column-gap: 2rem;
+
+  .headline {
+    font-size: 26px;
+    grid-column: span 2;
+    margin-bottom: 2rem;
+  }
+
+  img {
+    width: 100%;
+    border-radius: $radius-small;
+    height: 350px;
+    object-fit: cover;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+  }
+
+  p + p {
+    margin: 1rem 0;
+  }
+
+  @include mobile-max {
+    margin-top: 0;
+    grid-template-columns: unset;
+
+    .headline {
+      grid-column: unset;
+      margin-bottom: 1rem;
+    }
+
+    .text {
+      padding: 0 0.5rem;
+    }
+
+    img {
+      height: 250px;
+      margin-bottom: 1rem;
+    }
+  }
+}
