@@ -65,7 +65,7 @@
 }
 
 .contact {
-  @include hero-light("/images/8.png", "/images/8tablet.jpg", "/images/8mobile.jpg");
+  @include hero-light("/images/8.png", "/images/8-tablet.jpg", "/images/8-mobile.jpg");
 
   .wrapper {
     margin-top: 2rem;
