@@ -2,11 +2,11 @@ import { gql } from '@apollo/client'
 
 export const CONTACT = gql`
 query CONTACT {
-  heroes(where: {title: "Om oss"}) {
+  heroes(where: {title: "Kontakt"}) {
     nodes {
       heroInfo {
-        slogan
         title
+        slogan
       }
     }
   }
