@@ -3,11 +3,13 @@
 .pictures {
   display: grid;
   grid-column: 2;
+  grid-row: 2;
   max-width: 450px;
   width: 100%;
   height: 400px;
-  grid-template: auto 60px / repeat(5, auto);
-  gap: 1rem 0.7rem;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 340px 60px;
+  gap: 0.7rem;
   transition: all ease 200ms;
 
   @include tablet-normal {
@@ -17,7 +19,6 @@
 
   @include mobile-max {
     height: 250px;
-    grid-template: auto 60px / repeat(5, auto);
     gap: 0.7rem 0.2rem;
     grid-row: span 2;
   }
@@ -32,7 +33,6 @@
     grid-column: span 5;
     border-radius: $radius-small;
     box-shadow: 1px 1px 2px gray;
-    height: 100%;
     width: 100%;
   }
 

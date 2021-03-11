@@ -1,0 +1,22 @@
+@import "@/theme/theme";
+
+.wrapper {
+  @extend %main-wrapper;
+}
+
+.section {
+  @include hero-light("/images/2.png", "/images/2-tablet.jpg", "/images/2-mobile.jpg");
+}
+
+.loadMoreBtn {
+  background: $primary;
+  width: 80%;
+  padding: 0.7rem;
+  border: 1px solid $white;
+  border-radius: $radius-medium;
+  color: $white;
+  font-size: 16px;
+  @include poppins(700);
+  cursor: pointer;
+  box-shadow: 0 4px 4px rbga(0, 0, 0, 0.5);
+}
