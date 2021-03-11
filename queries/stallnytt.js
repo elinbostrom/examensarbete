@@ -1,8 +1,6 @@
 import { gql } from "@apollo/client";
 
-export function STALLNYTT(posts) {
-
-  return gql`
+export const STALLNYTT = gql`
   query STALLNYTT {
     heroes(where: {title: "Stallnytt"}) {
       nodes {
@@ -12,7 +10,7 @@ export function STALLNYTT(posts) {
         }
       }
     }
-    stablenews(first: ${posts}) {
+    stablenews(first: 50) {
       nodes {
         id
         date
@@ -47,5 +45,4 @@ export function STALLNYTT(posts) {
       }
     }
   }
-  `
-} 
+  `;

@@ -1,36 +1,19 @@
 import styles from '@/styles/Stablenews.module.scss';
 
 // Components
-import NewsArticle from '@/components/NewsArticle';
 import Layout from '@/components/Layouts';
 
-// get data
-import { STALLNYTT } from '../queries/stallnytt';
-import client from '@/apollo/client';
-
-export default function LoadingStableNews({ heroes }) {
-  console.log(heroes);
+export default function LoadingStableNews() {
+  const data = {
+    title: 'Stallnytt',
+    slogan: 'Sidan laddar...'
+  }
 
   return (
-    // <Layout data={heroInfo} page="stablenews">
-    //   <section className={styles.section}>
-    //     <h2>Sidan laddar...</h2>
-    //   </section>
-    // </Layout>
-    <h1>hej</h1>
+    <Layout data={data} page="stablenews">
+      <section className={styles.section}>
+        <h2 style={{ paddingTop: '3rem', color: 'white', textShadow: '0 1px 1px black' }}>Sidan laddar...</h2>
+      </section>
+    </Layout>
   )
-}
-
-
-export async function getStaticProps(context) {
-
-  const { data, loading, networkStatus } = await client.query({
-    query: STALLNYTT(10)
-  });
-
-  return {
-    props: {
-      heroes: data?.heroes?.nodes
-    },
-  }
 }

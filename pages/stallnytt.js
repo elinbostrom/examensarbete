@@ -1,20 +1,19 @@
 import styles from '@/styles/Stablenews.module.scss';
+import { useState } from 'react';
 
 // Components
 import NewsArticle from '@/components/NewsArticle';
 import Layout from '@/components/Layouts';
-
-// get data
-import { STALLNYTT } from '../queries/stallnytt';
-import { useQuery } from '@apollo/client'
-import { useState } from 'react';
 import LoadingStableNews from './loading';
 
-export default function Stallnytt() {
-  const getPosts = 15;
-  const [postShowing, setPostShowing] = useState(5);
+// Get data
+import { STALLNYTT } from '../queries/stallnytt';
+import { useQuery } from '@apollo/client'
 
-  const { data, loading, error } = useQuery(STALLNYTT(getPosts));
+export default function Stallnytt() {
+  const [postShowing, setPostShowing] = useState(4);
+
+  const { data, loading, error } = useQuery(STALLNYTT);
 
   if (loading) return <LoadingStableNews />;
   if (error) return <h1>ERROR</h1>;
@@ -25,7 +24,7 @@ export default function Stallnytt() {
   const { heroInfo } = heroes[0];
 
   const handleClick = () => {
-    setPostShowing(prevState => prevState + 5);
+    setPostShowing(prevState => prevState + 4);
   }
 
   return (
@@ -51,18 +50,3 @@ export default function Stallnytt() {
     </Layout>
   )
 }
-
-
-// export async function getStaticProps(context) {
-
-//   const { data, loading, networkStatus } = await client.query({
-//     query: STALLNYTT(10)
-//   });
-
-//   return {
-//     props: {
-//       stablenews: data?.stablenews?.nodes,
-//       heroes: data?.heroes?.nodes
-//     },
-//   }
-// }
