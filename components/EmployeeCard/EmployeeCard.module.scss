@@ -30,6 +30,32 @@
     grid-column: 2;
     grid-row: 1;
   }
+
+  @include mobile-max {
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    justify-content: flex-start;
+
+
+    button {
+      grid-row: 3;
+      grid-column: span 2;
+      width: 100%;
+      margin-top: 1rem;
+    }
+
+    img {
+      grid-row: 1;
+      grid-column: 1;
+      width: 100px;
+      height: 100px;
+    }
+
+    .text {
+      grid-row: 1;
+      grid-column: 2;
+    }
+  }
 }
 
 .card {
@@ -91,5 +117,50 @@
       justify-content: right;
       font-weight: 500;
     }
+  }
+
+  @include mobile-max {
+  grid-template-columns: 1fr;
+
+  img {
+    max-height: 250px;
+    grid-row: 1;
+    max-width: unset;
+  }
+
+  button {
+    grid-column: unset;
+    grid-row: 4;
+    margin: 0 auto 0.5rem;
+    width: 90%;
+  }
+
+  .text {
+    padding: 1.5rem;
+    grid-row: 2;
+
+    h3 {
+      @include poppins(700);
+      font-size: 24px;
+    }
+
+    p{
+      font-size: 16px;
+    }
+  }
+
+  .contact {
+    grid-column: unset;
+    padding: 1rem 2rem;
+
+    a {
+      @include link-normal;
+      color: $white;
+      display: flex;
+      align-items: center;
+      justify-content: right;
+      font-weight: 500;
+    }
+  }
   }
 }

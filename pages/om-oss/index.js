@@ -2,6 +2,7 @@ import AboutUsLayout from '@/components/Layouts/AboutUsLayout'
 import Wrapper from '@/components/Wrapper'
 import { LessonsCoursesContext } from '@/contexts/LessonCoursesProvider'
 import React, { useContext, useEffect } from 'react'
+import styles from '@/styles/AboutUs.module.scss'
 
 // get data
 import client from '@/apollo/client'
@@ -18,7 +19,8 @@ export default function AboutUs({ aboutusposts, heroes }) {
   return (
     <AboutUsLayout heroes={heroes} page="aboutus">
       <Wrapper>
-        <p style={{ textAlign: 'center', margin: '0 2rem 4rem 2rem' }}>{description.description}</p>
+        <h2 className={styles.headline}>Välkommen till oss</h2>
+        <p className={styles.paragraph}>{description.description}</p>
         <Article data={sectionOne} imgRight />
         <Article data={sectionTwo} imgRight />
         <Article data={sectionThree} imgRight />
