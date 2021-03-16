@@ -14,6 +14,7 @@
   height: 400px;
   gap: 1rem;
   transition: all ease 250ms;
+  animation: fadeIn 500ms;
 
   @include tablet-normal {
     max-width: 350px;

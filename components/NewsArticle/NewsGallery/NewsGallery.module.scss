@@ -6,7 +6,6 @@
   grid-row: 2;
   max-width: 450px;
   width: 100%;
-  height: 400px;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: 340px 60px;
   gap: 0.7rem;
@@ -18,9 +17,8 @@
   }
 
   @include mobile-max {
-    height: 250px;
     gap: 0.7rem 0.2rem;
-    grid-row: span 2;
+    grid-row: 2;
   }
 
   img {

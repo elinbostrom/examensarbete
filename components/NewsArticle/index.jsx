@@ -18,10 +18,10 @@ export default function NewsArticle({ postInfo, date, id }) {
             <p>{information}</p>
             {link && <ButtonNavigate text={btntext} navigate={link} link />}
           </section>
+          {pictures?.picture1 && <NewsGallery pictures={pictures} />}
           <button className={styles.seeMore} onClick={() => setIsOpen(false)}>
             Stäng inlägg
           </button>
-          {pictures?.picture1 && <NewsGallery pictures={pictures} />}
         </li>
       ) : (
         <li id={id} className={styles.closedPost}>

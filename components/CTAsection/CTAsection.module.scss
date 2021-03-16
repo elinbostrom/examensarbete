@@ -34,10 +34,19 @@
   text-shadow: 1px 1px 3px black;
   text-align: right;
   transition: all ease 250ms;
+  padding: 1rem;
 
   @include tablet-normal {
     text-align: center;
     padding-inline: 2rem;
+  }
+
+  @include mobile-max {
+    button {
+      width: max-content;
+      font-size: 16px;
+      @include poppins(700);
+    }
   }
 
   p {

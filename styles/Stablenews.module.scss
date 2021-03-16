@@ -2,15 +2,19 @@
 
 .wrapper {
   @extend %main-wrapper;
+
+  @include mobile-max {
+    margin: 0 1rem 1rem 1rem;
+  }
 }
 
 .section {
-  @include hero-light("/images/2.png", "/images/2-tablet.jpg", "/images/2-mobile.jpg");
+  @include hero-light("/images/2.png", "/images/2-tablet.png", "/images/2-mobile.png");
 }
 
 .loadMoreBtn {
   background: $primary;
-  width: 80%;
+  width: 90%;
   padding: 0.7rem;
   border: 1px solid $white;
   border-radius: $radius-medium;
@@ -19,4 +23,8 @@
   @include poppins(700);
   cursor: pointer;
   box-shadow: 0 4px 4px rbga(0, 0, 0, 0.5);
+
+  @include mobile-max {
+    width: 100%;
+  }
 }

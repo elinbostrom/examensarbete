@@ -11,7 +11,8 @@
   grid-template-columns: 1fr auto;
   align-items: center;
   transition: all ease 200ms;
-  width: 80%;
+  width: 90%;
+  animation: fadeIn 500ms;
 
   button {
     border-radius: $radius-medium;
@@ -26,6 +27,18 @@
     &:hover {
       box-shadow: 0 4px 4px rgba(0, 0, 0, 0.201);
     }
+
+    @include mobile-max {
+      font-size: 18px;
+    }
+  }
+
+  @include mobile-max {
+    grid-template-columns: unset;
+    width: 100%;
+    margin: 1rem 0;
+    padding: 1rem;
+    text-align: center;
   }
 }
 
@@ -40,16 +53,21 @@
   grid-template-columns: 1fr 0.9fr;
   grid-template-rows: 1fr auto;
   transition: all ease 200ms;
-  width: 80%;
+  width: 90%;
   gap: 1rem;
+  animation: fadeIn 500ms;
 
   @include tablet-normal {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(3, auto);
+    width: 100%;
   }
 
   @include mobile-max {
-    padding: 2rem 1rem 6rem;
+    padding: 2rem 1rem;
+    grid-template-columns: unset;
+    grid-template-rows: unset;
+    gap: 1rem 0;
   }
 
   .text {
@@ -67,15 +85,16 @@
       font-size: 16px;
     }
 
+    @include mobile-max {
+      grid-column: span 2;
+    }
+
     h2 {
       grid-row: 2;
       grid-column: span 2;
-
-      @include mobile-max {
-      }
     }
 
-    p {
+    p:nth-of-type(2) {
       @include montserrat(400);
       margin-top: 1rem;
       grid-column: span 2;
@@ -110,9 +129,18 @@
     margin-left: auto;
     min-width: 130px;
     transition: box-shadow ease 250ms;
+     @include poppins(700);
 
     &:hover {
       box-shadow: 0 4px 4px rgba(0, 0, 0, 0.201);
+    }
+
+    @include mobile-max {
+      grid-row: 3;
+      margin-left: unset;
+      width: 100%;
+      font-size: 16px;
+      grid-column: span 2;
     }
   }
 }
@@ -122,14 +150,15 @@
   margin-bottom: 2rem;
   padding: 2rem 3rem;
   border-radius: $radius-medium;
-  border: 1px solid rgba(42, 42, 63, 0.201);
+ border: 4px solid rgba($primary, 0.9);
   color: $night-blue;
   display: grid;
   grid-template-columns: 1fr auto;
   grid-template-rows: 1fr auto;
   transition: all ease 200ms;
-  width: 80%;
+  width: 90%;
   position: relative;
+  animation: fadeIn 500ms;
 
   @include tablet-normal {
     grid-template-columns: 1fr 1fr;
@@ -138,6 +167,9 @@
 
   @include mobile-max {
     padding: 2rem 1rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    width: 100%;
   }
 
   .text {
@@ -156,6 +188,11 @@
       text-align: center;
       font-size: 16px;
     }
+     
+    @include mobile-max {
+      grid-row: 1;
+      grid-column: span 2;
+    }
 
     h2 {
       grid-row: 2;
@@ -165,7 +202,7 @@
       }
     }
 
-    p {
+    p:nth-of-type(2) {
       @include montserrat(400);
       margin-top: 1rem;
       grid-column: span 2;
@@ -180,6 +217,7 @@
     @include montserrat-italic;
     font-size: 12px;
     transition: all ease 200ms;
+    margin-top: 0;
 
     @include tablet-normal {
       grid-column: span 2;
@@ -189,7 +227,7 @@
     }
   }
 
-  button {
+  button:nth-of-type(1) {
     border-radius: $radius-medium;
     color: $white;
     background: $primary;
@@ -204,6 +242,14 @@
 
     &:hover {
       box-shadow: 0 4px 4px rgba(0, 0, 0, 0.201);
+    }
+
+    @include mobile-max {
+      position: unset;
+      margin: 1rem 0 0.2rem;
+      width: 100%;
+      font-size: 16px;
+      grid-column: span 2;
     }
   }
 }
