@@ -41,6 +41,7 @@
   h2 {
     font-size: 16px;
     @include poppins(700);
+    color: $white;
   }
 
   p,
@@ -48,6 +49,7 @@
     @include montserrat(400);
     font-family: "Montserrat", sans-serif;
     font-size: 16px;
+    color: $white;
   }
 
   a {

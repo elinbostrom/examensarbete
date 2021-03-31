@@ -2,8 +2,9 @@
 
 .CTAwrapper {
   background: linear-gradient($transperant-blue, $transperant-blue),
-    url(/images/philippe-oursel-jckGRV_-FI4-unsplash.jpg);
+    url(/images/dressage_detail.jpg);
   @include parallax(none);
+  background-position: top;
   box-shadow: 2px 2px 2px rgb(63, 63, 63);
   z-index: 9;
   position: relative;

@@ -54,10 +54,10 @@
 // Hero
 @mixin hero-light($img, $tabletimg, $mobileimg) {
   display: flex;
-  min-height: 450px;
+  min-height: 500px;
   width: 100%;
   justify-content: center;
-  background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url($img);
+  background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), url($img);
   @include parallax(bottom);
   box-shadow: 1px 1px 2px rgb(63, 63, 63);
   position: relative;

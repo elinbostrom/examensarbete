@@ -1,7 +1,8 @@
 @import "@/theme/theme";
 
 .startpage {
-  @include hero-light("/images/9.png", "/images/9tablet.jpg", "/images/9mobile.jpg");
+  @include hero-light("/images/sandgraf.jpg", "/images/9tablet.jpg", "/images/9mobile.jpg");
+  background-position: center;
 }
 
 .stablenews {
@@ -39,7 +40,7 @@
 .text {
   align-self: center;
   @extend %main-wrapper;
-  
+
   h1,
   p {
     max-width: 450px;
