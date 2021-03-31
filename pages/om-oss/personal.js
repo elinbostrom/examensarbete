@@ -8,6 +8,7 @@ import EmployeeCard from '@/components/EmployeeCard'
 // get data
 import client from '@/apollo/client'
 import { EMPLOYEES } from '@/queries/employees';
+import ButtonNavigate from '@/components/Buttons/ButtonNavigate'
 
 export default function Employees({ employees, heroes }) {
   const { setActivePage } = useContext(LessonsCoursesContext);
@@ -19,14 +20,15 @@ export default function Employees({ employees, heroes }) {
   return (
     <AboutUsLayout heroes={heroes} page="aboutus">
       <Wrapper>
-        <h2 className={styles.headline}>Vår personal</h2>
-        <p className={styles.paragraph}>Lär känna oss som jobbar på ridskolan lite bättre :)</p>
+        <div className={styles.text}>
+          <h2 className={styles.headline}>Vår personal</h2>
+          <p className={styles.paragraph}>Lär känna oss som jobbar på ridskolan lite bättre :)</p>
+          <ButtonNavigate navigate="/karriar" text="Lediga tjänster" />
+        </div>
         <section className={styles.personal}>
-          {Array.isArray(employees) && employees.map(employee => {
-            return (
-              <EmployeeCard key={employee.id} employee={employee.info} />
-            )
-          })}
+          {Array.isArray(employees) && employees.map(employee => (
+            <EmployeeCard key={employee.id} employee={employee.info} />
+          ))}
         </section>
       </Wrapper>
     </AboutUsLayout>
