@@ -2,14 +2,10 @@ import styles from './CourseList.module.scss'
 import { BsClock, BsCalendar, BsStar } from 'react-icons/bs'
 import { FaMoneyCheck } from 'react-icons/fa'
 import { FiUsers } from 'react-icons/fi'
-import { useContext, useEffect } from 'react';
-import { LessonsCoursesContext } from '@/contexts/LessonCoursesProvider';
 
 export default function CourseList({ courseInfo }) {
   const { time, spots, price, level, date } = courseInfo;
-  const { placesLeft, setPlacesLeft } = useContext(LessonsCoursesContext);
 
-  useEffect(() => { setPlacesLeft(spots) }, [])
 
   return (
     <ul className={styles.infolist}>
@@ -29,9 +25,9 @@ export default function CourseList({ courseInfo }) {
         <FaMoneyCheck />
         <p>{price} kr inkl. moms</p>
       </li>
-      <li>
+      <li className={spots.left <= 3 ? styles.warning : null}>
         <FiUsers />
-        <p>{`${placesLeft} av ${spots} platser kvar`}</p>
+        <p>{`${spots.left} av ${spots.total} platser kvar`}</p>
       </li>
     </ul>
   )

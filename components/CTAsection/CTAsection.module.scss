@@ -50,6 +50,10 @@
     }
   }
 
+  h2 {
+    color: $white;
+  }
+
   p {
     font-size: 14px;
     @include montserrat(400);
@@ -57,6 +61,7 @@
     max-width: 450px;
     margin-left: auto;
     transition: all ease 250ms;
+    color: $white;
 
     @include tablet-normal {
       margin: 1rem auto;

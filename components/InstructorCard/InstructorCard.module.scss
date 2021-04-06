@@ -34,6 +34,10 @@
   .text {
     padding: 1.5rem 2rem;
 
+    p {
+      color: $white;
+    }
+
     @include mobile-max {
       padding: 1.5rem;
     }

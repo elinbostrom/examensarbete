@@ -6,7 +6,7 @@
 }
 
 .menu {
-  padding-block: 1rem;
+  padding: 1rem 2rem;
   background: $primary;
   display: grid;
   grid-template: auto 1fr / 1fr 1fr;
@@ -33,11 +33,13 @@
     flex-direction: column;
     padding-block: 0;
     padding-left: 0;
+    align-items: flex-start;
 
     .menu_link {
-      margin: 0;
+      margin: 0.2rem 0;
       padding: 0;
-      font-size: 14px;
+      font-size: 16px;
+      @include montserrat(400);
     }
   }
 }

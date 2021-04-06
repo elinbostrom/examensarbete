@@ -17,7 +17,7 @@ export default function Dropdown({ setIsOpen, setActivePage }) {
           {MenuItems.map(item => {
             if (item.category === "Häst") {
               return (
-                <li key={item.id} onClick={handleClick}>
+                <li className={styles.menu_link} key={item.id} onClick={handleClick}>
                   <Link className={item.cName} href={item.path}>
                     {item.title}
                   </Link>
@@ -31,7 +31,7 @@ export default function Dropdown({ setIsOpen, setActivePage }) {
           {MenuItems.map(item => {
             if (item.category === "Ponny") {
               return (
-                <li key={item.id} onClick={handleClick}>
+                <li className={styles.menu_link} key={item.id} onClick={handleClick}>
                   <Link className={item.cName} href={item.path}>
                     {item.title}
                   </Link>

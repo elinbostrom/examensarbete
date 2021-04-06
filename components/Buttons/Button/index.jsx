@@ -7,6 +7,7 @@ export default function Button({ btnText, setActiveInfo, activeInfo }) {
       className={cn({
         [styles.button]: activeInfo != btnText,
         [styles.button_active]: activeInfo === btnText,
+        [styles.button_memorylane]: btnText === "Minneslunden",
       })}
       onClick={() => setActiveInfo(btnText)}
     >

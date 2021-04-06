@@ -20,7 +20,10 @@ export default function CourseCard({ id, courseInfo }) {
         <span>Instruktör:</span> {instructor}
       </p>
       <CourseList courseInfo={courseInfo} />
-      <ButtonBlockNavigate text="Anmäl dig till kursen" navigate={`/rida/${id}`} />
+      <ButtonBlockNavigate
+        text="Anmäl dig till kursen via Min ridskola"
+        navigate="https://ww2.minridskola.se/Init_LoggaIn.aspx"
+      />
       {shortenDescription ? (
         <>
           <p className={styles.description}>

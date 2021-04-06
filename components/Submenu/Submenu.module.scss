@@ -34,7 +34,7 @@
   a {
     @include link-underline;
     color: $white;
-    @include poppins(400);
+    @include montserrat(400);
     font-size: 14px;
     transition: all ease 200ms;
 
