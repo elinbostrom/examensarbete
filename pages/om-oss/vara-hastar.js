@@ -1,30 +1,36 @@
+import React, { useContext, useEffect, useState } from 'react'
+import { LessonsCoursesContext } from '@/contexts/LessonCoursesProvider'
+import styles from '@/styles/AboutUs.module.scss'
+
+// Components
 import AboutUsLayout from '@/components/Layouts/AboutUsLayout'
 import Wrapper from '@/components/Wrapper'
-import { LessonsCoursesContext } from '@/contexts/LessonCoursesProvider'
-import React, { useContext, useEffect, useState } from 'react'
-import styles from '@/styles/AboutUs.module.scss'
+import Button from '@/components/Buttons/Button'
+import HorseList from '@/components/HorseList'
 
 // get data
 import client from '@/apollo/client'
 import { HORSES } from '@/queries/horses';
-import Button from '@/components/Buttons/Button'
-import HorseList from '@/components/HorseList'
 
 export default function Horses({ horses, heroes }) {
   const { setActivePage } = useContext(LessonsCoursesContext);
   const [activeInfo, setActiveInfo] = useState("Häst");
-
-  useEffect(() => {
-    setActivePage("Våra hästar")
-  }, [])
+  setActivePage("Våra hästar")
 
   return (
     <AboutUsLayout heroes={heroes} page="aboutus">
       <Wrapper>
-        <h2 className={styles.headline}>Våra Hästar</h2>
-        <p className={styles.paragraph}>Lär känna våra fina fyrbenta vänner bättre :)</p>
+        {activeInfo !== "Minneslunden" ? <>
+          <h2 className={styles.headline}>Våra Hästar</h2>
+          <p className={styles.paragraph}>Lär känna våra fina fyrbenta vänner bättre :)</p>
+        </> :
+          <>
+            <h2 className={styles.headline}>Våra änglar</h2>
+            <p className={styles.paragraph}>Här kan du läsa mer om våra fina kollegor som tyvärr tvingats lämna oss 😔</p>
+          </>}
         <Button btnText="Häst" setActiveInfo={setActiveInfo} activeInfo={activeInfo} />
         <Button btnText="Ponny" setActiveInfo={setActiveInfo} activeInfo={activeInfo} />
+        <Button btnText="Minneslunden" setActiveInfo={setActiveInfo} activeInfo={activeInfo} />
         <HorseList horses={horses} activeInfo={activeInfo} />
       </Wrapper>
     </AboutUsLayout>

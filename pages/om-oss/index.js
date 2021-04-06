@@ -13,8 +13,7 @@ export default function AboutUs({ aboutusposts, heroes }) {
   const { setActivePage } = useContext(LessonsCoursesContext);
   const { description, article } = aboutusposts[0];
   const { sectionOne, sectionTwo, sectionThree } = article;
-
-  useEffect(() => { setActivePage("Om ridskolan") }, [])
+  setActivePage("Om ridskolan")
 
   return (
     <AboutUsLayout heroes={heroes} page="aboutus">
