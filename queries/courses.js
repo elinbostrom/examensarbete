@@ -9,7 +9,10 @@ query COURSES {
       course {
         title
         time
-        spots
+        spots {
+          left
+          total
+        }
         price
         level
         instructor
