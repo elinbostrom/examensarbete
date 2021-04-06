@@ -2,6 +2,7 @@
 
 .wrapper {
   margin-top: 4rem;
+  position: relative;
 
   @include mobile-max {
     margin-top: unset;
@@ -13,12 +14,7 @@
   }
 
   div {
-    margin-top: 1rem;
     max-width: 700px;
-
-    @include mobile-max {
-      padding: 1rem 0;
-    }
   }
 }
 
