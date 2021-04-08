@@ -1,10 +1,9 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import styles from "./Gallery.module.scss";
-import { MdNavigateBefore, MdNavigateNext } from "react-icons/md";
 import { AiOutlineLink } from "react-icons/ai";
 import ImageGallery from "react-image-gallery";
 
-export default function Gallery({ id, data }) {
+export default function Gallery({ data }) {
   const { title, link, description, gallery } = data;
   const pictureData = Object.entries(gallery);
   const [isOpen, setIsOpen] = useState(false);

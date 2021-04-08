@@ -3,22 +3,10 @@
 .button {
   max-width: 175px;
   width: 100%;
-  @extend %button-clear;
-  background: rgba($primary, 0.75);
-  color: white;
+  @extend %button-primary;
   margin-right: 0.5rem;
   font-size: 14px;
   padding: 0.5rem 1.5rem;
-  border-radius: $radius-medium;
-  cursor: pointer;
-  transition: all ease 250ms;
-
-  @media (min-width: $tablet-normal) {
-    &:hover {
-      box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
-      background: $primary;
-    }
-  }
 
   @include mobile-max {
     max-width: unset;

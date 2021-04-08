@@ -9,11 +9,15 @@
   column-gap: 2rem;
   margin: 1rem 0;
   animation: fadeIn 500ms;
+  align-items: center;
 
   button {
     grid-row: 1;
     grid-column: 3;
-    @include button-green;
+    @extend %button-primary;
+    padding: 0.5rem 2rem;
+    height: min-content;
+    font-size: 12px;
     width: max-content;
   }
 
@@ -35,7 +39,6 @@
     grid-template-columns: auto 1fr;
     align-items: center;
     justify-content: flex-start;
-
 
     button {
       grid-row: 3;
@@ -65,9 +68,8 @@
   grid-template-columns: 250px 1fr;
   margin: 1rem 0;
   overflow: hidden;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+  @extend %soft-shadow;
   position: relative;
-  animation: fadeIn 500ms;
 
   img {
     max-width: 250px;
@@ -76,18 +78,24 @@
     height: 100%;
     object-fit: cover;
     grid-row: span 3;
+    animation: fadeIn 500ms;
   }
 
   button {
     grid-column: 2;
     grid-row: 1;
-    @include button-green;
+    @extend %button-primary;
     width: max-content;
-    margin: 0.5rem 0.5rem 0 auto;
+    margin: 2rem 2rem 0 auto;
+    @extend %button-primary;
+    padding: 0.5rem 2rem;
+    height: min-content;
+    font-size: 14px;
   }
 
   .text {
     padding: 0 2rem 1.5rem;
+    animation: fadeIn 500ms;
 
     h3 {
       @include poppins(700);
@@ -120,47 +128,47 @@
   }
 
   @include mobile-max {
-  grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
 
-  img {
-    max-height: 250px;
-    grid-row: 1;
-    max-width: unset;
-  }
-
-  button {
-    grid-column: unset;
-    grid-row: 4;
-    margin: 0 auto 0.5rem;
-    width: 90%;
-  }
-
-  .text {
-    padding: 1.5rem;
-    grid-row: 2;
-
-    h3 {
-      @include poppins(700);
-      font-size: 24px;
+    img {
+      max-height: 250px;
+      grid-row: 1;
+      max-width: unset;
     }
 
-    p{
-      font-size: 16px;
+    button {
+      grid-column: unset;
+      grid-row: 4;
+      margin: 0 auto 0.5rem;
+      width: 90%;
     }
-  }
 
-  .contact {
-    grid-column: unset;
-    padding: 1rem 2rem;
+    .text {
+      padding: 1.5rem;
+      grid-row: 2;
 
-    a {
-      @include link-normal;
-      color: $white;
-      display: flex;
-      align-items: center;
-      justify-content: right;
-      font-weight: 500;
+      h3 {
+        @include poppins(700);
+        font-size: 24px;
+      }
+
+      p {
+        font-size: 16px;
+      }
     }
-  }
+
+    .contact {
+      grid-column: unset;
+      padding: 1rem 2rem;
+
+      a {
+        @include link-normal;
+        color: $white;
+        display: flex;
+        align-items: center;
+        justify-content: right;
+        font-weight: 500;
+      }
+    }
   }
 }

@@ -1,7 +1,8 @@
 @import "@/theme/theme";
 
 .navigation {
-  background: $primary;
+  background: rgb(61, 78, 72);
+  background: linear-gradient(336deg, rgba(61, 78, 72, 1) 0%, rgba(99, 123, 114, 1) 100%);
   position: absolute;
   width: 100%;
   box-shadow: 1px 1px 2px rgb(67, 67, 67);
@@ -9,7 +10,7 @@
 
   .list {
     display: grid;
-    grid-template: 1fr auto / repeat(7, 1fr);
+    grid-template: 1fr auto / repeat(6, auto);
     @extend %main-wrapper;
     padding-block: 2rem;
 

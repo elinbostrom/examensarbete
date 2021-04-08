@@ -1,8 +1,8 @@
 @import "../../theme/theme";
 
 .main {
-  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
-    url(../../public/images/3.png);
+  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1)),
+    url(../../public/images/name_detail.jpg);
   @include parallax(center);
 }
 

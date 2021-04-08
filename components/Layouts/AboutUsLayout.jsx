@@ -14,9 +14,7 @@ export default function AboutUsLayout({ heroes, children, page, activePage }) {
   return (
     <Layout data={heroInfo} page={page}>
       <Submenu page={activePage} aboutus />
-      <main className={styles.main}>
-        <div className={styles.wrapper}>{children}</div>
-      </main>
+      <main className={styles.main}>{children}</main>
     </Layout>
   );
 }

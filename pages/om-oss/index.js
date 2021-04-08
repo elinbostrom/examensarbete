@@ -17,13 +17,13 @@ export default function AboutUs({ aboutusposts, heroes }) {
 
   return (
     <AboutUsLayout heroes={heroes} page="aboutus">
-      <Wrapper>
-        <h2 className={styles.headline}>Välkommen till oss</h2>
+      <main className={styles.main}>
+        <h2>Välkommen till oss</h2>
         <p className={styles.paragraph}>{description.description}</p>
         <Article data={sectionOne} imgRight />
         <Article data={sectionTwo} imgRight />
         <Article data={sectionThree} imgRight />
-      </Wrapper>
+      </main>
     </AboutUsLayout>
   )
 }

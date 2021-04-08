@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import ButtonNavigate from "../Buttons/ButtonNavigate";
 import styles from "./NewsArticle.module.scss";
+import { IoIosLink } from "react-icons/io";
+
+// Components
 import NewsGallery from "./NewsGallery";
 
 export default function NewsArticle({ postInfo, date, id }) {
@@ -16,7 +18,11 @@ export default function NewsArticle({ postInfo, date, id }) {
             <h2>{title}</h2>
             <p className={styles.date}>{date}</p>
             <p>{information}</p>
-            {link && <ButtonNavigate text={btntext} navigate={link} link />}
+            {link && (
+              <a href={link}>
+                <IoIosLink /> {btntext}
+              </a>
+            )}
           </section>
           {pictures?.picture1 && <NewsGallery pictures={pictures} />}
           <button className={styles.seeMore} onClick={() => setIsOpen(false)}>

@@ -1,7 +1,34 @@
 @import "@/theme/theme";
 
+.main {
+  padding: 5rem 2rem;
+  @extend %main-wrapper;
+  background: $white;
+
+  h2 {
+    margin: 2rem 0 0.5rem;
+    text-align: center;
+  }
+}
+
+.main_horses {
+  padding: 5rem 2rem;
+  @extend %main-wrapper;
+  background: $white;
+  position: relative;
+
+  h2 {
+    margin: 2rem 0 0.5rem;
+    text-align: center;
+  }
+}
+
 .personal {
   padding: 2rem 1rem;
+
+  @include mobile-max {
+    padding: 0;
+  }
 }
 
 .headline {
@@ -24,16 +51,31 @@
 }
 
 .taxiskjuts {
-  margin-top: 4rem;
+  margin-top: 2rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
   column-gap: 2rem;
+  @extend %main-wrapper;
+  background: $white;
+  padding: 4rem 3rem;
 
   .headline {
     font-size: 26px;
     grid-column: span 2;
-    margin-bottom: 2rem;
+    margin: 2rem;
+
+    @include mobile-max {
+      margin-top: 4rem;
+    }
+  }
+
+  div {
+    text-align: left;
+
+    @include mobile-max {
+      text-align: center;
+    }
   }
 
   img {
@@ -81,8 +123,9 @@
 
     @include tablet-normal {
       grid-template-columns: unset;
-      margin-top: 0;
       gap: 0.5rem;
+      margin: 0 1rem 1rem 1rem;
+      gap: 1rem;
     }
   }
 

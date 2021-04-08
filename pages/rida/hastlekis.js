@@ -17,22 +17,24 @@ export default function Hastlekis({ courses, heroes, lektionerkurseritems }) {
 
   return (
     <LessonCoursesLayout heroes={heroes} page="lessoncourses">
-      <TextInformationSection data={information.welcome} name="Hästlekis" />
-      <ArticleSection data={information.information} imgright />
-      <hr className={styles.line} />
-      {Array.isArray(courses) && courses.length === 0
-        ? <h3 className={styles.courseHeadline}>Tyvärr så är inga kurser tillgängliga i denna kategori just nu 😢</h3>
-        : <h3 className={styles.courseHeadline}>Kommande hästlekis pass</h3>}
-      <div className={styles.card}>
-        {Array.isArray(courses) && courses.map(item => {
-          const { category } = item.course;
-          if (category === "Hästlekis") {
-            return (
-              <CourseCard key={item.id} id={item.id} slug={item.slug} courseInfo={item.course} />
-            )
-          }
-        })}
-      </div>
+      <main className={styles.main}>
+        <TextInformationSection data={information.welcome} name="Hästlekis" />
+        <ArticleSection data={information.information} imgright />
+        <hr className={styles.line} />
+        {Array.isArray(courses) && courses.length === 0
+          ? <h3 className={styles.courseHeadline}>Tyvärr så är inga kurser tillgängliga i denna kategori just nu 😢</h3>
+          : <h3 className={styles.courseHeadline}>Kommande hästlekis pass</h3>}
+        <div className={styles.card}>
+          {Array.isArray(courses) && courses.map(item => {
+            const { category } = item.course;
+            if (category === "Hästlekis") {
+              return (
+                <CourseCard key={item.id} id={item.id} slug={item.slug} courseInfo={item.course} />
+              )
+            }
+          })}
+        </div>
+      </main>
     </LessonCoursesLayout>
   )
 }

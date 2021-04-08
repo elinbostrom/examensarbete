@@ -20,6 +20,7 @@
     "react-dom": "17.0.1",
     "react-hook-form": "^6.15.2",
     "react-icons": "^4.2.0",
+    "react-image-gallery": "^1.0.9",
     "sass": "^1.32.6",
     "scss": "^0.2.4",
     "typeface-montserrat": "^1.1.13",

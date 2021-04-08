@@ -1,37 +1,42 @@
-import LessonsCoursesLayout from '@/components/Layouts/LessonsCoursesLayout'
-import { START_RIDING } from '../../../queries/start-riding'
-import client from '../../../apollo/client';
-import { MenuItems } from '@/components/Submenu/MenuItems';
-import Wrapper from '@/components/Wrapper';
-import ButtonNavigate from '@/components/Buttons/ButtonNavigate';
+import styles from '@/styles/Kurser.module.scss'
+import { useRouter } from "next/router";
 
-export default function index({ heroes }) {
+// components
+import LessonsCoursesLayout from '@/components/Layouts/LessonsCoursesLayout'
+import { MenuItems } from '@/components/Submenu/MenuItems';
+
+// get data
+import { START_RIDING } from '@/queries/start-riding'
+import client from '@/apollo/client';
+
+export default function CoursesPage({ heroes }) {
+  const router = useRouter();
 
   return (
     <LessonsCoursesLayout heroes={heroes} page="lessoncourses" activePage="Alla kurser">
-      <Wrapper>
-        <h2 style={{ marginBottom: '1rem', textAlign: 'center' }}>Våra kurser</h2>
-        <Wrapper courses>
+      <main className={styles.main}>
+        <h2>Våra kurser</h2>
+        <section className={styles.course_container}>
           <h3 style={{ marginTop: '1rem', textAlign: 'center' }}>Häst</h3>
           {MenuItems.map(item => {
             if (item.category === "Häst") {
               return (
-                <ButtonNavigate key={item.id} text={item.title} navigate={item.path} />
+                <button key={item.id} onClick={() => router.push(item.path)}>{item.title}</button>
               )
             }
           })}
-        </Wrapper>
-        <Wrapper courses>
+        </section>
+        <section className={styles.course_container}>
           <h3 style={{ marginTop: '1rem', textAlign: 'center' }}>Ponny</h3>
           {MenuItems.map(item => {
             if (item.category === "Ponny") {
               return (
-                <ButtonNavigate key={item.id} text={item.title} navigate={item.path} />
+                <button key={item.id} onClick={() => router.push(item.path)}>{item.title}</button>
               )
             }
           })}
-        </Wrapper>
-      </Wrapper>
+        </section>
+      </main>
     </LessonsCoursesLayout>
   )
 }

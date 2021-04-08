@@ -1,14 +1,14 @@
-import Layout from '@/components/Layouts'
-import Wrapper from '@/components/Wrapper'
-import { LessonsCoursesContext } from '@/contexts/LessonCoursesProvider'
 import React, { useContext, useEffect } from 'react'
 import styles from '@/styles/AboutUs.module.scss'
-import Gallery from '@/components/Gallery'
+import { LessonsCoursesContext } from '@/contexts/LessonCoursesProvider'
+
+// Components
+import Layout from '@/components/Layouts'
+import ContactForm from '@/components/ContactForm'
 
 // get data
 import client from '@/apollo/client'
 import { CONTACT } from '@/queries/contact';
-import ContactForm from '@/components/ContactForm'
 
 export default function ContactPage({ contacts, heroes }) {
   const heroInfo = heroes[0].heroInfo;

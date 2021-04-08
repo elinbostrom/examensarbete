@@ -44,7 +44,7 @@ export default function Stallnytt() {
               )
             }
           })}
-          <button className={styles.loadMoreBtn} onClick={handleClick}>Se fler inlägg</button>
+          {Array.isArray(stablenews) && stablenews.length > postShowing && <button className={styles.loadMoreBtn} onClick={handleClick}>Se fler inlägg</button>}
         </ul>
       </section>
     </Layout>

@@ -35,12 +35,10 @@
   }
 
   .openBtn {
-    background: $primary;
-    @extend %button-clear;
-    border-radius: $radius-medium;
+    @extend %button-primary;
     padding: 0.5rem 1rem;
-    color: $white;
     min-width: 80px;
+    font-size: 12px;
   }
 
   @include mobile-max {
@@ -125,14 +123,17 @@
   }
 
   .openBtn {
-    background: $primary;
-    @extend %button-clear;
-    border-radius: $radius-medium;
+    @extend %button-primary;
     padding: 0.5rem 1rem;
-    color: $white;
     min-width: 80px;
     position: absolute;
-    top: 1rem;
-    right: 1.5rem;
+    top: 2rem;
+    right: 2rem;
+    font-size: 14px;
+
+    @include mobile-max {
+      position: unset;
+      grid-column: span 2;
+    }
   }
 }

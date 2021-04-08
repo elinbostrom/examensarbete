@@ -25,41 +25,43 @@ export default function InformationPrices({ heroes, pricepages, informations }) 
 
   return (
     <LessonCoursesLayout heroes={heroes} page="lessoncourses">
-      <Wrapper btn>
-        <Button btnText="Priser" setActiveInfo={setActiveInfo} activeInfo={activeInfo} />
-        <Button btnText="Fakturainfo" setActiveInfo={setActiveInfo} activeInfo={activeInfo} />
-        <Button btnText="Igenridning & Avbokning" setActiveInfo={setActiveInfo} activeInfo={activeInfo} />
-        <Button btnText="Uppsägning" setActiveInfo={setActiveInfo} activeInfo={activeInfo} />
-      </Wrapper>
-      {activeInfo === "Priser" &&
-        <Wrapper>
-          <h2>{activeInfo}</h2>
-          <PriceList data={pricepages} category="Senior" />
-          <PriceList data={pricepages} category="Junior" />
-          <PriceList data={pricepages} category="Hästlekis" />
-          {Array.isArray(informations) && informations.map(item => {
-            const category = item.informationtype.informationstype;
-            if (category === "Prisinformation") {
-              return (
-                <div key={item.id} dangerouslySetInnerHTML={createMarkup(item.content)} />
-              )
+      <main className={styles.main}>
+        <div className={styles.btn_container}>
+          <Button btnText="Priser" setActiveInfo={setActiveInfo} activeInfo={activeInfo} />
+          <Button btnText="Fakturainfo" setActiveInfo={setActiveInfo} activeInfo={activeInfo} />
+          <Button btnText="Igenridning & Avbokning" setActiveInfo={setActiveInfo} activeInfo={activeInfo} />
+          <Button btnText="Uppsägning" setActiveInfo={setActiveInfo} activeInfo={activeInfo} />
+        </div>
+        {activeInfo === "Priser" &&
+          <section className={styles.info_container}>
+            <h2>{activeInfo}</h2>
+            <PriceList data={pricepages} category="Senior" />
+            <PriceList data={pricepages} category="Junior" />
+            <PriceList data={pricepages} category="Hästlekis" />
+            {Array.isArray(informations) && informations.map(item => {
+              const category = item.informationtype.informationstype;
+              if (category === "Prisinformation") {
+                return (
+                  <div key={item.id} dangerouslySetInnerHTML={createMarkup(item.content)} />
+                )
+              }
+            })
             }
-          })
-          }
-        </Wrapper>
-      }
-      {Array.isArray(informations) && informations.map(item => {
-        const category = item.informationtype.informationstype;
-        if (category === activeInfo) {
-          return (
-            <Wrapper key={item.id}>
-              <h2>{activeInfo}</h2>
-              <div dangerouslySetInnerHTML={createMarkup(item.content)} />
-            </Wrapper>
-          )
+          </section>
         }
-      })
-      }
+        {Array.isArray(informations) && informations.map(item => {
+          const category = item.informationtype.informationstype;
+          if (category === activeInfo) {
+            return (
+              <section className={styles.info_container} key={item.id}>
+                <h2>{activeInfo}</h2>
+                <div dangerouslySetInnerHTML={createMarkup(item.content)} />
+              </section>
+            )
+          }
+        })
+        }
+      </main>
 
     </LessonCoursesLayout>
   )

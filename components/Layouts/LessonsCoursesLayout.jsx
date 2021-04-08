@@ -13,9 +13,7 @@ export default function LessonsCoursesLayout({ heroes, children, page, activePag
   return (
     <Layout data={heroInfo} page={page}>
       <Submenu page={activePage} />
-      <main className={styles.main}>
-        <div className={styles.wrapper}>{children}</div>
-      </main>
+      <main className={styles.main}>{children}</main>
     </Layout>
   );
 }

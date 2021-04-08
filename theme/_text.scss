@@ -38,6 +38,7 @@
   text-decoration: none;
   color: $night-blue;
   transition: all ease 1s;
+  @include montserrat(400);
 
   @media (min-width: $tablet-normal) {
     &:hover {

@@ -19,7 +19,7 @@ export default function Employees({ employees, heroes }) {
 
   return (
     <AboutUsLayout heroes={heroes} page="aboutus">
-      <Wrapper>
+      <main className={styles.main}>
         <div className={styles.text}>
           <h2 className={styles.headline}>Vår personal</h2>
           <p className={styles.paragraph}>Lär känna oss som jobbar på ridskolan lite bättre :)</p>
@@ -30,7 +30,7 @@ export default function Employees({ employees, heroes }) {
             <EmployeeCard key={employee.id} employee={employee.info} />
           ))}
         </section>
-      </Wrapper>
+      </main>
     </AboutUsLayout>
   )
 }

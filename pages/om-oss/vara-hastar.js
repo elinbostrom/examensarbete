@@ -1,10 +1,9 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { LessonsCoursesContext } from '@/contexts/LessonCoursesProvider'
 import styles from '@/styles/AboutUs.module.scss'
 
 // Components
 import AboutUsLayout from '@/components/Layouts/AboutUsLayout'
-import Wrapper from '@/components/Wrapper'
 import Button from '@/components/Buttons/Button'
 import HorseList from '@/components/HorseList'
 
@@ -19,20 +18,20 @@ export default function Horses({ horses, heroes }) {
 
   return (
     <AboutUsLayout heroes={heroes} page="aboutus">
-      <Wrapper>
+      <main className={styles.main_horses}>
         {activeInfo !== "Minneslunden" ? <>
-          <h2 className={styles.headline}>Våra Hästar</h2>
+          <h2>Våra Hästar</h2>
           <p className={styles.paragraph}>Lär känna våra fina fyrbenta vänner bättre :)</p>
         </> :
           <>
-            <h2 className={styles.headline}>Våra änglar</h2>
+            <h2>Våra änglar</h2>
             <p className={styles.paragraph}>Här kan du läsa mer om våra fina kollegor som tyvärr tvingats lämna oss 😔</p>
           </>}
         <Button btnText="Häst" setActiveInfo={setActiveInfo} activeInfo={activeInfo} />
         <Button btnText="Ponny" setActiveInfo={setActiveInfo} activeInfo={activeInfo} />
         <Button btnText="Minneslunden" setActiveInfo={setActiveInfo} activeInfo={activeInfo} />
         <HorseList horses={horses} activeInfo={activeInfo} />
-      </Wrapper>
+      </main>
     </AboutUsLayout>
   )
 }

@@ -1,20 +1,18 @@
-import AboutUsLayout from '@/components/Layouts/AboutUsLayout'
-import Wrapper from '@/components/Wrapper'
 import { LessonsCoursesContext } from '@/contexts/LessonCoursesProvider'
-import React, { useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import styles from '@/styles/AboutUs.module.scss'
 
-// get data
+// Components
+import AboutUsLayout from '@/components/Layouts/AboutUsLayout'
+
+// Get data
 import client from '@/apollo/client'
 import { TAXISKJUTS } from '@/queries/taxiskjuts';
 
 export default function Taxiskjuts({ informations, heroes }) {
   const { setActivePage } = useContext(LessonsCoursesContext);
   const { title, content } = informations[0];
-
-  useEffect(() => {
-    setActivePage("Taxiskjuts")
-  }, [])
+  setActivePage("Taxiskjuts")
 
   const createMarkup = (content) => {
     return { __html: content }

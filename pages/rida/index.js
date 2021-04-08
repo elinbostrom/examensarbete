@@ -1,3 +1,5 @@
+import styles from '@/styles/LektionerKurser.module.scss'
+
 // Components
 import LessonCoursesLayout from '@/components/Layouts/LessonsCoursesLayout'
 import TextInformationSection from '@/components/TextInformationSection';
@@ -12,10 +14,12 @@ export default function LektionerKurser({ heroes, lektionerkurseritems }) {
 
   return (
     <LessonCoursesLayout heroes={heroes} page="lessoncourses">
-      <TextInformationSection data={information.welcome} name="Börja rida" />
-      <ArticleSection data={information.information} imgright />
-      <ArticleSection data={information.minridskola} button />
-      <ArticleSection data={information.ridscheman} imgright />
+      <main className={styles.main}>
+        <TextInformationSection data={information.welcome} name="Börja rida" />
+        <ArticleSection data={information.information} imgright />
+        <ArticleSection data={information.minridskola} button />
+        <ArticleSection data={information.ridscheman} imgright />
+      </main>
     </LessonCoursesLayout>
   )
 }

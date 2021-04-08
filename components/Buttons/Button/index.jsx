@@ -5,7 +5,7 @@ export default function Button({ btnText, setActiveInfo, activeInfo }) {
   return (
     <button
       className={cn({
-        [styles.button]: activeInfo != btnText,
+        [styles.button]: activeInfo !== btnText && btnText !== "Minneslunden",
         [styles.button_active]: activeInfo === btnText,
         [styles.button_memorylane]: btnText === "Minneslunden",
       })}

@@ -3,7 +3,7 @@
 .wrapper {
   @extend %main-wrapper;
 
-  @include mobile-max {
+  @include tablet-normal {
     margin: 0 1rem 1rem 1rem;
   }
 }
@@ -13,18 +13,12 @@
 }
 
 .loadMoreBtn {
-  background: $primary;
+  @extend %button-primary;
   width: 90%;
   padding: 0.7rem;
-  border: 1px solid $white;
-  border-radius: $radius-medium;
-  color: $white;
-  font-size: 16px;
-  @include poppins(700);
-  cursor: pointer;
-  box-shadow: 0 4px 4px rbga(0, 0, 0, 0.5);
+  border: 1px solid rgba($white, 0.5);
 
-  @include mobile-max {
+  @include tablet-normal {
     width: 100%;
   }
 }

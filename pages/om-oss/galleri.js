@@ -18,15 +18,15 @@ export default function GalleryPage({ gallerys, heroes }) {
 
   return (
     <AboutUsLayout heroes={heroes} page="aboutus">
-      <Wrapper>
-        <h2 className={styles.headline}>Galleri</h2>
+      <main className={styles.main}>
+        <h2>Galleri</h2>
         <p className={styles.paragraph}>Här kan du se tillbaka på gamla händelser som skett på ridskolan</p>
         <ul className={styles.galleryList}>
           {Array.isArray(gallerys) && gallerys.map(gallery => {
             return <Gallery key={gallery.id} id={gallery.id} data={gallery.galleryInfo} />
           })}
         </ul>
-      </Wrapper>
+      </main>
     </AboutUsLayout>
   )
 }

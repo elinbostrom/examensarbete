@@ -1,9 +1,31 @@
 @import "@/theme/theme";
 
-.wrapper {
-  margin-top: 4rem;
+.main {
+  @extend %main-wrapper;
+  background: $white;
+  @extend %soft-shadow;
+  padding: 2rem 3rem;
 
-  div {
-    margin-top: 1rem;
+  @include mobile-max {
+    padding: 1.5rem;
+  }
+
+  .btn_container {
+    margin-top: 5rem;
+
+    @include mobile-max {
+      margin-top: 6rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+
+      button {
+        min-height: 60px;
+      }
+    }
+  }
+
+  .info_container {
+    margin-top: 2rem;
   }
 }
