@@ -37,6 +37,19 @@
   div {
     margin-top: 1rem;
   }
+
+  @include tablet-normal {
+    margin: 2rem;
+  }
+
+  @include mobile-max {
+    margin: 1.5rem 1rem;
+    padding: 2rem;
+
+    div {
+      font-size: 16px;
+    }
+  }
 }
 
 .post_stablenews {
@@ -59,6 +72,30 @@
       display: flex;
       align-items: center;
       gap: 1rem;
+    }
+  }
+
+  @include tablet-normal {
+    margin: 1.5rem 1rem;
+    flex-direction: column;
+
+    section {
+      a {
+        position: unset;
+        bottom: unset;
+        margin-top: 1rem;
+      }
+    }
+  }
+
+  @include mobile-max {
+    padding: 2rem;
+
+    section {
+      p,
+      a {
+        font-size: 16px;
+      }
     }
   }
 }

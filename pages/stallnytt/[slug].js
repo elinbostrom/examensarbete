@@ -35,7 +35,7 @@ export default function StablenewsPost() {
   console.log({ data });
 
   const heroInfo = {
-    title: post?.title ?? title,
+    title: post?.title ?? stablenewsInfo.title,
     slogan: <button className={styles.navigation_btn} onClick={() => window.history.back()}>Gå tillbaka</button>,
   };
 
@@ -51,12 +51,12 @@ export default function StablenewsPost() {
         ) : (
           <article className={styles.post_stablenews}>
             <section>
-              <h2>{title}</h2>
+              <h2>{stablenewsInfo.title}</h2>
               <p>{date}</p>
-              <p>{information}</p>
-              {link && <a href={link}><IoIosLink />{btntext}</a>}
+              <p>{stablenewsInfo.information}</p>
+              {stablenewsInfo.link && <a href={stablenewsInfo.link}><IoIosLink />{stablenewsInfo.btntext}</a>}
             </section>
-            {pictures?.picture1 && <NewsGallery pictures={pictures} />}
+            {stablenewsInfo.pictures?.picture1 && <NewsGallery pictures={stablenewsInfo.pictures} />}
           </article>
         )}
       </section>
