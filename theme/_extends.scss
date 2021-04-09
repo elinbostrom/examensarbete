@@ -19,6 +19,16 @@
   margin: auto;
 }
 
+%post-wrapper {
+  background: $white;
+  margin-bottom: 2rem;
+  padding: 2rem 3rem;
+  border-radius: $radius-medium;
+  border: 4px solid rgba($primary, 0.9);
+  color: $night-blue;
+  animation: fadeIn 500ms;
+}
+
 // Buttons
 %button-clear {
   border: none;

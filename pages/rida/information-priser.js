@@ -4,6 +4,9 @@ import { useEffect, useState } from 'react';
 import LessonCoursesLayout from '@/components/Layouts/LessonsCoursesLayout'
 import PriceList from '@/components/PriceList';
 
+// Utils
+import { createMarkup } from '@/utils/createMarkup';
+
 // Styling
 import styles from '@/styles/InformationPrices.module.scss'
 
@@ -18,10 +21,6 @@ export default function InformationPrices({ heroes, pricepages, informations }) 
   const [activeInfo, setActiveInfo] = useState("Priser");
 
   useEffect(() => { }, [activeInfo])
-
-  const createMarkup = (content) => {
-    return { __html: content }
-  };
 
   return (
     <LessonCoursesLayout heroes={heroes} page="lessoncourses">

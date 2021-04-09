@@ -19,6 +19,9 @@
       ],
       "@/contexts/*": [
         "contexts/*"
+      ],
+      "@/utils/*": [
+        "utils/*"
       ]
     }
   }

@@ -14,6 +14,7 @@ export const STALLNYTT = gql`
       nodes {
         id
         date
+        slug
         posts {
           title
           information

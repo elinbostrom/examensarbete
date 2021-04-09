@@ -1,43 +1,18 @@
-import React, { useState } from "react";
 import styles from "./NewsArticle.module.scss";
-import { IoIosLink } from "react-icons/io";
+import { useRouter } from "next/router";
 
-// Components
-import NewsGallery from "./NewsGallery";
-
-export default function NewsArticle({ postInfo, date, id }) {
-  const { title, information, link, btntext, pictures } = postInfo;
+export default function NewsArticle({ postInfo, date, id, slug }) {
+  const { title } = postInfo;
   date = date.replace("T", " | ");
-  const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
 
   return (
-    <>
-      {isOpen ? (
-        <li id={id} className={pictures?.picture1 ? styles.post : styles.postNoPic}>
-          <section className={styles.text}>
-            <h2>{title}</h2>
-            <p className={styles.date}>{date}</p>
-            <p>{information}</p>
-            {link && (
-              <a href={link}>
-                <IoIosLink /> {btntext}
-              </a>
-            )}
-          </section>
-          {pictures?.picture1 && <NewsGallery pictures={pictures} />}
-          <button className={styles.seeMore} onClick={() => setIsOpen(false)}>
-            Stäng inlägg
-          </button>
-        </li>
-      ) : (
-        <li id={id} className={styles.closedPost}>
-          <section className={styles.text}>
-            <h2>{title}</h2>
-            <p className={styles.date}>{date}</p>
-          </section>
-          <button onClick={() => setIsOpen(true)}>Läs mer</button>
-        </li>
-      )}
-    </>
+    <li id={id} className={styles.closedPost}>
+      <section className={styles.text}>
+        <h2>{title}</h2>
+        <p className={styles.date}>{date}</p>
+      </section>
+      <button onClick={() => router.push(`/stallnytt/${slug}`)}>Läs mer</button>
+    </li>
   );
 }

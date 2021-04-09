@@ -4,13 +4,13 @@ import { useState } from 'react';
 // Components
 import NewsArticle from '@/components/NewsArticle';
 import Layout from '@/components/Layouts';
-import LoadingStableNews from './loading';
+import LoadingStableNews from '../loading';
 
 // Get data
-import { STALLNYTT } from '../queries/stallnytt';
+import { STALLNYTT } from '../../queries/stallnytt';
 import { useQuery } from '@apollo/client'
 
-export default function Stallnytt() {
+export default function Stablenews() {
   const [postShowing, setPostShowing] = useState(4);
 
   const { data, loading, error } = useQuery(STALLNYTT);
@@ -40,6 +40,7 @@ export default function Stallnytt() {
                   key={news.id}
                   postInfo={posts}
                   date={news.date}
+                  slug={news.slug}
                   id={news.id} />
               )
             }
