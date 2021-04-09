@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 // Components
 import LessonCoursesLayout from '@/components/Layouts/LessonsCoursesLayout'
 import PriceList from '@/components/PriceList';
+import Button from '@/components/Buttons/Button';
 
 // Utils
 import { createMarkup } from '@/utils/createMarkup';
@@ -13,9 +14,6 @@ import styles from '@/styles/InformationPrices.module.scss'
 // get data
 import client from '@/apollo/client'
 import { INFORMATION_PRISER } from '@/queries/information-priser';
-import Button from '@/components/Buttons/Button';
-import Wrapper from '@/components/Wrapper';
-
 
 export default function InformationPrices({ heroes, pricepages, informations }) {
   const [activeInfo, setActiveInfo] = useState("Priser");

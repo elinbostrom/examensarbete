@@ -1,5 +1,4 @@
 import AboutUsLayout from '@/components/Layouts/AboutUsLayout'
-import Wrapper from '@/components/Wrapper'
 import { LessonsCoursesContext } from '@/contexts/LessonCoursesProvider'
 import React, { useContext, useEffect } from 'react'
 import styles from '@/styles/AboutUs.module.scss'
