@@ -15,10 +15,11 @@ import styles from '@/styles/InformationPrices.module.scss'
 import client from '@/apollo/client'
 import { INFORMATION_PRISER } from '@/queries/information-priser';
 
-export default function InformationPrices({ heroes, pricepages, informations }) {
+export default function InformationPrices({ heroes, pricepages, pageInfo }) {
   const [activeInfo, setActiveInfo] = useState("Priser");
 
   useEffect(() => { }, [activeInfo])
+  console.log({ pageInfo });
 
   return (
     <LessonCoursesLayout heroes={heroes} page="lessoncourses">
@@ -35,24 +36,25 @@ export default function InformationPrices({ heroes, pricepages, informations }) 
             <PriceList data={pricepages} category="Senior" />
             <PriceList data={pricepages} category="Junior" />
             <PriceList data={pricepages} category="Hästlekis" />
-            {Array.isArray(informations) && informations.map(item => {
-              const category = item.informationtype.informationstype;
+            {Array.isArray(pageInfo) && pageInfo.map(item => {
+              const category = item.information.informationType;
+              console.log({ item });
               if (category === "Prisinformation") {
                 return (
-                  <div key={item.id} dangerouslySetInnerHTML={createMarkup(item.content)} />
+                  <div key={item.information.id} dangerouslySetInnerHTML={createMarkup(item.information.infoDescriptionSection)} />
                 )
               }
             })
             }
           </section>
         }
-        {Array.isArray(informations) && informations.map(item => {
-          const category = item.informationtype.informationstype;
+        {Array.isArray(pageInfo) && pageInfo.map(item => {
+          const category = item.information.informationType;
           if (category === activeInfo) {
             return (
-              <section className={styles.info_container} key={item.id}>
+              <section className={styles.info_container} key={item.information.id}>
                 <h2>{activeInfo}</h2>
-                <div dangerouslySetInnerHTML={createMarkup(item.content)} />
+                <div dangerouslySetInnerHTML={createMarkup(item.information.infoDescriptionSection)} />
               </section>
             )
           }
@@ -75,7 +77,7 @@ export async function getStaticProps(context) {
     props: {
       heroes: data?.heroes?.nodes,
       pricepages: data?.pricepages?.nodes,
-      informations: data?.informations?.nodes
+      pageInfo: data?.newPages?.nodes
     },
   }
 }

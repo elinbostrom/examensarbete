@@ -14,12 +14,12 @@ query INFORMATION_PRISER {
       }
     }
   }
-  informations {
+  newPages {
     nodes {
-      content
       id
-      informationtype {
-        informationstype
+      information {
+        informationType
+        infoDescriptionSection
       }
     }
   }

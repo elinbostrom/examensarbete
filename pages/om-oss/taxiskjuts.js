@@ -9,9 +9,10 @@ import AboutUsLayout from '@/components/Layouts/AboutUsLayout'
 import client from '@/apollo/client'
 import { TAXISKJUTS } from '@/queries/taxiskjuts';
 
-export default function Taxiskjuts({ informations, heroes }) {
+export default function Taxiskjuts({ pageInfo, heroes }) {
   const { setActivePage } = useContext(LessonsCoursesContext);
-  const { title, content } = informations[0];
+  const title = pageInfo[0].title;
+  const content = pageInfo[0].information.infoDescriptionSection;
   setActivePage("Taxiskjuts")
 
   const createMarkup = (content) => {
@@ -38,7 +39,7 @@ export async function getStaticProps(context) {
 
   return {
     props: {
-      informations: data?.informations?.nodes,
+      pageInfo: data?.newPages?.nodes,
       heroes: data?.heroes?.nodes
     },
   }

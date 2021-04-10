@@ -10,8 +10,9 @@ query START_RIDING {
       }
     }
   }
-  lektionerkurseritems(where: {title: "Börja rida"}, first: 1) {
+  newPages(first: 1, where: {title: "Börja rida"}) {
     nodes {
+      id
       information {
         welcome {
           title
@@ -28,8 +29,8 @@ query START_RIDING {
         minridskola {
           title
           description
-          btntext
           link
+          btntext
           picture {
             altText
             sourceUrl
@@ -38,9 +39,9 @@ query START_RIDING {
         ridscheman {
           title
           description
+          btntextponny
           btntexthorse
           linkhast
-          btntextponny
           linkponny
           picture {
             altText

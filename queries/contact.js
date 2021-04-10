@@ -10,22 +10,16 @@ query CONTACT {
       }
     }
   }
-  contacts(first: 1) {
+  newPages(first: 1, where: {title: "Kontakt & Öppettider"}) {
     nodes {
-      info {
-        companynumber
-        email
-        phone
-        address
-        city
-        postalcode
-      }
-      openingHours {
-        openinghours {
-          montors
-          friday
-          closedforlunch
-          weekends
+      id
+      information {
+        contact {
+          email
+          city
+          address
+          phone
+          postalcode
         }
         stableClosed {
           closed1 {
@@ -63,9 +57,15 @@ query CONTACT {
         }
         startFinish {
           firstDayHt
-          lastDayHt
           firstDayVt
+          lastDayHt
           lastDayVt
+        }
+        openinghours {
+          closedforlunch
+          friday
+          montors
+          weekends
         }
       }
     }

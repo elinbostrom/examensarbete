@@ -8,20 +8,19 @@ import client from '@/apollo/client'
 import { ABOUT_US } from '@/queries/about-us';
 import Article from '@/components/Article'
 
-export default function AboutUs({ aboutusposts, heroes }) {
+export default function AboutUs({ pageInfo, heroes }) {
   const { setActivePage } = useContext(LessonsCoursesContext);
-  const { description, article } = aboutusposts[0];
-  const { sectionOne, sectionTwo, sectionThree } = article;
+  const { description, title, history } = pageInfo[0].information.aboutUs;
   setActivePage("Om ridskolan")
+
+  console.log({ pageInfo });
 
   return (
     <AboutUsLayout heroes={heroes} page="aboutus">
       <main className={styles.main}>
-        <h2>Välkommen till oss</h2>
-        <p className={styles.paragraph}>{description.description}</p>
-        <Article data={sectionOne} imgRight />
-        <Article data={sectionTwo} imgRight />
-        <Article data={sectionThree} imgRight />
+        <h2>{title}</h2>
+        <p className={styles.paragraph}>{description}</p>
+        <p className={styles.paragraph}>{history}</p>
       </main>
     </AboutUsLayout>
   )
@@ -35,7 +34,7 @@ export async function getStaticProps(context) {
 
   return {
     props: {
-      aboutusposts: data?.aboutusposts?.nodes,
+      pageInfo: data?.newPages?.nodes,
       heroes: data?.heroes?.nodes
     },
   }

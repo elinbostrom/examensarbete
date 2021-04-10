@@ -8,15 +8,15 @@ import SectionStartRiding from '@/components/SectionStartRiding/index.jsx'
 import client from '../apollo/client'
 import { STARTPAGE } from '../queries/startpage';
 
-export default function Home({ startpageitems, heroes, stablenews }) {
-  const { cta, start_riding } = startpageitems[0];
+export default function Home({ pageInfo, heroes, stablenews }) {
+  const { cta, startRiding } = pageInfo[0].information.startpage;
   const { heroInfo } = heroes[0];
 
   return (
     <Layout data={heroInfo} page="startpage">
       <CTAsection data={cta} />
       <NewsStartSection data={stablenews} />
-      <SectionStartRiding data={start_riding} />
+      <SectionStartRiding data={startRiding} />
     </Layout>
   )
 }
@@ -27,9 +27,11 @@ export async function getStaticProps(context) {
     query: STARTPAGE
   });
 
+  console.log(data);
+
   return {
     props: {
-      startpageitems: data?.startpageitems?.nodes,
+      pageInfo: data?.newPages?.nodes,
       heroes: data?.heroes?.nodes,
       stablenews: data?.stablenews?.nodes
     },

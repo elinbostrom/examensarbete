@@ -10,35 +10,14 @@ query ABOUT_US {
       }
     }
   }
-  aboutusposts(first: 1) {
+  newPages(first: 1, where: {title: "Om ridskolan"}) {
     nodes {
-      description {
-        description
-      }
-      article {
-        sectionOne {
+      id
+      information {
+        aboutUs {
           title
           description
-          picture {
-            altText
-            sourceUrl
-          }
-        }
-        sectionTwo {
-          title
-          description
-          picture {
-            altText
-            sourceUrl
-          }
-        }
-        sectionThree {
-          title
-          description
-          picture {
-            altText
-            sourceUrl
-          }
+          history
         }
       }
     }

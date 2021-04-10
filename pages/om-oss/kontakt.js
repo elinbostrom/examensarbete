@@ -10,11 +10,10 @@ import ContactForm from '@/components/ContactForm'
 import client from '@/apollo/client'
 import { CONTACT } from '@/queries/contact';
 
-export default function ContactPage({ contacts, heroes }) {
+export default function ContactPage({ pageInfo, heroes }) {
   const heroInfo = heroes[0].heroInfo;
   const { setActivePage } = useContext(LessonsCoursesContext);
-  const { info, openingHours } = contacts[0];
-  const { openinghours, stableClosed, startFinish } = openingHours;
+  const { contact, openinghours, startFinish, stableClosed } = pageInfo[0].information;
 
   useEffect(() => {
     setActivePage("Kontakt")
@@ -66,8 +65,8 @@ export default function ContactPage({ contacts, heroes }) {
           </section>
           <section>
             <h3 style={{ textAlign: 'center' }}>Kontaktformulär</h3>
-            <p style={{ textAlign: 'center', paddingTop: '0.5rem' }}>Ring oss på <span>{info.phone}</span>eller fyll i formuläret så återkommer vi!</p>
-            <ContactForm email={info.email} />
+            <p style={{ textAlign: 'center', paddingTop: '0.5rem' }}>Ring oss på <span>{contact.phone}</span>eller fyll i formuläret så återkommer vi!</p>
+            <ContactForm email={contact.email} />
           </section>
         </div>
       </div>
@@ -83,7 +82,7 @@ export async function getStaticProps(context) {
 
   return {
     props: {
-      contacts: data?.contacts?.nodes,
+      pageInfo: data?.newPages?.nodes,
       heroes: data?.heroes?.nodes
     },
   }

@@ -34,8 +34,9 @@ query HASTLEKIS {
       }
     }
   }
-  lektionerkurseritems(where: {title: "Hästlekis"}, first: 1) {
+  newPages(first: 1, where: {title: "Hästlekis"}) {
     nodes {
+      id
       information {
         welcome {
           title

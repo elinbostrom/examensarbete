@@ -11,17 +11,21 @@ query STARTPAGE {
       }
     }
   }
-  startpageitems(first: 1) {
+  newPages(first: 1) {
     nodes {
-      cta {
-        titlecta
-        descriptioncta
-        link
-        btnText
-      }
-      start_riding {
-        titlestartriding
-        descriptionstartriding
+      information {
+        startpage {
+          cta {
+            title
+            description
+            link
+            btnText
+          }
+          startRiding {
+            title
+            description
+          }
+        }
       }
     }
   }

@@ -10,10 +10,13 @@ query TAXISKJUTS {
       }
     }
   }
-  informations(where: {title: "Taxiskjuts"}, first: 1) {
+  newPages(first: 1, where: {title: "Taxiskjuts"}) {
     nodes {
-      content
+      id
       title
+      information {
+        infoDescriptionSection
+      }
     }
   }
 }

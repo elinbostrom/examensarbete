@@ -12,8 +12,8 @@ import client from '@/apollo/client'
 import { HASTLEKIS } from '@/queries/hastlekis';
 
 
-export default function Hastlekis({ courses, heroes, lektionerkurseritems }) {
-  const { information } = lektionerkurseritems[0];
+export default function Hastlekis({ courses, heroes, pageInfo }) {
+  const { information } = pageInfo[0];
 
   return (
     <LessonCoursesLayout heroes={heroes} page="lessoncourses">
@@ -49,7 +49,7 @@ export async function getStaticProps(context) {
   return {
     props: {
       courses: data?.courses?.nodes,
-      lektionerkurseritems: data?.lektionerkurseritems?.nodes,
+      pageInfo: data?.newPages?.nodes,
       heroes: data?.heroes?.nodes
     },
   }
