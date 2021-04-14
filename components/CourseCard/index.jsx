@@ -25,16 +25,13 @@ export default function CourseCard({ courseInfo }) {
       <ButtonBlockNavigate
         text="Anmäl dig till kursen via Min ridskola"
         navigate="https://ww2.minridskola.se/Init_LoggaIn.aspx"
+        disableBtn={courseInfo.spots.left === null}
       />
       {shortenDescription ? (
         <>
           <p className={styles.description}>
             {`${description.slice(0, 350)}...`}
-            <button
-              className={styles.btnReadMore}
-              onClick={() => setShortenDescription(false)}
-              disabled={courseInfo.spots.left === null}
-            >
+            <button className={styles.btnReadMore} onClick={() => setShortenDescription(false)}>
               Läs mer
             </button>
           </p>

@@ -9,3 +9,19 @@
 
   grid-column: 1;
 }
+
+.disabledBtn {
+  @extend %button-primary;
+  background: lightgray;
+  font-size: 14px;
+  padding: 0.7rem;
+  width: 100%;
+  border: none;
+
+  grid-column: 1;
+
+  &:hover {
+    background: lightgray;
+    cursor: not-allowed;
+  }
+}
