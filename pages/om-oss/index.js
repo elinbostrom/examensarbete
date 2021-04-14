@@ -1,26 +1,33 @@
-import AboutUsLayout from '@/components/Layouts/AboutUsLayout'
 import { LessonsCoursesContext } from '@/contexts/LessonCoursesProvider'
-import React, { useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import styles from '@/styles/AboutUs.module.scss'
 
-// get data
+// Utils
+import { createMarkup } from '@/utils/createMarkup'
+
+// Components
+import AboutUsLayout from '@/components/Layouts/AboutUsLayout'
+
+// Get data
 import client from '@/apollo/client'
 import { ABOUT_US } from '@/queries/about-us';
-import Article from '@/components/Article'
 
 export default function AboutUs({ pageInfo, heroes }) {
   const { setActivePage } = useContext(LessonsCoursesContext);
   const { description, title, history } = pageInfo[0].information.aboutUs;
   setActivePage("Om ridskolan")
 
-  console.log({ pageInfo });
-
   return (
     <AboutUsLayout heroes={heroes} page="aboutus">
-      <main className={styles.main}>
+      <main className={styles.main_about_start}>
         <h2>{title}</h2>
         <p className={styles.paragraph}>{description}</p>
-        <p className={styles.paragraph}>{history}</p>
+        <h3>Ridskolans historia</h3>
+        <div className={styles.paragraph} dangerouslySetInnerHTML={createMarkup(history)} />
+        <img src="/images/Anna1.jpeg" alt="Old Picture" />
+        <img src="/images/Anna2.jpeg" alt="Old Picture" />
+        <img src="/images/Bild1.jpeg" alt="Old Picture" />
+        <img src="/images/Bild2.jpeg" alt="Old Picture" />
       </main>
     </AboutUsLayout>
   )

@@ -11,7 +11,7 @@ export default function ButtonBlockNavigate({ text, navigate, disableBtn }) {
       onClick={() => router.push(navigate)}
       disabled={disableBtn}
     >
-      {disableBtn ? "Kursen full" : text}
+      {disableBtn ? "Kursen fullsatt" : text}
     </button>
   );
 }
