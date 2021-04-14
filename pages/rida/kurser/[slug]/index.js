@@ -11,11 +11,11 @@ import TextInformationSection from '@/components/TextInformationSection';
 import ArticleSection from '@/components/ArticleSection';
 
 
-export default function index({ courses, heroes, lektionerkurseritems }) {
+export default function index({ courses, heroes, pageInfo }) {
   const router = useRouter()
   const slug = router.query.slug;
   const [activeCourses, setActiveCourses] = useState([]);
-  const information = lektionerkurseritems?.[0].information ?? null;
+  const information = pageInfo?.[0].information ?? null;
 
   useEffect(() => {
     let arr = [];
@@ -38,16 +38,18 @@ export default function index({ courses, heroes, lektionerkurseritems }) {
 
   return (
     <LessonCoursesLayout heroes={heroes} page="lessoncourses">
-      {information && <TextInformationSection data={information.welcome} name="Alla kurser" />}
-      {information && <ArticleSection data={information.informationOrs} buttonOrs />}
-      <hr className={styles.line} />
-      {activeCourses.length === 0
-        ? <h3 className={styles.courseHeadline}>Tyvärr så är inga kurser tillgängliga i denna kategori just nu 😢</h3>
-        : <h3 className={styles.courseHeadline}>Kommande kurser</h3>}
-      <div className={styles.card}>
-        {Array.isArray(activeCourses) && activeCourses.map(item =>
-          <CourseCard key={item.id} id={item.id} slug={slug} courseInfo={item.course} />)}
-      </div>
+      <main className={styles.main}>
+        {information && <TextInformationSection data={information.welcome} name="Alla kurser" />}
+        {information && <ArticleSection data={information.informationOrs} buttonOrs />}
+        <hr className={styles.line} />
+        {activeCourses.length === 0
+          ? <h3 className={styles.courseHeadline}>Tyvärr så är inga kurser tillgängliga i denna kategori just nu 😢</h3>
+          : <h3 className={styles.courseHeadline}>Kommande kurser</h3>}
+        <div className={styles.card}>
+          {Array.isArray(activeCourses) && activeCourses.map(item =>
+            <CourseCard key={item.id} id={item.id} slug={slug} courseInfo={item.course} />)}
+        </div>
+      </main>
     </LessonCoursesLayout>
   )
 }
@@ -63,7 +65,7 @@ export async function getStaticProps(context) {
     props: {
       courses: data?.courses?.nodes,
       heroes: data?.heroes?.nodes,
-      lektionerkurseritems: data?.lektionerkurseritems?.nodes
+      pageInfo: data?.newPages?.nodes
     },
   }
 }

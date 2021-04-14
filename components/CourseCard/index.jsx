@@ -3,7 +3,7 @@ import ButtonBlockNavigate from "../Buttons/ButtonBlockNavigate";
 import CourseList from "../CourseList";
 import { useEffect, useState } from "react";
 
-export default function CourseCard({ id, courseInfo }) {
+export default function CourseCard({ courseInfo }) {
   const { title, instructor, description } = courseInfo;
   const [shortenDescription, setShortenDescription] = useState(false);
 
@@ -12,6 +12,8 @@ export default function CourseCard({ id, courseInfo }) {
       setShortenDescription(true);
     }
   }, []);
+
+  console.log({ courseInfo });
 
   return (
     <article className={styles.text}>
@@ -28,7 +30,11 @@ export default function CourseCard({ id, courseInfo }) {
         <>
           <p className={styles.description}>
             {`${description.slice(0, 350)}...`}
-            <button className={styles.btnReadMore} onClick={() => setShortenDescription(false)}>
+            <button
+              className={styles.btnReadMore}
+              onClick={() => setShortenDescription(false)}
+              disabled={courseInfo.spots.left === null}
+            >
               Läs mer
             </button>
           </p>

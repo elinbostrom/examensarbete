@@ -34,8 +34,9 @@ query COURSES {
       }
     }
   }
-  lektionerkurseritems(where: {title: "Alla kurser"}, first: 1) {
+  newPages(first: 1, where: {title: "Alla kurser"}) {
     nodes {
+      id
       information {
         welcome {
           title
@@ -62,40 +63,3 @@ query COURSES {
   }
 }
 `;
-
-export function COURSE(id) {
-  return gql`
-query COURSE {
-  course(id: "${id}") {
-    course {
-      title
-      time
-      spots
-      price
-      level
-      instructor
-      description
-      date
-      category
-      picture {
-        altText
-        sourceUrl
-      }
-    }
-  }
-  heroes(where: {title: "Lektioner och Kurser"}, first: 1) {
-    nodes {
-      heroInfo {
-        title
-        slogan
-      }
-    }
-  }
-  informations(where: {title: "Betalningsvillkor & Retur / reklamationsrutiner"}) {
-    nodes {
-      content(format: RENDERED)
-    }
-  }
-}
-`
-};
