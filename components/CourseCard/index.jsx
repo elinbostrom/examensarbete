@@ -1,19 +1,15 @@
 import styles from "./CourseCard.module.scss";
 import ButtonBlockNavigate from "../Buttons/ButtonBlockNavigate";
 import CourseList from "../CourseList";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function CourseCard({ courseInfo }) {
   const { title, instructor, description } = courseInfo;
-  const [shortenDescription, setShortenDescription] = useState(false);
-
-  useEffect(() => {
+  const [shortenDescription, setShortenDescription] = useState(() => {
     if (description.length > 350) {
-      setShortenDescription(true);
+      return true;
     }
-  }, []);
-
-  console.log({ courseInfo });
+  });
 
   return (
     <article className={styles.text}>
