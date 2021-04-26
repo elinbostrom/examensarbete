@@ -23,18 +23,15 @@ export default function CourseCard({ courseInfo }) {
         navigate="https://ww2.minridskola.se/Init_LoggaIn.aspx"
         disableBtn={courseInfo.spots.left === null}
       />
-      {shortenDescription ? (
-        <>
-          <p className={styles.description}>
-            {`${description.slice(0, 350)}...`}
-            <button className={styles.btnReadMore} onClick={() => setShortenDescription(false)}>
-              Läs mer
-            </button>
-          </p>
-        </>
-      ) : (
-        <p className={styles.description}>{description}</p>
-      )}
+      <p className={styles.description}>
+        {shortenDescription ? `${description.slice(0, 350)}...` : description}
+        <button
+          className={styles.btnReadMore}
+          onClick={() => setShortenDescription(!shortenDescription)}
+        >
+          {shortenDescription ? "Läs mer" : "Minimera text"}
+        </button>
+      </p>
     </article>
   );
 }
