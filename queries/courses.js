@@ -9,6 +9,7 @@ query COURSES {
       course {
         title
         time
+        showSpots
         spots {
           left
           total
