@@ -1,33 +1,22 @@
 import { useRouter } from 'next/router'
-import LessonCoursesLayout from '@/components/Layouts/LessonsCoursesLayout'
-import CourseCard from '@/components/CourseCard'
 import styles from '@/styles/CourseDetailpage.module.scss'
+import { useMemo, useEffect, useState } from 'react';
 
 // get data
 import client from '@/apollo/client';
 import { COURSES } from '@/queries/courses';
-import { useEffect, useState } from 'react';
+
+// Components
+import LessonCoursesLayout from '@/components/Layouts/LessonsCoursesLayout'
+import CourseCard from '@/components/CourseCard'
 import TextInformationSection from '@/components/TextInformationSection';
 import ArticleSection from '@/components/ArticleSection';
 
 
-export default function index({ courses, heroes, pageInfo }) {
+export default function CoursePage({ courses, heroes, pageInfo }) {
   const router = useRouter()
   const slug = router.query.slug;
-  const [activeCourses, setActiveCourses] = useState([]);
   const information = pageInfo?.[0].information ?? null;
-
-  useEffect(() => {
-    let arr = [];
-    courses.map(item => {
-      const category = changeString(item.course.category);
-      if (category === slug) {
-        arr.push(item)
-      }
-    })
-    setActiveCourses(arr);
-  }, [slug])
-
 
   const changeString = (string) => {
     let newString = string.replace('ä', 'a');
@@ -35,6 +24,18 @@ export default function index({ courses, heroes, pageInfo }) {
     newString = newString.toLowerCase();
     return newString;
   }
+
+  // using useMemo hook and changeString function to give every course the right slug before the component renders
+  const activeCourses = useMemo(() => {
+    let arr = [];
+    courses.map(item => {
+      const category = changeString(item.course.category);
+      if (category === slug) {
+        arr.push(item)
+      }
+    })
+    return arr;
+  }, [slug])
 
   return (
     <LessonCoursesLayout heroes={heroes} page="lessoncourses">
