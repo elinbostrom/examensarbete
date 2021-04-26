@@ -1,10 +1,16 @@
 import styles from "./HorseListItem.module.scss";
-import { useState } from "react";
+import { useMemo, useState } from "react";
+import { structurePictures } from "@/utils/structurePictures";
 
 export default function HorseListItem({ horse }) {
   const { name, birthyear, breed, description, pictures } = horse;
   const [seeMore, setSeeMore] = useState(false);
   const [activePicture, setActivePicture] = useState(pictures.picture1);
+
+  /* using structurePictures function to structure data before rendering. 
+  I need to structure data beacuse ACF free version in 
+  Wordpress does not have access to the gallery functions */
+  const pictureArr = structurePictures(pictures);
 
   return (
     <li className={seeMore ? styles.horse_more : styles.horse}>
@@ -16,49 +22,16 @@ export default function HorseListItem({ horse }) {
         />
         {seeMore && pictures.picture2 && (
           <div className={styles.gallery}>
-            <button onClick={() => setActivePicture(pictures.picture1)}>
-              <img
-                className={styles.galleryImg}
-                src={pictures.picture1.sourceUrl}
-                alt={pictures.picture1.altText}
-              />
-            </button>
-            {pictures?.picture2 && (
-              <button onClick={() => setActivePicture(pictures.picture2)}>
-                <img
-                  className={styles.galleryImg}
-                  src={pictures.picture2.sourceUrl}
-                  alt={pictures.picture2.altText}
-                />
-              </button>
-            )}
-            {pictures?.picture3 && (
-              <button onClick={() => setActivePicture(pictures.picture3)}>
-                <img
-                  className={styles.galleryImg}
-                  src={pictures.picture3.sourceUrl}
-                  alt={pictures.picture3.altText}
-                />
-              </button>
-            )}
-            {pictures?.picture4 && (
-              <button onClick={() => setActivePicture(pictures.picture4)}>
-                <img
-                  className={styles.galleryImg}
-                  src={pictures.picture4.sourceUrl}
-                  alt={pictures.picture4.altText}
-                />
-              </button>
-            )}
-            {pictures?.picture5 && (
-              <button onClick={() => setActivePicture(pictures.picture5)}>
-                <img
-                  className={styles.galleryImg}
-                  src={pictures.picture5.sourceUrl}
-                  alt={pictures.picture5.altText}
-                />
-              </button>
-            )}
+            {pictureArr.length &&
+              pictureArr.map(picture => (
+                <button key={picture.sourceUrl} onClick={() => setActivePicture(picture)}>
+                  <img
+                    className={styles.galleryImg}
+                    src={picture.sourceUrl}
+                    alt={picture.altText}
+                  />
+                </button>
+              ))}
           </div>
         )}
       </div>
