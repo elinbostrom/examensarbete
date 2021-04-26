@@ -3,8 +3,6 @@ import style from "./SectionStartRiding.module.scss";
 import ButtonNavigate from "../Buttons/ButtonNavigate";
 
 export default function SectionStartRiding({ data }) {
-  console.log({ data });
-
   return (
     <section className={style.wrapper}>
       <div className={style.text}>

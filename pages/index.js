@@ -27,8 +27,6 @@ export async function getStaticProps(context) {
     query: STARTPAGE
   });
 
-  console.log(data);
-
   return {
     props: {
       pageInfo: data?.newPages?.nodes,

@@ -1,9 +1,12 @@
 import { LessonsCoursesContext } from '@/contexts/LessonCoursesProvider'
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import styles from '@/styles/AboutUs.module.scss'
 
 // Components
 import AboutUsLayout from '@/components/Layouts/AboutUsLayout'
+
+// Utils
+import { createMarkup } from '@/utils/createMarkup'
 
 // Get data
 import client from '@/apollo/client'
@@ -13,11 +16,8 @@ export default function Taxiskjuts({ pageInfo, heroes }) {
   const { setActivePage } = useContext(LessonsCoursesContext);
   const title = pageInfo[0].title;
   const content = pageInfo[0].information.infoDescriptionSection;
-  setActivePage("Taxiskjuts")
 
-  const createMarkup = (content) => {
-    return { __html: content }
-  };
+  useEffect(() => { setActivePage("Taxiskjuts") }, [])
 
   return (
     <AboutUsLayout heroes={heroes} page="aboutus">

@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
-import ButtonNavigate from "../../Buttons/ButtonNavigate";
 import style from "./NewsCard.module.scss";
 import { IoIosArrowForward } from "react-icons/io";
+
+// Components
+import ButtonNavigate from "../../Buttons/ButtonNavigate";
 
 export default function NewsCard({ obj, activePost, setActivePost }) {
   const [post, setPost] = useState(obj[activePost]);

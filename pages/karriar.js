@@ -1,11 +1,15 @@
 import React from 'react'
 
 import { IoTimeOutline, IoPersonCircleOutline } from 'react-icons/io5'
+import styles from '@/styles/AboutUs.module.scss'
+
+// Get data
 import { CARRIERS } from '@/queries/carriers'
 import client from '@/apollo/client'
+
+// Components
 import Layout from '@/components/Layouts';
 import ButtonNavigate from '@/components/Buttons/ButtonNavigate';
-import styles from '@/styles/AboutUs.module.scss'
 
 export default function Carrier({ carriers }) {
   const heroObj = {

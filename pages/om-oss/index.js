@@ -1,5 +1,5 @@
 import { LessonsCoursesContext } from '@/contexts/LessonCoursesProvider'
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import styles from '@/styles/AboutUs.module.scss'
 
 // Utils
@@ -15,7 +15,8 @@ import { ABOUT_US } from '@/queries/about-us';
 export default function AboutUs({ pageInfo, heroes }) {
   const { setActivePage } = useContext(LessonsCoursesContext);
   const { description, title, history } = pageInfo[0].information.aboutUs;
-  setActivePage("Om ridskolan")
+
+  useEffect(() => { setActivePage("Om ridskolan") }, [])
 
   return (
     <AboutUsLayout heroes={heroes} page="aboutus">

@@ -1,8 +1,10 @@
-import AboutUsLayout from '@/components/Layouts/AboutUsLayout'
+import React, { useContext, useEffect } from 'react'
 import { LessonsCoursesContext } from '@/contexts/LessonCoursesProvider'
-import React, { useContext, useEffect, useState } from 'react'
 import styles from '@/styles/AboutUs.module.scss'
+
+// Components
 import EmployeeCard from '@/components/EmployeeCard'
+import AboutUsLayout from '@/components/Layouts/AboutUsLayout'
 
 // get data
 import client from '@/apollo/client'
