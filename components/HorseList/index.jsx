@@ -1,4 +1,4 @@
-import React from "react";
+// Components
 import HorseListItem from "./HorseListItem";
 
 export default function HorseList({ horses, activeInfo }) {

@@ -1,6 +1,6 @@
-import React, { useContext, useState } from 'react'
-import { LessonsCoursesContext } from '@/contexts/LessonCoursesProvider'
+import React, { useContext, useEffect, useState } from 'react'
 import styles from '@/styles/AboutUs.module.scss'
+import { LessonsCoursesContext } from '@/contexts/LessonCoursesProvider'
 
 // Components
 import AboutUsLayout from '@/components/Layouts/AboutUsLayout'
@@ -14,7 +14,9 @@ import { HORSES } from '@/queries/horses';
 export default function Horses({ horses, heroes }) {
   const { setActivePage } = useContext(LessonsCoursesContext);
   const [activeInfo, setActiveInfo] = useState("Häst");
-  setActivePage("Våra hästar")
+
+  // using useEffect to update state setActivePage after rendering the site so it would not be a bad set state
+  useEffect(() => { setActivePage("Våra hästar") }, [])
 
   return (
     <AboutUsLayout heroes={heroes} page="aboutus">

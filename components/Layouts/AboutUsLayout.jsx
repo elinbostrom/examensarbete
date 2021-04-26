@@ -1,8 +1,9 @@
 import React from "react";
-import Layout from "./index";
 import styles from "./Style.module.scss";
+
+// Components
+import Layout from "./index";
 import Submenu from "../Submenu";
-import LessonCoursesProvider from "@/contexts/LessonCoursesProvider";
 
 export default function AboutUsLayout({ heroes, children, page, activePage }) {
   const heroObj = {

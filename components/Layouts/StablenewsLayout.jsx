@@ -1,6 +1,8 @@
 import React from "react";
-import Layout from ".";
 import styles from "./Style.module.scss";
+
+// Components
+import Layout from ".";
 
 export default function StablenewsLayout({ children, heroInfo, page }) {
   return (

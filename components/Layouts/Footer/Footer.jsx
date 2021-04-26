@@ -3,7 +3,7 @@ import React from "react";
 import style from "./Footer.module.scss";
 import { AiOutlineInstagram, AiOutlineFacebook } from "react-icons/ai";
 
-export default function index() {
+export default function Footer() {
   return (
     <footer className={style.footer}>
       <div className={style.inner}>
@@ -33,9 +33,9 @@ export default function index() {
             </div>
           </div>
         </section>
-        <div>
+        <a href="https://goo.gl/maps/vVCVJaLHbA2Te4Ss6">
           <img className={style.map} src="/images/map.png" alt="map" />
-        </div>
+        </a>
       </div>
     </footer>
   );

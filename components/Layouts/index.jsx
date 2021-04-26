@@ -1,7 +1,9 @@
-import Head from "next/head";
 import React from "react";
-import Footer from "./Footer/Footer";
+import Head from "next/head";
+
+// Components
 import Hero from "./Hero";
+import Footer from "./Footer/Footer";
 
 export default function Layout({ children, data, page }) {
   return (
