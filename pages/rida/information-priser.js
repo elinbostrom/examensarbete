@@ -17,9 +17,7 @@ import { INFORMATION_PRISER } from '@/queries/information-priser';
 
 export default function InformationPrices({ heroes, pricepages, pageInfo }) {
   const [activeInfo, setActiveInfo] = useState("Priser");
-
   useEffect(() => { }, [activeInfo])
-  console.log({ pageInfo });
 
   return (
     <LessonCoursesLayout heroes={heroes} page="lessoncourses">
@@ -38,10 +36,9 @@ export default function InformationPrices({ heroes, pricepages, pageInfo }) {
             <PriceList data={pricepages} category="Hästlekis" />
             {Array.isArray(pageInfo) && pageInfo.map(item => {
               const category = item.information.informationType;
-              console.log({ item });
               if (category === "Prisinformation") {
                 return (
-                  <div key={item.information.id} dangerouslySetInnerHTML={createMarkup(item.information.infoDescriptionSection)} />
+                  <div key={item.id} dangerouslySetInnerHTML={createMarkup(item.information.infoDescriptionSection)} />
                 )
               }
             })
@@ -52,7 +49,7 @@ export default function InformationPrices({ heroes, pricepages, pageInfo }) {
           const category = item.information.informationType;
           if (category === activeInfo) {
             return (
-              <section className={styles.info_container} key={item.information.id}>
+              <section className={styles.info_container} key={itemid}>
                 <h2>{activeInfo}</h2>
                 <div dangerouslySetInnerHTML={createMarkup(item.information.infoDescriptionSection)} />
               </section>
