@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import style from "./Navbar.module.scss";
 import { BiMenu } from "react-icons/bi";
@@ -7,9 +7,25 @@ import cn from "classnames";
 
 export default function Navbar() {
   const [showMenu, setShowMenu] = useState(false);
+  const [navbarPosition, setNavbarPosition] = useState("0");
+
+  useEffect(() => {
+    let scrollPosition = window.pageYOffset;
+
+    window.onscroll = () => {
+      const currentScrollPosition = window.pageYOffset;
+
+      if (scrollPosition > currentScrollPosition) {
+        setNavbarPosition("0");
+      } else {
+        setNavbarPosition("-100px");
+      }
+      scrollPosition = currentScrollPosition;
+    };
+  }, []);
 
   return (
-    <nav className={style.navbar}>
+    <nav className={style.navbar} style={{ top: navbarPosition }}>
       <Link href="/">
         <img className={style.logotype} src="/icons/LogotypVit.svg" alt="Logotyp" />
       </Link>
