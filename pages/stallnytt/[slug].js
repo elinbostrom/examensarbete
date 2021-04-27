@@ -25,14 +25,8 @@ export default function StablenewsPost() {
   if (!data) return <h1>Not found</h1>;
 
   const stablenewsInfo = data.stablenew ? { ...data.stablenew.posts } : null;
-
-  console.log(stablenewsInfo);
-
   const { post, stablenew } = data;
-
   const date = post ? post?.date.replace("T", " | ") : stablenew?.date.replace("T", " | ");
-
-  console.log({ data });
 
   const heroInfo = {
     title: post?.title ?? stablenewsInfo.title,

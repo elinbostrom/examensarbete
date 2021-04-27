@@ -14,7 +14,6 @@ export default function SubmenuMobile({ page, aboutus }) {
   };
 
   useEffect(() => {
-    console.log({ page });
     setActivePage(page);
   }, []);
 
