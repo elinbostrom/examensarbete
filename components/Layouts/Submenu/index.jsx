@@ -6,6 +6,7 @@ import styles from "./Submenu.module.scss";
 
 export default function Submenu({ page, aboutus }) {
   const { activePage, setActivePage } = useContext(LessonsCoursesContext);
+  const [isItAMobileDevice, setIsItAMobileDevice] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -61,7 +62,7 @@ export default function Submenu({ page, aboutus }) {
           >
             <Link href="/rida/information-priser">Information & Priser</Link>
           </li>
-          {isOpen && (
+          {isOpen && !isItAMobileDevice && (
             <Dropdown isOpen={isOpen} setIsOpen={setIsOpen} setActivePage={setActivePage} />
           )}
         </ul>

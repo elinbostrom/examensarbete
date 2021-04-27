@@ -1,0 +1,38 @@
+@import "@/theme/theme";
+
+.navigation {
+  background: rgb(61, 78, 72);
+  background: linear-gradient(336deg, rgba(61, 78, 72, 1) 0%, rgba(99, 123, 114, 1) 100%);
+  position: absolute;
+  width: 100%;
+  box-shadow: 1px 1px 2px rgb(67, 67, 67);
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem 2rem;
+
+  svg {
+    color: $white;
+    font-size: 18px;
+  }
+
+  .select {
+    border: none;
+    @include montserrat(400);
+    color: $white;
+    width: 100%;
+    font-size: 16px;
+
+    // Remove default arrow
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: none;
+
+    &:focus,
+    &:hover {
+      outline: none;
+    }
+  }
+}

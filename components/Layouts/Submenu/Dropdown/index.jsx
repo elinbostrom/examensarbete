@@ -1,5 +1,5 @@
 import React from "react";
-import { MenuItems } from "../MenuItems";
+import { MenuItems } from "./MenuItems";
 import Link from "next/link";
 import styles from "./Dropdown.module.scss";
 

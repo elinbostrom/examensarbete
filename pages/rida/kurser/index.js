@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 
 // components
 import LessonsCoursesLayout from '@/components/Layouts/LessonsCoursesLayout'
-import { MenuItems } from '@/components/Submenu/MenuItems';
+import { MenuItems } from '@/components/Layouts/Submenu/Dropdown/MenuItems';
 
 // get data
 import { START_RIDING } from '@/queries/start-riding'
