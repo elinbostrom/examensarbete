@@ -3,10 +3,10 @@ import React, { useContext, useEffect, useState } from "react";
 import { LessonsCoursesContext } from "@/contexts/LessonCoursesProvider";
 import Dropdown from "./Dropdown";
 import styles from "./Submenu.module.scss";
+import { menuItemsMobileAboutUs, menuItemsMobileLessonCourses } from "../SubmenuMobile/MenuItems";
 
 export default function Submenu({ page, aboutus }) {
   const { activePage, setActivePage } = useContext(LessonsCoursesContext);
-  const [isItAMobileDevice, setIsItAMobileDevice] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -15,58 +15,41 @@ export default function Submenu({ page, aboutus }) {
 
   return (
     <nav className={styles.navigation}>
-      {aboutus ? (
-        <ul className={styles.list}>
-          <li className={activePage === "Om ridskolan" ? styles.active_link : styles.link}>
-            <Link href="/om-oss">Om ridskolan</Link>
-          </li>
-          <li className={activePage === "Personal" ? styles.active_link : styles.link}>
-            <Link href="/om-oss/personal">Personal</Link>
-          </li>
-          <li className={activePage === "Våra hästar" ? styles.active_link : styles.link}>
-            <Link href="/om-oss/vara-hastar">Våra hästar</Link>
-          </li>
-          <li className={activePage === "Galleri" ? styles.active_link : styles.link}>
-            <Link href="/om-oss/galleri">Galleri</Link>
-          </li>
-          <li className={activePage === "Taxiskjuts" ? styles.active_link : styles.link}>
-            <Link href="/om-oss/taxiskjuts">Taxiskjuts</Link>
-          </li>
-          <li className={activePage === "Kontakt" ? styles.active_link : styles.link}>
-            <Link href="/om-oss/kontakt">Kontakt</Link>
-          </li>
-        </ul>
-      ) : (
-        <ul className={styles.list}>
-          <li
-            className={activePage === "Börja rida" ? styles.active_link : styles.link}
-            onMouseEnter={() => setIsOpen(false)}
-          >
-            <Link href="/rida">Börja rida</Link>
-          </li>
-          <li
-            className={activePage === "Alla kurser" ? styles.active_link : styles.link}
-            onMouseEnter={() => setIsOpen(true)}
-          >
-            <Link href="/rida/kurser">Alla kurser</Link>
-          </li>
-          <li
-            className={activePage === "Hästlekis" ? styles.active_link : styles.link}
-            onMouseEnter={() => setIsOpen(false)}
-          >
-            <Link href="/rida/hastlekis">Hästlekis</Link>
-          </li>
-          <li
-            className={activePage === "Information & Priser" ? styles.active_link : styles.link}
-            onMouseEnter={() => setIsOpen(false)}
-          >
-            <Link href="/rida/information-priser">Information & Priser</Link>
-          </li>
-          {isOpen && !isItAMobileDevice && (
-            <Dropdown isOpen={isOpen} setIsOpen={setIsOpen} setActivePage={setActivePage} />
-          )}
-        </ul>
-      )}
+      <ul className={styles.list}>
+        {aboutus
+          ? menuItemsMobileAboutUs.map(menuItem => (
+              <li
+                key={menuItem.name}
+                className={activePage === menuItem.name ? styles.active_link : styles.link}
+              >
+                <Link href={menuItem.slug}>{menuItem.name}</Link>
+              </li>
+            ))
+          : menuItemsMobileLessonCourses.map(menuItem => {
+              if (menuItem.name === "Alla kurser") {
+                return (
+                  <li
+                    key={menuItem.name}
+                    className={activePage === menuItem.name ? styles.active_link : styles.link}
+                    onMouseEnter={() => setIsOpen(true)}
+                  >
+                    <Link href={menuItem.slug}>{menuItem.name}</Link>
+                  </li>
+                );
+              } else {
+                return (
+                  <li
+                    key={menuItem.name}
+                    className={activePage === menuItem.name ? styles.active_link : styles.link}
+                    onMouseEnter={() => setIsOpen(false)}
+                  >
+                    <Link href={menuItem.slug}>{menuItem.name}</Link>
+                  </li>
+                );
+              }
+            })}
+        {isOpen && <Dropdown isOpen={isOpen} setIsOpen={setIsOpen} setActivePage={setActivePage} />}
+      </ul>
     </nav>
   );
 }
