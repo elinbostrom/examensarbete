@@ -12,14 +12,14 @@ import client from '@/apollo/client'
 import { HORSES } from '@/queries/horses';
 
 export default function Horses({ horses, heroes }) {
-  const { setActivePage } = useContext(LessonsCoursesContext);
+  const { activePage, setActivePage } = useContext(LessonsCoursesContext);
   const [activeInfo, setActiveInfo] = useState("Häst");
 
   // using useEffect to update state setActivePage after rendering the site so it would not be a bad set state
   useEffect(() => { setActivePage("Våra hästar") }, [])
 
   return (
-    <AboutUsLayout heroes={heroes} page="aboutus">
+    <AboutUsLayout heroes={heroes} page="aboutus" activePage={activePage}>
       <main className={styles.main_horses}>
         {activeInfo !== "Minneslunden" ? <>
           <h2>Våra Hästar</h2>

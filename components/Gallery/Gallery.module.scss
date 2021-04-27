@@ -72,6 +72,13 @@
       grid-row: 3;
     }
   }
+
+  @include mobile {
+    .thumbnail {
+      width: 100px;
+      height: 100px;
+    }
+  }
 }
 
 .openGallery {

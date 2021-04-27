@@ -13,13 +13,13 @@ import client from '@/apollo/client'
 import { ABOUT_US } from '@/queries/about-us';
 
 export default function AboutUs({ pageInfo, heroes }) {
-  const { setActivePage } = useContext(LessonsCoursesContext);
+  const { activePage, setActivePage } = useContext(LessonsCoursesContext);
   const { description, title, history } = pageInfo[0].information.aboutUs;
 
   useEffect(() => { setActivePage("Om ridskolan") }, [])
 
   return (
-    <AboutUsLayout heroes={heroes} page="aboutus">
+    <AboutUsLayout heroes={heroes} page="aboutus" activePage={activePage}>
       <main className={styles.main_about_start}>
         <h2>{title}</h2>
         <p className={styles.paragraph}>{description}</p>

@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
+import { LessonsCoursesContext } from "@/contexts/LessonCoursesProvider";
 
 // Components
 import LessonCoursesLayout from '@/components/Layouts/LessonsCoursesLayout'
@@ -16,11 +17,13 @@ import client from '@/apollo/client'
 import { INFORMATION_PRISER } from '@/queries/information-priser';
 
 export default function InformationPrices({ heroes, pricepages, pageInfo }) {
+  const { setActivePage, activePage } = useContext(LessonsCoursesContext);
   const [activeInfo, setActiveInfo] = useState("Priser");
   useEffect(() => { }, [activeInfo])
+  useEffect(() => { setActivePage("Information & Priser") }, [])
 
   return (
-    <LessonCoursesLayout heroes={heroes} page="lessoncourses">
+    <LessonCoursesLayout heroes={heroes} page="lessoncourses" activePage={activePage}>
       <main className={styles.main}>
         <div className={styles.btn_container}>
           <Button btnText="Priser" setActiveInfo={setActiveInfo} activeInfo={activeInfo} />

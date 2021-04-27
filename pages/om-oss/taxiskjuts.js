@@ -13,14 +13,14 @@ import client from '@/apollo/client'
 import { TAXISKJUTS } from '@/queries/taxiskjuts';
 
 export default function Taxiskjuts({ pageInfo, heroes }) {
-  const { setActivePage } = useContext(LessonsCoursesContext);
+  const { activePage, setActivePage } = useContext(LessonsCoursesContext);
   const title = pageInfo[0].title;
   const content = pageInfo[0].information.infoDescriptionSection;
 
   useEffect(() => { setActivePage("Taxiskjuts") }, [])
 
   return (
-    <AboutUsLayout heroes={heroes} page="aboutus">
+    <AboutUsLayout heroes={heroes} page="aboutus" activePage={activePage}>
       <section className={styles.taxiskjuts}>
         <h2 className={styles.headline}>{title}</h2>
         <div className={styles.text} dangerouslySetInnerHTML={createMarkup(content)} />

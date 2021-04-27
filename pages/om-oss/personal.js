@@ -12,14 +12,14 @@ import { EMPLOYEES } from '@/queries/employees';
 import ButtonNavigate from '@/components/Buttons/ButtonNavigate'
 
 export default function Employees({ employees, heroes }) {
-  const { setActivePage } = useContext(LessonsCoursesContext);
+  const { activePage, setActivePage } = useContext(LessonsCoursesContext);
 
   useEffect(() => {
     setActivePage("Personal")
   }, [])
 
   return (
-    <AboutUsLayout heroes={heroes} page="aboutus">
+    <AboutUsLayout heroes={heroes} page="aboutus" activePage={activePage}>
       <main className={styles.main}>
         <div className={styles.text}>
           <h2 className={styles.headline}>Vår personal</h2>

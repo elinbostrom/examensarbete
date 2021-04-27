@@ -1,6 +1,6 @@
 export const menuItemsMobileAboutUs = [
   {
-    name: "Om ridsolan",
+    name: "Om ridskolan",
     slug: "/om-oss"
   },
   {

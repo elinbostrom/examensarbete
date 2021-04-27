@@ -26,7 +26,6 @@ export default function Navbar() {
       }
 
       scrollPosition = currentScrollPosition;
-      console.log(currentScrollPosition);
     };
   }, []);
 

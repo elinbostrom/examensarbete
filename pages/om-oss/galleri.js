@@ -9,14 +9,14 @@ import client from '@/apollo/client'
 import { GALLERY } from '@/queries/gallery';
 
 export default function GalleryPage({ gallerys, heroes }) {
-  const { setActivePage } = useContext(LessonsCoursesContext);
+  const { activePage, setActivePage } = useContext(LessonsCoursesContext);
 
   useEffect(() => {
     setActivePage("Galleri")
   }, [])
 
   return (
-    <AboutUsLayout heroes={heroes} page="aboutus">
+    <AboutUsLayout heroes={heroes} page="aboutus" activePage={activePage}>
       <main className={styles.main}>
         <h2>Galleri</h2>
         <p className={styles.paragraph}>Här kan du se tillbaka på gamla händelser som skett på ridskolan</p>

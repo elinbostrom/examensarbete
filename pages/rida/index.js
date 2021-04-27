@@ -1,4 +1,6 @@
 import styles from '@/styles/LektionerKurser.module.scss'
+import { useContext, useEffect } from 'react'
+import { LessonsCoursesContext } from "@/contexts/LessonCoursesProvider";
 
 // Components
 import LessonCoursesLayout from '@/components/Layouts/LessonsCoursesLayout'
@@ -11,9 +13,12 @@ import { START_RIDING } from '@/queries/start-riding';
 
 export default function LektionerKurser({ heroes, pageInfo }) {
   const { information } = pageInfo[0];
+  const { setActivePage, activePage } = useContext(LessonsCoursesContext);
+
+  useEffect(() => { setActivePage("Börja rida") }, [])
 
   return (
-    <LessonCoursesLayout heroes={heroes} page="lessoncourses">
+    <LessonCoursesLayout heroes={heroes} page="lessoncourses" activePage={activePage}>
       <main className={styles.main}>
         <TextInformationSection data={information.welcome} name="Börja rida" />
         <ArticleSection data={information.information} imgright />

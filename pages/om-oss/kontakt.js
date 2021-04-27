@@ -12,7 +12,7 @@ import { CONTACT } from '@/queries/contact';
 
 export default function ContactPage({ pageInfo, heroes }) {
   const heroInfo = heroes[0].heroInfo;
-  const { setActivePage } = useContext(LessonsCoursesContext);
+  const { activePage, setActivePage } = useContext(LessonsCoursesContext);
   const { contact, openinghours, startFinish, stableClosed } = pageInfo[0].information;
 
   useEffect(() => {
@@ -27,7 +27,7 @@ export default function ContactPage({ pageInfo, heroes }) {
   }
 
   return (
-    <Layout data={heroInfo} page="contact">
+    <Layout data={heroInfo} page="contact" activePage={activePage}>
       <div className={styles.contact}>
 
         <div className={styles.wrapper}>
