@@ -52,7 +52,7 @@ export default function InformationPrices({ heroes, pricepages, pageInfo }) {
           const category = item.information.informationType;
           if (category === activeInfo) {
             return (
-              <section className={styles.info_container} key={itemid}>
+              <section className={styles.info_container} key={item.id}>
                 <h2>{activeInfo}</h2>
                 <div dangerouslySetInnerHTML={createMarkup(item.information.infoDescriptionSection)} />
               </section>

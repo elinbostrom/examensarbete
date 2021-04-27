@@ -14,13 +14,8 @@
     margin-top: 5rem;
 
     @include mobile-max {
-      margin-top: 6rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-
       button {
-        min-height: 60px;
+        padding: 0.7rem;
       }
     }
   }

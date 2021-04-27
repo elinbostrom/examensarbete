@@ -18,6 +18,8 @@ export default function CoursePage({ courses, heroes, pageInfo }) {
   const slug = router.query.slug;
   const information = pageInfo?.[0].information ?? null;
 
+  console.log(information);
+
   const changeString = (string) => {
     let newString = string.replace('ä', 'a');
     newString = newString.replace(' ', '-');
@@ -40,7 +42,7 @@ export default function CoursePage({ courses, heroes, pageInfo }) {
   return (
     <LessonCoursesLayout heroes={heroes} page="lessoncourses">
       <main className={styles.main}>
-        {information && <TextInformationSection data={information.welcome} name="Alla kurser" />}
+        {information && <TextInformationSection data={information.welcome} />}
         {information && <ArticleSection data={information.informationOrs} buttonOrs />}
         <hr className={styles.line} />
         {activeCourses.length === 0
