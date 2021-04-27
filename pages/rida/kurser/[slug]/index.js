@@ -18,8 +18,6 @@ export default function CoursePage({ courses, heroes, pageInfo }) {
   const slug = router.query.slug;
   const information = pageInfo?.[0].information ?? null;
 
-  console.log(information);
-
   const changeString = (string) => {
     let newString = string.replace('ä', 'a');
     newString = newString.replace(' ', '-');
@@ -30,7 +28,7 @@ export default function CoursePage({ courses, heroes, pageInfo }) {
   // using useMemo hook and changeString function to give every course the right slug before the component renders
   const activeCourses = useMemo(() => {
     let arr = [];
-    courses.map(item => {
+    courses && courses.map(item => {
       const category = changeString(item.course.category);
       if (category === slug) {
         arr.push(item)
