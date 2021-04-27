@@ -8,11 +8,15 @@
   @extend %main-wrapper;
   transition: all ease 250ms;
   z-index: 50;
-  top: 0;
+  // top: 0;
   transition: top 0.4s ease-in;
 
   @include tablet-normal {
     padding: 0;
+  }
+
+  @include mobile-max {
+    // background: $transperant-blue;
   }
 
   .logotype {
@@ -22,6 +26,10 @@
     @include tablet-normal {
       margin: 1.3rem;
       width: 80px;
+    }
+
+    @include mobile-max {
+      width: 50px;
     }
   }
 
@@ -74,6 +82,10 @@
     @include mobile-max {
       margin: 1rem;
     }
+
+    @include mobile {
+      margin: 0 0.5rem;
+    }
   }
 
   a {
@@ -120,11 +132,11 @@
 
     button {
       position: absolute;
-      top: 2rem;
+      top: 1.2rem;
       right: 1rem;
 
       svg {
-        color: $primary;
+        color: $white;
         font-size: 40px;
         text-shadow: 2px 2px 2px black;
       }

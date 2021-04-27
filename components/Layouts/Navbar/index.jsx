@@ -18,9 +18,15 @@ export default function Navbar() {
       if (scrollPosition > currentScrollPosition) {
         setNavbarPosition("0");
       } else {
-        setNavbarPosition("-100px");
+        if (currentScrollPosition < 100) {
+          setNavbarPosition("0");
+        } else {
+          setNavbarPosition("-100px");
+        }
       }
+
       scrollPosition = currentScrollPosition;
+      console.log(currentScrollPosition);
     };
   }, []);
 
