@@ -16,6 +16,9 @@ import { useQuery } from '@apollo/client'
 
 
 export default function StablenewsPost() {
+  /* With useRouter we can get the slug information from the url.
+  And with that information we can query the right data from 
+  Wordpress so we render the correct info */
   const router = useRouter();
   const slug = router.query.slug;
   const { data, loading, error } = useQuery(POST(slug));
