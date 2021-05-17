@@ -11,12 +11,14 @@ import LessonCoursesLayout from '@/components/Layouts/LessonsCoursesLayout'
 import CourseCard from '@/components/CourseCard'
 import TextInformationSection from '@/components/TextInformationSection';
 import ArticleSection from '@/components/ArticleSection';
+import { todaysDate } from '@/utils/todaysDate';
 
 
 export default function CoursePage({ courses, heroes, pageInfo }) {
   const router = useRouter()
   const slug = router.query.slug;
   const information = pageInfo?.[0].information ?? null;
+  const today = todaysDate();
 
   const changeString = (string) => {
     let newString = string.replace('ä', 'a');
@@ -47,8 +49,16 @@ export default function CoursePage({ courses, heroes, pageInfo }) {
           ? <h3 className={styles.courseHeadline}>Tyvärr så är inga kurser tillgängliga i denna kategori just nu 😢</h3>
           : <h3 className={styles.courseHeadline}>Kommande kurser</h3>}
         <div className={styles.card}>
-          {Array.isArray(activeCourses) && activeCourses.map(item =>
-            <CourseCard key={item.id} id={item.id} slug={slug} courseInfo={item.course} />)}
+          {Array.isArray(activeCourses) && activeCourses.map(item => {
+            let courseDate = item.course.date.replace('-', '').replace('-', '');
+            courseDate = ++courseDate;
+            if (courseDate > today) {
+              return (
+                <CourseCard key={item.id} id={item.id} slug={slug} courseInfo={item.course} />
+              )
+            }
+          }
+          )}
         </div>
       </main>
     </LessonCoursesLayout>
