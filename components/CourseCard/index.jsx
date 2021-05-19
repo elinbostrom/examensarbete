@@ -1,10 +1,10 @@
 import styles from "./CourseCard.module.scss";
 import ButtonBlockNavigate from "../Buttons/ButtonBlockNavigate";
-import CourseList from "../CourseList";
+import CourseInfoList from "../CourseInfoList";
 import { useState } from "react";
 
 export default function CourseCard({ courseInfo }) {
-  const { title, instructor, description } = courseInfo;
+  const { category, title, instructor, description } = courseInfo;
   const [shortenDescription, setShortenDescription] = useState(() => {
     if (description.length > 350) {
       return true;
@@ -17,7 +17,10 @@ export default function CourseCard({ courseInfo }) {
       <p className={styles.instructor}>
         <span>Instruktör:</span> {instructor}
       </p>
-      <CourseList courseInfo={courseInfo} />
+      <p className={styles.category}>
+        <span>Kategori:</span> {category}
+      </p>
+      <CourseInfoList courseInfo={courseInfo} />
       <ButtonBlockNavigate
         text="Anmäl dig till kursen via Min ridskola"
         navigate="https://ww2.minridskola.se/Init_LoggaIn.aspx"

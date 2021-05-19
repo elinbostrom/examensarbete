@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react'
+import { useContext, useEffect, useMemo } from 'react'
 import { LessonsCoursesContext } from "@/contexts/LessonCoursesProvider";
 
 // Components
@@ -13,11 +13,25 @@ import styles from '@/styles/CourseDetailpage.module.scss'
 // get data
 import client from '@/apollo/client'
 import { HASTLEKIS } from '@/queries/hastlekis';
+import { formatCourseDate } from '@/utils/formatCourseDate';
+import { todaysDate } from '@/utils/todaysDate';
 
 
 export default function Hastlekis({ courses, heroes, pageInfo }) {
   const { setActivePage, activePage } = useContext(LessonsCoursesContext);
   const { information } = pageInfo[0];
+  const today = todaysDate()
+  const activeCourses = useMemo(() => {
+    let arr = []
+    Array.isArray(courses) && courses.forEach(item => {
+      const { category } = item.course;
+      const courseDate = formatCourseDate(item.course.date)
+      if (category === "Hästlekis" && courseDate > today) {
+        arr.push(item)
+      }
+    })
+    return arr;
+  }, [courses])
 
   useEffect(() => { setActivePage("Hästlekis") }, [])
 
@@ -27,18 +41,11 @@ export default function Hastlekis({ courses, heroes, pageInfo }) {
         <TextInformationSection data={information.welcome} name="Hästlekis" />
         <ArticleSection data={information.information} imgright />
         <hr className={styles.line} />
-        {Array.isArray(courses) && courses.length === 0
+        {Array.isArray(activeCourses) && activeCourses.length === 0
           ? <h3 className={styles.courseHeadline}>Tyvärr så är inga kurser tillgängliga i denna kategori just nu 😢</h3>
           : <h3 className={styles.courseHeadline}>Kommande hästlekis pass</h3>}
         <div className={styles.card}>
-          {Array.isArray(courses) && courses.map(item => {
-            const { category } = item.course;
-            if (category === "Hästlekis") {
-              return (
-                <CourseCard key={item.id} id={item.id} slug={item.slug} courseInfo={item.course} />
-              )
-            }
-          })}
+          {activeCourses.map(item => <CourseCard key={item.id} id={item.id} slug={item.slug} courseInfo={item.course} />)}
         </div>
       </main>
     </LessonCoursesLayout>

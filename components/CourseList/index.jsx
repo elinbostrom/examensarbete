@@ -1,47 +1,45 @@
+import { formatCourseDate } from "@/utils/formatCourseDate";
+import { todaysDate } from "@/utils/todaysDate";
+import React, { useMemo } from "react";
+import CourseCard from "../CourseCard";
 import styles from "./CourseList.module.scss";
-import { useMemo } from "react";
 
-// Components
-import { BsClock, BsCalendar, BsStar } from "react-icons/bs";
-import { FaMoneyCheck } from "react-icons/fa";
-import { FiUsers } from "react-icons/fi";
+export default function CourseList({ activeInfo, courses }) {
+  const today = todaysDate();
 
-export default function CourseList({ courseInfo }) {
-  const { time, showSpots, spots, price, level, date } = courseInfo;
-  const createStringDependingOnSpots = useMemo(() => {
-    let spotsLeftString;
-
-    if (spots.left === null) {
-      spotsLeftString = "FULLSATT";
-    } else {
-      spotsLeftString = `${spots.left} av ${spots.total} platser kvar`;
-    }
-    return spotsLeftString;
-  }, [spots]);
+  // using useMemo hook and changeString function to give every course the right slug before the component renders
+  const activeCourses = useMemo(() => {
+    let arr = [];
+    courses &&
+      courses.map(item => {
+        console.log(item);
+        console.log(item.course.category);
+        console.log(activeInfo);
+        const courseDate = formatCourseDate(item.course.date);
+        if (item.course.category === activeInfo && courseDate > today) {
+          arr.push(item);
+        }
+      });
+    return arr;
+  }, [activeInfo]);
 
   return (
-    <ul className={styles.infolist}>
-      <li>
-        <BsClock />
-        <p>{time} minuter</p>
-      </li>
-      <li>
-        <BsCalendar />
-        <p>{date}</p>
-      </li>
-      <li>
-        <BsStar />
-        <p>{level}</p>
-      </li>
-      <li>
-        <FaMoneyCheck />
-        <p>{price} kr inkl. moms</p>
-      </li>
-      {showSpots && (
-        <li className={spots.left <= 3 ? styles.warning : null}>
-          <FiUsers />
-          <p>{createStringDependingOnSpots}</p>
-        </li>
+    <ul className={styles.list}>
+      {activeInfo === "Alla kurser" ? (
+        courses.map(item => {
+          let courseDate = formatCourseDate(item.course.date);
+          if (courseDate > today) {
+            return <CourseCard key={item.id} id={item.id} courseInfo={item.course} />;
+          }
+        })
+      ) : Array.isArray(activeCourses) && activeCourses.length ? (
+        activeCourses.map(item => (
+          <CourseCard key={item.id} id={item.id} courseInfo={item.course} />
+        ))
+      ) : (
+        <h3 className={styles.headline}>
+          Tyvärr så är inga kurser tillgängliga i denna kategori just nu 😢
+        </h3>
       )}
     </ul>
   );

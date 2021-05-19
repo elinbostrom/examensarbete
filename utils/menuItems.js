@@ -1,4 +1,4 @@
-export const MenuItems = [
+export const menuItems = [
   {
     category: 'Häst',
     id: 'course-horse-01',

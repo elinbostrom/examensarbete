@@ -1,32 +1,15 @@
 @import "@/theme/theme";
 
-.infolist {
-  list-style: none;
-  padding: 0;
-  grid-column: 1;
-  grid-row: 3;
+.list {
+  color: $night-blue;
+  margin: 1rem -100px;
 
-  @include mobile-max {
-    grid-row: 3;
-    grid-column: span 2;
+  @include tablet-normal {
+    margin: 0;
+    padding: 1rem 0;
   }
 
-  li {
-    @include montserrat(400);
-    font-size: 14px;
-    margin-block: 0.3rem;
-    display: grid;
-    grid-template-columns: 20px 1fr;
-    align-items: center;
-    column-gap: 1rem;
-
-    p {
-      grid-column: 2;
-    }
-  }
-
-  .warning p {
-    color: $warning-red;
-    font-weight: 700;
+  .headline {
+    text-align: center;
   }
 }

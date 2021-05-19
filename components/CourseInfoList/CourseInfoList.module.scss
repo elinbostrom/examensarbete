@@ -1,0 +1,32 @@
+@import "@/theme/theme";
+
+.infolist {
+  list-style: none;
+  padding: 0;
+  grid-column: 1;
+  grid-row: 4;
+
+  @include mobile-max {
+    grid-row: 4;
+    grid-column: span 2;
+  }
+
+  li {
+    @include montserrat(400);
+    font-size: 14px;
+    margin-block: 0.3rem;
+    display: grid;
+    grid-template-columns: 20px 1fr;
+    align-items: center;
+    column-gap: 1rem;
+
+    p {
+      grid-column: 2;
+    }
+  }
+
+  .warning p {
+    color: $warning-red;
+    font-weight: 700;
+  }
+}
