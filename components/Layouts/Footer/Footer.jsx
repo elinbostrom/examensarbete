@@ -16,8 +16,8 @@ export default function Footer() {
             <p>136 75 Vendelsö</p>
           </div>
           <div>
-            <Link href="/kontakt">Öppettider</Link>
-            <Link href="/karriarsida">Karriärsida</Link>
+            <Link href="/om-oss/kontakt">Öppettider</Link>
+            <Link href="/karriar">Karriärsida</Link>
             <p>Vendelsö Ridhus AB | 556423-6668</p>
           </div>
 

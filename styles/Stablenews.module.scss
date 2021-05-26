@@ -9,7 +9,11 @@
 }
 
 .section {
-  @include hero-light("/images/2.png", "/images/2-tablet.png", "/images/2-mobile.png");
+  @include hero-light(
+    "/images/name_detail.jpg",
+    "/images/name_detail_tablet.jpg",
+    "/images/name_detail_mobile.jpg"
+  );
 }
 
 .loadMoreBtn {

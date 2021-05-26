@@ -1,26 +1,26 @@
 @import "@/theme/theme";
 
 .wrapper {
-  min-height: 600px;
+  min-height: 550px;
   background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)),
-    url("/images/caroline-ziemkiewicz-9KgxAnq7eD0-unsplash.jpg");
+    url("/images/stable.jpg");
   @include parallax(left);
   position: relative;
   z-index: 3;
   box-shadow: 2px 2px 2px rgb(63, 63, 63);
-  padding: 2rem 0 3rem;
+  padding: 1rem 0 2rem;
   transition: all ease 250ms;
 
   @media (max-width: $tablet-normal) {
     background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)),
-      url("/images/caroline-ziemkiewicz-9KgxAnq7eD0-unsplash-tablet.jpg");
+      url("/images/stable_tablet.jpg");
     background-size: cover;
   }
 
   @media (max-width: $mobile-max) {
     min-height: 450px;
     background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)),
-      url("/images/caroline-ziemkiewicz-9KgxAnq7eD0-unsplash-tablet.jpg");
+      url("/images/stable_mobile.jpg");
     background-size: cover;
     background-position-x: 40%;
     padding: 0.5rem;

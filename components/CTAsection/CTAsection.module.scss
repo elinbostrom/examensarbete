@@ -1,14 +1,13 @@
 @import "@/theme/theme";
 
 .CTAwrapper {
-  background: linear-gradient($transperant-blue, $transperant-blue),
-    url(/images/dressage_detail.jpg);
+  background: linear-gradient($transperant-blue, $transperant-blue), url(/images/outdoor_box.jpg);
   @include parallax(none);
   background-position: top;
   box-shadow: 2px 2px 2px rgb(63, 63, 63);
   z-index: 9;
   position: relative;
-  min-height: 600px;
+  min-height: 550px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -17,14 +16,14 @@
 
   @include tablet-normal {
     background: linear-gradient($transperant-blue, $transperant-blue),
-      url(/images/philippe-oursel-jckGRV_-FI4-unsplash-tablet.jpg);
+      url(/images/outdoor_box_tablet.jpg);
     background-size: cover;
   }
 
   @include mobile-max {
     min-height: 450px;
     background: linear-gradient($transperant-blue, $transperant-blue),
-      url(/images/philippe-oursel-jckGRV_-FI4-unsplash-mobile.jpg);
+      url(/images/outdoor_box_mobile.jpg);
     background-size: cover;
   }
 }

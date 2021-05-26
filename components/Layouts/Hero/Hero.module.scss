@@ -1,39 +1,39 @@
 @import "@/theme/theme";
 
 .startpage {
-  @include hero-light("/images/sandgraf.jpg", "/images/9tablet.jpg", "/images/9mobile.jpg");
-  background-position: center;
+  @include hero-light("/images/9.png", "/images/9tablet.jpg", "/images/9mobile.jpg");
+  background-position: bottom;
 }
 
 .stablenews {
   @include hero-dark(
-    "/images/markus-spiske-eioMwO2IJ2E-unsplash.jpg",
-    "/images/markus-spiske-eioMwO2IJ2E-unsplash-tablet.jpg",
-    "/images/markus-spiske-eioMwO2IJ2E-unsplash-mobile.jpg"
+    "/images/stable.jpg",
+    "/images/stable_tablet.jpg",
+    "/images/stable_mobile.jpg"
   );
 }
 
 .lessoncourses {
   @include hero-dark(
-    "/images/louise-pilgaard-3SM_F21nzSw-unsplash.jpg",
-    "/images/louise-pilgaard-3SM_F21nzSw-unsplash-tablet.jpg",
-    "/images/louise-pilgaard-3SM_F21nzSw-unsplash-mobile.jpg"
+    "/images/kandar_detail.jpg",
+    "/images/kandar_detail_tablet.jpg",
+    "/images/kandar_detail_mobile.jpg"
   );
 }
 
 .aboutus {
   @include hero-dark(
-    "/images/markus-spiske-xl7-2hh251Y-unsplash.jpg",
-    "/images/markus-spiske-xl7-2hh251Y-unsplash-tablet.jpg",
-    "/images/markus-spiske-xl7-2hh251Y-unsplash-mobile.jpg"
+    "/images/sandgraf.jpg",
+    "/images/sandgraf_tablet.jpg",
+    "/images/sandgraf_mobile.jpg"
   );
 }
 
 .contact {
   @include hero-dark(
-    "/images/contact.jpg",
-    "/images/contact-tablet.jpg",
-    "/images/contact-mobile.jpg"
+    "/images/saddle.jpg",
+    "/images/saddle-tablet.jpg",
+    "/images/saddle-mobile.jpg"
   );
 }
 

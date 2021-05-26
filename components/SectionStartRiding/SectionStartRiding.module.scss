@@ -1,23 +1,22 @@
 @import "@/theme/theme";
 
 .wrapper {
-  min-height: 600px;
-  background: linear-gradient($transperant-blue, $transperant-blue),
-    url(/images/chris-bair-sJBBCn4vk8Y-unsplash.jpg);
+  min-height: 550px;
+  background: linear-gradient($transperant-blue, $transperant-blue), url(/images/kandar_detail.jpg);
   @include parallax(left);
   padding: 5rem 0 6rem;
   transition: all ease 250ms;
 
   @include tablet-normal {
     background: linear-gradient($transperant-blue, $transperant-blue),
-      url(/images/chris-bair-sJBBCn4vk8Y-unsplash-tablet.jpg);
+      url(/images/kandar_detail_tablet.jpg);
     background-size: cover;
   }
 
   @include mobile-max {
     min-height: 450px;
     background: linear-gradient($transperant-blue, $transperant-blue),
-      url(/images/chris-bair-sJBBCn4vk8Y-unsplash-mobile.jpg);
+      url(/images/kandar_detail_mobile.jpg);
     background-size: cover;
     background-position-x: 20%;
   }

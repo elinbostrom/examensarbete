@@ -1,8 +1,11 @@
 @import "../../theme/theme";
 
 .main {
-  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1)),
-    url(../../public/images/name_detail.jpg);
+  @include hero-light(
+    "/images/name_detail.jpg",
+    "/images/name_detail_tablet.jpg",
+    "/images/name_detail_mobile.jpg"
+  );
   @include parallax(center);
 }
 
