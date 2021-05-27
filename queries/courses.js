@@ -20,10 +20,6 @@ query COURSES {
         description
         date
         category
-        picture {
-          altText
-          sourceUrl
-        }
       }
     }
   }

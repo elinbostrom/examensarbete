@@ -10,7 +10,7 @@ query HORSES {
       }
     }
   }
-  horses(where: {orderby: {field: TITLE, order: ASC}}) {
+  horses(where: {orderby: {field: TITLE, order: ASC}}, first: 40) {
     nodes {
       id
       horseInfo {
