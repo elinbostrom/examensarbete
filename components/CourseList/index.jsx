@@ -12,9 +12,6 @@ export default function CourseList({ activeInfo, courses }) {
     let arr = [];
     courses &&
       courses.map(item => {
-        console.log(item);
-        console.log(item.course.category);
-        console.log(activeInfo);
         const courseDate = formatCourseDate(item.course.date);
         if (item.course.category === activeInfo && courseDate > today) {
           arr.push(item);
