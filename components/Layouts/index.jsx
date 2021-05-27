@@ -14,10 +14,6 @@ the same structure*/
 export default function Layout({ children, data, page }) {
   const { showMenu } = useContext(GlobalContext);
 
-  useEffect(() => {
-    console.log(showMenu);
-  }, [showMenu]);
-
   return (
     <div className={showMenu && styles.noScroll}>
       <Head>
