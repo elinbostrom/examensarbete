@@ -7,6 +7,12 @@
     "/images/name_detail_mobile.jpg"
   );
   @include parallax(center);
+  z-index: unset;
+}
+
+.noScroll {
+  height: 100vh;
+  overflow: hidden;
 }
 
 .wrapper {

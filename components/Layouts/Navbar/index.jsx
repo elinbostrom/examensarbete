@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Link from "next/link";
 import style from "./Navbar.module.scss";
 import { BiMenu } from "react-icons/bi";
 import { AiOutlineClose } from "react-icons/ai";
 import cn from "classnames";
+import { GlobalContext } from "@/contexts/GlobalContextProvider";
 
 export default function Navbar() {
-  const [showMenu, setShowMenu] = useState(false);
+  const { showMenu, setShowMenu } = useContext(GlobalContext);
   const [navbarPosition, setNavbarPosition] = useState("0");
 
   useEffect(() => {

@@ -4,9 +4,11 @@ import { LessonsCoursesContext } from "@/contexts/LessonCoursesProvider";
 import { menuItemsMobileAboutUs, menuItemsMobileLessonCourses } from "./MenuItems";
 import { BsChevronExpand } from "react-icons/bs";
 import { useEffect, useContext } from "react";
+import { GlobalContext } from "@/contexts/GlobalContextProvider";
 
 export default function SubmenuMobile({ page, aboutus }) {
   const { activePage, setActivePage } = useContext(LessonsCoursesContext);
+  const { showMenu } = useContext(GlobalContext);
   const router = useRouter();
 
   const handleChoosenValue = slug => {
@@ -18,7 +20,7 @@ export default function SubmenuMobile({ page, aboutus }) {
   }, []);
 
   return (
-    <nav className={styles.navigation}>
+    <nav className={showMenu ? styles.hidden : styles.navigation}>
       <select onChange={e => handleChoosenValue(e.target.value)} className={styles.select}>
         <option disabled selected>
           Meny

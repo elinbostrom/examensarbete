@@ -1,12 +1,16 @@
 @import "@/theme/theme";
 
+.hidden {
+  display: none;
+}
+
 .navigation {
   background: rgb(61, 78, 72);
   background: linear-gradient(336deg, rgba(61, 78, 72, 1) 0%, rgba(99, 123, 114, 1) 100%);
   position: absolute;
   width: 100%;
   box-shadow: 1px 1px 2px rgb(67, 67, 67);
-  z-index: 20;
+  z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
