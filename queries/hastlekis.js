@@ -19,10 +19,6 @@ query HASTLEKIS {
         description
         date
         category
-        picture {
-          altText
-          sourceUrl
-        }
       }
     }
   }
