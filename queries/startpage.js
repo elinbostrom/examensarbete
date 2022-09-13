@@ -15,12 +15,6 @@ query STARTPAGE {
     nodes {
       information {
         startpage {
-          cta {
-            title
-            description
-            link
-            btnText
-          }
           startRiding {
             title
             description

@@ -2,11 +2,11 @@ import { gql } from '@apollo/client'
 
 export const TAXISKJUTS = gql`
 query TAXISKJUTS {
-  heroes(where: {title: "Om oss"}) {
+  heroes(where: {title: "Lektioner och Kurser"}, first: 1) {
     nodes {
       heroInfo {
-        slogan
         title
+        slogan
       }
     }
   }

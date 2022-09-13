@@ -66,6 +66,7 @@ query CONTACT {
           friday
           montors
           weekends
+          phonetime
         }
       }
     }

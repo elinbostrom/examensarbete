@@ -1,45 +1,46 @@
 export const menuItemsMobileAboutUs = [
   {
     name: "Om ridskolan",
-    slug: "/om-oss"
+    slug: "/om-oss",
   },
   {
     name: "Personal",
-    slug: "/om-oss/personal"
+    slug: "/om-oss/personal",
   },
   {
     name: "Våra hästar",
-    slug: "/om-oss/vara-hastar"
+    slug: "/om-oss/vara-hastar",
   },
   {
     name: "Galleri",
-    slug: "/om-oss/galleri"
-  },
-  {
-    name: "Taxiskjuts",
-    slug: "/om-oss/taxiskjuts"
+    slug: "/om-oss/galleri",
   },
   {
     name: "Kontakt",
-    slug: "/om-oss/kontakt"
+    slug: "/om-oss/kontakt",
   },
 ];
 
 export const menuItemsMobileLessonCourses = [
   {
     name: "Börja rida",
-    slug: "/rida"
+    slug: "/rida",
   },
   {
     name: "Alla kurser",
-    slug: "/rida/kurser"
+    slug: "/rida/kurser",
   },
   {
     name: "Hästlekis",
-    slug: "/rida/hastlekis"
+    slug: "/rida/hastlekis",
   },
   {
-    name: "Information & Priser",
-    slug: "/rida/information-priser"
-  }
+    name: "Information",
+    slug: "/rida/information",
+  },
+  {
+    name: "Taxiskjuts",
+    slug: "/rida/taxiskjuts",
+  },
+  { name: "Ridscheman", slug: "/rida/ridscheman" },
 ];

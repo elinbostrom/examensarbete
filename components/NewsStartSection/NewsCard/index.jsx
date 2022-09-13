@@ -7,6 +7,7 @@ import ButtonNavigate from "../../Buttons/ButtonNavigate";
 
 export default function NewsCard({ obj, activePost, setActivePost }) {
   const [post, setPost] = useState(obj[activePost]);
+
   let { date, id, posts } = post;
   date = date.replace("T", " ");
 

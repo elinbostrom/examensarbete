@@ -8,20 +8,28 @@ export default function Footer() {
     <footer className={style.footer}>
       <div className={style.inner}>
         <section className={style.text}>
-          <h2>Vendelsö Ridskola</h2>
           <div>
+            <h2>Vendelsö Ridskola</h2>
             <p>08-776 10 15</p>
-            <a href="mailto:info@vendelsoridskola.se">info@vendelsoridskola.se</a>
+            <a href="mailto:info@vendelsoridskola.se">
+              info@vendelsoridskola.se
+            </a>
             <p>Österängs Gård</p>
             <p>136 75 Vendelsö</p>
-          </div>
-          <div>
-            <Link href="/om-oss/kontakt">Öppettider</Link>
-            <Link href="/karriar">Karriärsida</Link>
             <p>Vendelsö Ridhus AB | 556423-6668</p>
           </div>
 
           <div className={style.socials}>
+            <div className={style.links}>
+              <Link href="/om-oss/kontakt">Öppettider</Link>
+              <Link href="/karriar">Karriärsida</Link>
+              <a
+                href="https://www.vendelsoridskola.se/wp-content/uploads/2022/02/Personuppgiftspolicy.pdf"
+                target="_blank"
+              >
+                Personuppgiftspolicy
+              </a>
+            </div>
             <p>Följ oss via våra sociala medier</p>
             <div>
               <a href="https://www.instagram.com/vendelsoridskola/?hl=sv">
@@ -33,9 +41,6 @@ export default function Footer() {
             </div>
           </div>
         </section>
-        <a href="https://goo.gl/maps/vVCVJaLHbA2Te4Ss6">
-          <img className={style.map} src="/images/map.png" alt="map" />
-        </a>
       </div>
     </footer>
   );

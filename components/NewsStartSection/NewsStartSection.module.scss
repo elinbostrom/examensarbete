@@ -3,7 +3,7 @@
 .wrapper {
   min-height: 550px;
   background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)),
-    url("/images/stable.jpg");
+    url("/images/trans.jpg");
   @include parallax(left);
   position: relative;
   z-index: 3;
@@ -13,14 +13,14 @@
 
   @media (max-width: $tablet-normal) {
     background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)),
-      url("/images/stable_tablet.jpg");
+      url("/images/trans.jpg");
     background-size: cover;
   }
 
   @media (max-width: $mobile-max) {
     min-height: 450px;
     background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)),
-      url("/images/stable_mobile.jpg");
+      url("/images/trans.jpg");
     background-size: cover;
     background-position-x: 40%;
     padding: 0.5rem;

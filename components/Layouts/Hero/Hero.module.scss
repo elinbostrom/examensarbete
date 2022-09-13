@@ -1,15 +1,15 @@
 @import "@/theme/theme";
 
 .startpage {
-  @include hero-light("/images/9.png", "/images/9tablet.jpg", "/images/9mobile.jpg");
+  @include hero-dark("/images/start.jpg", "/images/start.jpg", "/images/start.jpg");
   background-position: bottom;
 }
 
 .stablenews {
   @include hero-dark(
-    "/images/stable.jpg",
-    "/images/stable_tablet.jpg",
-    "/images/stable_mobile.jpg"
+    "/images/trans.jpg",
+    "/images/trans.jpg",
+    "/images/trans.jpg"
   );
 }
 

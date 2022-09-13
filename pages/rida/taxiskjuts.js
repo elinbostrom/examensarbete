@@ -3,7 +3,7 @@ import React, { useContext, useEffect } from 'react'
 import styles from '@/styles/AboutUs.module.scss'
 
 // Components
-import AboutUsLayout from '@/components/Layouts/AboutUsLayout'
+import LessonCoursesLayout from '@/components/Layouts/LessonsCoursesLayout'
 
 // Utils
 import { createMarkup } from '@/utils/createMarkup'
@@ -20,14 +20,14 @@ export default function Taxiskjuts({ pageInfo, heroes }) {
   useEffect(() => { setActivePage("Taxiskjuts") }, [])
 
   return (
-    <AboutUsLayout heroes={heroes} page="aboutus" activePage={activePage}>
+    <LessonCoursesLayout heroes={heroes} page="lessoncourses" activePage={activePage}>
       <section className={styles.taxiskjuts}>
         <h2 className={styles.headline}>{title}</h2>
         <div className={styles.text} dangerouslySetInnerHTML={createMarkup(content)} />
         <img src="https://images.unsplash.com/photo-1482029255085-35a4a48b7084?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80" alt="Bild på taxi" />
 
       </section>
-    </AboutUsLayout>
+    </LessonCoursesLayout>
   )
 }
 
