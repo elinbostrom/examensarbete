@@ -13,7 +13,7 @@ export default function Home({ pageInfo, heroes, stablenews, animals }) {
 
   return (
     <Layout data={heroInfo} page="startpage">
-      <NewsStartSection data={stablenews} />
+      {/* <NewsStartSection data={stablenews} /> */}
       <SectionStartRiding data={startRiding} />
     </Layout>
   );
